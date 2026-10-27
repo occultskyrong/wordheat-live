@@ -1,0 +1,741 @@
+{
+  "applications": {
+    "api": {
+      "dependency_substitutions": [],
+      "http_operations": [
+        {
+          "method": "get",
+          "path": "/api/v1/auth/sessions"
+        },
+        {
+          "method": "post",
+          "path": "/api/v1/auth/sessions"
+        },
+        {
+          "method": "delete",
+          "path": "/api/v1/auth/sessions/current"
+        },
+        {
+          "method": "get",
+          "path": "/api/v1/auth/sessions/current"
+        },
+        {
+          "method": "delete",
+          "path": "/api/v1/auth/sessions/{session_id}"
+        },
+        {
+          "method": "get",
+          "path": "/api/v1/commands/{command_id}"
+        },
+        {
+          "method": "post",
+          "path": "/api/v1/connectors/{connector_id}/commands"
+        },
+        {
+          "method": "post",
+          "path": "/api/v1/display-sessions"
+        },
+        {
+          "method": "get",
+          "path": "/api/v1/display-sessions/current"
+        },
+        {
+          "method": "post",
+          "path": "/api/v1/display-tickets"
+        },
+        {
+          "method": "delete",
+          "path": "/api/v1/display-tickets/{ticket_id}"
+        },
+        {
+          "method": "post",
+          "path": "/api/v1/display/receipts"
+        },
+        {
+          "method": "get",
+          "path": "/api/v1/display/sessions/{session_id}/snapshot"
+        },
+        {
+          "method": "get",
+          "path": "/api/v1/health/live"
+        },
+        {
+          "method": "get",
+          "path": "/api/v1/health/ready"
+        },
+        {
+          "method": "post",
+          "path": "/api/v1/live-sessions"
+        },
+        {
+          "method": "get",
+          "path": "/api/v1/live-sessions/{session_id}"
+        },
+        {
+          "method": "get",
+          "path": "/api/v1/live-sessions/{session_id}/analytics"
+        },
+        {
+          "method": "get",
+          "path": "/api/v1/live-sessions/{session_id}/analytics/rounds"
+        },
+        {
+          "method": "post",
+          "path": "/api/v1/live-sessions/{session_id}/commands"
+        },
+        {
+          "method": "get",
+          "path": "/api/v1/messages"
+        },
+        {
+          "method": "get",
+          "path": "/api/v1/messages/{message_id}/trace"
+        },
+        {
+          "method": "post",
+          "path": "/api/v1/puzzle-imports"
+        },
+        {
+          "method": "get",
+          "path": "/api/v1/puzzle-imports/{job_id}"
+        },
+        {
+          "method": "post",
+          "path": "/api/v1/puzzle-imports/{job_id}/commands"
+        },
+        {
+          "method": "get",
+          "path": "/api/v1/puzzles"
+        },
+        {
+          "method": "post",
+          "path": "/api/v1/puzzles"
+        },
+        {
+          "method": "patch",
+          "path": "/api/v1/puzzles/{puzzle_id}"
+        },
+        {
+          "method": "post",
+          "path": "/api/v1/puzzles/{puzzle_id}/commands"
+        },
+        {
+          "method": "post",
+          "path": "/api/v1/rehearsal/guesses"
+        },
+        {
+          "method": "post",
+          "path": "/api/v1/replays"
+        },
+        {
+          "method": "get",
+          "path": "/api/v1/replays/{job_id}"
+        },
+        {
+          "method": "post",
+          "path": "/api/v1/replays/{job_id}/commands"
+        },
+        {
+          "method": "post",
+          "path": "/api/v1/rounds"
+        },
+        {
+          "method": "post",
+          "path": "/api/v1/rounds/{round_id}/commands"
+        },
+        {
+          "method": "get",
+          "path": "/api/v1/rounds/{round_id}/private-state"
+        },
+        {
+          "method": "post",
+          "path": "/api/v1/runtime/commands"
+        },
+        {
+          "method": "get",
+          "path": "/api/v1/runtime/status"
+        },
+        {
+          "method": "post",
+          "path": "/api/v1/scoring-evaluations"
+        },
+        {
+          "method": "get",
+          "path": "/api/v1/scoring-evaluations/{job_id}"
+        },
+        {
+          "method": "get",
+          "path": "/api/v1/studio/sessions/{session_id}/snapshot"
+        }
+      ],
+      "source_files": [
+        {
+          "path": "apps/api/app/__init__.py",
+          "sha256": "afcd942f4b6e9475c9c6722006e9c5459a5367d63a31477ba65e284bc8a6a730"
+        },
+        {
+          "path": "apps/api/app/application.py",
+          "sha256": "cd53e5b43f62332b25bdeefb1c3011d6e0ca58187a3a2d8f10d68921f87112c1"
+        },
+        {
+          "path": "apps/api/app/cli.py",
+          "sha256": "d11264ff8451d7d7110b1c9628b253625896cfde547c09e891eaf86400aa7a81"
+        },
+        {
+          "path": "apps/api/app/config.py",
+          "sha256": "0a36da8d5d06abb20d86ce2744862810b40587d2b0d9aa2a011c783547482929"
+        },
+        {
+          "path": "apps/api/app/dto.py",
+          "sha256": "e87921d32763e382db7f7bca2ac9c5383c4ad2e3175af942054fefe7e6380a20"
+        },
+        {
+          "path": "apps/api/app/errors.py",
+          "sha256": "9c00367244712a01e5cec97c69d469f7239f6447658125cee81264e47ad434cc"
+        },
+        {
+          "path": "apps/api/app/http_contract.py",
+          "sha256": "88b0f730c7db0de069ef5136d712351867619206f3989d671599c8522b52ef65"
+        },
+        {
+          "path": "apps/api/app/infrastructure/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "apps/api/app/infrastructure/clock/session_clock.py",
+          "sha256": "3bf4192bfdd23d78fd4b276b35f84ff27d2b27be0df2835b7349907088365a06"
+        },
+        {
+          "path": "apps/api/app/infrastructure/db/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "apps/api/app/infrastructure/db/database.py",
+          "sha256": "0d69c5dc58e277d90daf6c67f2c06596083c3dad4d665f2ff6b2f85ac283fae1"
+        },
+        {
+          "path": "apps/api/app/infrastructure/db/migrate.py",
+          "sha256": "a9e30960ba27082da50c1c26eb8abe838c11782e6432731de237b8da2eb4147a"
+        },
+        {
+          "path": "apps/api/app/infrastructure/db/schema.py",
+          "sha256": "e424ce6adab43283fd0b104a44b5cd438ec3f809b82832f2724b82fbf7809412"
+        },
+        {
+          "path": "apps/api/app/infrastructure/db/test_namespace.py",
+          "sha256": "cf92c0a560fed5c7cb397ef192ce15c4b031304a2ec9e097ee9026377d81c8e0"
+        },
+        {
+          "path": "apps/api/app/infrastructure/db/verification.py",
+          "sha256": "6be04b8d3ddccf632c090f7c09a67bcb3a41452b597000791c8d2c6ca261a195"
+        },
+        {
+          "path": "apps/api/app/infrastructure/runtime_configuration.py",
+          "sha256": "1101686d2968cc680d63e22e43bf852d9997a53f0855e93b1d95046327242f10"
+        },
+        {
+          "path": "apps/api/app/main.py",
+          "sha256": "adea4ec6a70a900646adbb4caed50e12c3890046916d7e1364e70838e6bda192"
+        },
+        {
+          "path": "apps/api/app/modules/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "apps/api/app/modules/analytics/maintenance.py",
+          "sha256": "4a2f61237914faf94725d6c4b2240dd30a6e9f20585e983b906dfa2a3995b377"
+        },
+        {
+          "path": "apps/api/app/modules/analytics/models.py",
+          "sha256": "039f60a83d8b05468ee380c5b0e1699ddaa57b515cb5eb3ef04e501f0f3c3299"
+        },
+        {
+          "path": "apps/api/app/modules/analytics/router.py",
+          "sha256": "a9e97b2017966c797d05582827ee28b95c6fbd55896fdb8e3ec32ed112cd1a9d"
+        },
+        {
+          "path": "apps/api/app/modules/analytics/service.py",
+          "sha256": "d4634d0c90bf8407c0ce24caba34faacbe752ccf39c667103bd961bd0e22abf7"
+        },
+        {
+          "path": "apps/api/app/modules/auth/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "apps/api/app/modules/auth/evidence.py",
+          "sha256": "666cdbc8af5480ac884efd3f6b453602de382b64f950fe281edaa4ff29fad71e"
+        },
+        {
+          "path": "apps/api/app/modules/auth/pairing_intent.py",
+          "sha256": "e241fc7130808081fa77736d1305f9ccba3a45bd56fc459285fb858e86f9155a"
+        },
+        {
+          "path": "apps/api/app/modules/auth/service.py",
+          "sha256": "262ef55e9e608c3af39ec6593c9accb0e7f9ab16a4ba03f4b63b57e53d8c902c"
+        },
+        {
+          "path": "apps/api/app/modules/auth/trust_keys.py",
+          "sha256": "95698992a22d24a98c30f951f59434dba9d490cfa0cf392fdd26e7c09d391a3b"
+        },
+        {
+          "path": "apps/api/app/modules/connectors/__init__.py",
+          "sha256": "1411b7724c107ed7349110ce3b8672fc29f45411e670ea6b48744178da4374d3"
+        },
+        {
+          "path": "apps/api/app/modules/connectors/coordinator.py",
+          "sha256": "5592225c72e05098de309cafdef9570f35c82f6e393e8a146c7ba8d2e5fdc9ea"
+        },
+        {
+          "path": "apps/api/app/modules/connectors/models.py",
+          "sha256": "3851011576715782544845ba8219b06216f4eb6f9d2f9ad1d6622bd92872d711"
+        },
+        {
+          "path": "apps/api/app/modules/connectors/native_pairing_bridge.py",
+          "sha256": "7ec356d89a4eaa100b268047b7a502620270cf6881eaaaaaadf7d80e9685e17d"
+        },
+        {
+          "path": "apps/api/app/modules/connectors/pairing.py",
+          "sha256": "2bb5b092a4f74a286e680fd0251bb3c5e8bf213f0894a1be1766c30e0d371958"
+        },
+        {
+          "path": "apps/api/app/modules/connectors/protocol.py",
+          "sha256": "3127242b28b7ace9b2018b0787b8bec00dc720376dfb6e40ac4cf10fcf24611d"
+        },
+        {
+          "path": "apps/api/app/modules/connectors/store.py",
+          "sha256": "cc069c53308a2b60b482001f71a63722796f83be464a99e251bdd28703f19f3e"
+        },
+        {
+          "path": "apps/api/app/modules/connectors/transport.py",
+          "sha256": "2a41c5c8030430609ee3cf76c76e05ac65046d1cdbf6db827734e3104fd625c1"
+        },
+        {
+          "path": "apps/api/app/modules/inbox/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "apps/api/app/modules/inbox/admission.py",
+          "sha256": "9b70acee2f91dccf0b10abb1b6900de480208c2c059d8adf65ca168c45a4cd83"
+        },
+        {
+          "path": "apps/api/app/modules/inbox/limiter.py",
+          "sha256": "19f7b470e47576a07c6219281a200a7a0ab0060f78408bcab5356fc5c3c33037"
+        },
+        {
+          "path": "apps/api/app/modules/inbox/normalization.py",
+          "sha256": "b30ed06e23119a44efe547887aece0a0b028a386a45a88f0512dfc1acf44ac89"
+        },
+        {
+          "path": "apps/api/app/modules/operations/__init__.py",
+          "sha256": "d26f8da596fcd7457bc30dc2787b8d81e6390786dc074caa12997b8d910fe6e1"
+        },
+        {
+          "path": "apps/api/app/modules/operations/adapter.py",
+          "sha256": "9de29230ae1104d0b09c7c5ae272bdb21485ebcfe732700d1911de430041ba27"
+        },
+        {
+          "path": "apps/api/app/modules/operations/messages.py",
+          "sha256": "a790945e4e1d00e891436fd092e510a346e2078983bad1f51c8e8c32f73e7771"
+        },
+        {
+          "path": "apps/api/app/modules/operations/readiness.py",
+          "sha256": "3400de1462bfbc29deb7af7922ab53e414b23fce05de43d087840122e2999c41"
+        },
+        {
+          "path": "apps/api/app/modules/operations/runtime_artifacts.py",
+          "sha256": "3d8bc4cda00e31e68aab91b62f4157d8c7c9328dccc774315aa68e91e300bd4e"
+        },
+        {
+          "path": "apps/api/app/modules/operations/runtime_backup.py",
+          "sha256": "6cc93354c28d93d60af148c405a2bc12ae74d401e0540b001b07bffea6f5a802"
+        },
+        {
+          "path": "apps/api/app/modules/operations/runtime_cli.py",
+          "sha256": "aee9a7f0cc373d19e4e2545b1d0ea0c4d6907f2d17ee7c5db3f24a0d90a57d74"
+        },
+        {
+          "path": "apps/api/app/modules/operations/runtime_controller.py",
+          "sha256": "501b1419965d4be5e7b603f1d82332ef9ee82f9b18301b69ca97add86969730d"
+        },
+        {
+          "path": "apps/api/app/modules/operations/runtime_models.py",
+          "sha256": "3b8955e8d063822a2a34d620fb1431bf731149974e3e2acd6191e1edc591b0b7"
+        },
+        {
+          "path": "apps/api/app/modules/operations/runtime_native.py",
+          "sha256": "3e6a982dcbfb430e24996048e306e579cb4d700f757217b99187e4a638cc9240"
+        },
+        {
+          "path": "apps/api/app/modules/operations/runtime_postgres.py",
+          "sha256": "a11246eec09de7395691662737c65a2ec7b9cf19f178738c1fbaef6af894f14a"
+        },
+        {
+          "path": "apps/api/app/modules/operations/runtime_router.py",
+          "sha256": "71c4321d05f793e421ff66755916fa571a838386e255ccb0022bb1ac9c617685"
+        },
+        {
+          "path": "apps/api/app/modules/operations/runtime_socket.py",
+          "sha256": "8d0ca5c8a60458ce67f9d1a4c64e617a53f697cf27f50878b8ff088cfea0e057"
+        },
+        {
+          "path": "apps/api/app/modules/operations/runtime_watchdog.py",
+          "sha256": "472ef5755cb02abf3ce099b37f0d7dde49e161349f29bf7b203c6bbc05d90535"
+        },
+        {
+          "path": "apps/api/app/modules/operations/trusted_control.py",
+          "sha256": "754f0fd2fa5947278436837096ed1998d3b05429353bc7f506de4c4eddbc27c5"
+        },
+        {
+          "path": "apps/api/app/modules/realtime/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "apps/api/app/modules/realtime/protocol.py",
+          "sha256": "480796ace7504b374cae97846f22a31859877cc63dcda4b743dd790d7e72264c"
+        },
+        {
+          "path": "apps/api/app/modules/realtime/router.py",
+          "sha256": "01b7767f7d390a1deb82fedcb44b6c4e94ea62c97d2e490889df25a79d5cc80c"
+        },
+        {
+          "path": "apps/api/app/modules/realtime/service.py",
+          "sha256": "a854c725b65c7638b7f9bf80053da5f8b4f3f0ab8a877c348974dbadf00e9d8f"
+        },
+        {
+          "path": "apps/api/app/modules/replays/__init__.py",
+          "sha256": "2e4f20c46cc40da9006581ba55e2133c03eb429ab608336b74435f9482e668ce"
+        },
+        {
+          "path": "apps/api/app/modules/replays/admission.py",
+          "sha256": "bc4b0710af38f7b6d3eeca2daa1fe0501834bbe73ff3eea319147ad86477185b"
+        },
+        {
+          "path": "apps/api/app/modules/replays/models.py",
+          "sha256": "43e7d74ceddfb1f31cdbf23dab181368e695a4adce9deeddca9aabce99222216"
+        },
+        {
+          "path": "apps/api/app/modules/replays/router.py",
+          "sha256": "253612a15033857a0a92aea147d680d2b008f68ee17aa681a25f66c97d43b975"
+        },
+        {
+          "path": "apps/api/app/modules/replays/service.py",
+          "sha256": "76a334a17a804ce41c6ec7e72e6f92bbf7dadcd0b1ac85a04b03229ff4694306"
+        },
+        {
+          "path": "apps/api/app/modules/replays/worker.py",
+          "sha256": "572a0956fcdc78f3759aa83aefebd87372e93d89e5d7fb6a00308f537e496ae3"
+        },
+        {
+          "path": "apps/api/app/modules/rounds/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "apps/api/app/modules/rounds/worker.py",
+          "sha256": "3218238f9653bb0f82e6c1a79e9fa69706b3f1f99b6ad30c7fbede6e21391fec"
+        },
+        {
+          "path": "apps/api/app/modules/scoring/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "apps/api/app/modules/scoring/client.py",
+          "sha256": "8c8b4efb4615c86374e435a13330b3333ab41c8c33f1d9ea3dbe199daad71020"
+        },
+        {
+          "path": "apps/api/app/modules/scoring/port.py",
+          "sha256": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043"
+        },
+        {
+          "path": "apps/api/app/modules/scoring/runtime.py",
+          "sha256": "de0456358103e82a5ac62fc9eaf2042eb03687449b635411b1f398527b4c2891"
+        },
+        {
+          "path": "apps/api/app/modules/scoring/worker.py",
+          "sha256": "889de55bfe3c71510072dbd33e10f0a3db3e1cc02168b1733be23681954b8391"
+        },
+        {
+          "path": "apps/api/app/modules/sessions/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "apps/api/app/modules/sessions/service.py",
+          "sha256": "e823115797705bc8384e4b9a09af3dc438a322f291aefc1b7b77fe7d31cd0a02"
+        },
+        {
+          "path": "apps/api/app/modules/wordbank/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "apps/api/app/modules/wordbank/bundle.py",
+          "sha256": "ab3f6659ba80f79c8e552e21122afefa6ce4fab7908ce0482ca813126fd03599"
+        },
+        {
+          "path": "apps/api/app/modules/wordbank/catalog.py",
+          "sha256": "4d05451148b3ade262f376bb97487ebd7ea0f5b3bddbf6402a81273100cfb27f"
+        },
+        {
+          "path": "apps/api/app/modules/wordbank/evaluation.py",
+          "sha256": "c4285fbd5ecc3d456591d4ffa25264e4fb168cf34b0d4486492f1d88a32fe775"
+        },
+        {
+          "path": "apps/api/app/modules/wordbank/models.py",
+          "sha256": "fc82dce5399dde7ea7061aef756fb4a2755d087762c6698972c47cb1d9676c73"
+        },
+        {
+          "path": "apps/api/app/modules/wordbank/pagination.py",
+          "sha256": "ef7ca2f7d8359f96496cbfa2a26d74613c5adf8bbd88b7a79adc49b255253f29"
+        },
+        {
+          "path": "apps/api/app/modules/wordbank/resources.py",
+          "sha256": "bf32e13d001bc6c37d039bc2fca3ce52254f439385402ec4210bab4ccc1971ca"
+        },
+        {
+          "path": "apps/api/app/modules/wordbank/router.py",
+          "sha256": "67d4c5ae1a197f31163072cc3719674b2b0af7a93f87edaf1514b589034e69d6"
+        },
+        {
+          "path": "apps/api/app/modules/wordbank/selection.py",
+          "sha256": "8b76183a21252d0470275754438c9a21d38fc9fdecd03bd9f8cc4ffe9eb9fd65"
+        },
+        {
+          "path": "apps/api/app/modules/wordbank/service.py",
+          "sha256": "fe0fdd239b78557ee218f6790a56ef171634d65139bf46fd3d27fdaa027eca38"
+        },
+        {
+          "path": "apps/api/app/modules/wordbank/worker.py",
+          "sha256": "6e6824f6c679ee12836c53e89eb6ad8423b80723cc0129b174e576ca6563772b"
+        },
+        {
+          "path": "apps/api/app/runtime_entry.py",
+          "sha256": "aadb9d5f7e0ec43143a14ee9799e64b07823279dd00707b9d9b7a9ab25e5a102"
+        },
+        {
+          "path": "apps/api/pyproject.toml",
+          "sha256": "56dd35d9cf0262bf921ad0494cb4f6be34ead3c7889a3b58677f3cdf28b24766"
+        },
+        {
+          "path": "apps/api/uv.lock",
+          "sha256": "1d69b6f962a1c5c2b206672ea88879f3b09f0fdc6717d845d22070bc4111d679"
+        }
+      ],
+      "websocket_paths": [
+        "/api/v1/display/ws",
+        "/api/v1/studio/ws"
+      ]
+    },
+    "relay": {
+      "dependency_substitutions": [
+        "RelayService construction only; full build_app/control routers unchanged; DB not connected"
+      ],
+      "http_operations": [
+        {
+          "method": "post",
+          "path": "/relay/v1/delivery-stages"
+        },
+        {
+          "method": "post",
+          "path": "/relay/v1/device-pairings"
+        },
+        {
+          "method": "post",
+          "path": "/relay/v1/device-tokens/{operation}"
+        },
+        {
+          "method": "post",
+          "path": "/relay/v1/douyin/callback"
+        },
+        {
+          "method": "post",
+          "path": "/relay/v1/freshness"
+        },
+        {
+          "method": "post",
+          "path": "/relay/v1/leases"
+        },
+        {
+          "method": "post",
+          "path": "/relay/v1/leases/{operation}"
+        },
+        {
+          "method": "post",
+          "path": "/relay/v1/revocations"
+        },
+        {
+          "method": "post",
+          "path": "/relay/v1/state"
+        },
+        {
+          "method": "post",
+          "path": "/relay/v1/streams/bootstrap"
+        },
+        {
+          "method": "post",
+          "path": "/relay/v1/tasks/{operation}"
+        },
+        {
+          "method": "post",
+          "path": "/relay/v1/windows/{operation}"
+        }
+      ],
+      "source_files": [
+        {
+          "path": "apps/relay/app/__init__.py",
+          "sha256": "d17fe0567257966cfb5d8f96f658e9e6cdf01896d637a49d0abb915f99af914b"
+        },
+        {
+          "path": "apps/relay/app/cli.py",
+          "sha256": "2e8339f11bceeb3a1a73912c03adb151bf782af933f4d4fe515fa2bc79e6b67e"
+        },
+        {
+          "path": "apps/relay/app/composition.py",
+          "sha256": "bc8fb6387a0a18453cf50275104a7312f233938dd050cca22e4a4c9b8a341926"
+        },
+        {
+          "path": "apps/relay/app/config.py",
+          "sha256": "59a5b13edf2dd97d130b6abf59f0db0e68f681fd613af96cddc7b54a6583a43c"
+        },
+        {
+          "path": "apps/relay/app/control.py",
+          "sha256": "fe4b8126a521b15f3bbbebc387a06e5ec076fb727d7d7b8a4051ea464e8aa26a"
+        },
+        {
+          "path": "apps/relay/app/control_routes.py",
+          "sha256": "a820aec71c3006ae856f3fce3bab369101bd1a9ffd720115925066055aca1bbf"
+        },
+        {
+          "path": "apps/relay/app/core.py",
+          "sha256": "e26bac22c4964dbd7422baf0ef5cec48a92811f99154067d53d2bc98b9289773"
+        },
+        {
+          "path": "apps/relay/app/fulfillment.py",
+          "sha256": "6f5d3931379cad9ef70fb384c389692c31efbb186b76974b537bd60e99d28420"
+        },
+        {
+          "path": "apps/relay/app/historical.py",
+          "sha256": "4899b9b9209eb44bb664111edd5e31a837cd3c2729d26aa7191ca0894f30710d"
+        },
+        {
+          "path": "apps/relay/app/main.py",
+          "sha256": "bd47234e3b1842dd51076ac1f6d3a5723452c828ebb668be0208b00ae8068c54"
+        },
+        {
+          "path": "apps/relay/app/pairing_intent.py",
+          "sha256": "e241fc7130808081fa77736d1305f9ccba3a45bd56fc459285fb858e86f9155a"
+        },
+        {
+          "path": "apps/relay/app/platform_state.py",
+          "sha256": "5f8a48fa71b0f887b0a545349184aab46a2ddcd9570d52520dc01000a7156ff7"
+        },
+        {
+          "path": "apps/relay/app/provider.py",
+          "sha256": "67e9a1f263b06017b67938e23b91b42793ecacc5e1eeb7e987af9b083305a87b"
+        },
+        {
+          "path": "apps/relay/app/segments.py",
+          "sha256": "b2ab96bcd551d61f3600b71fb6303594816b24c5dfa026202309c81e9123db02"
+        },
+        {
+          "path": "apps/relay/app/server_config.py",
+          "sha256": "1d817079f1956373933e5b4973b215a739fe26f4197049ded40620a968e36f19"
+        },
+        {
+          "path": "apps/relay/app/trust_keys.py",
+          "sha256": "95698992a22d24a98c30f951f59434dba9d490cfa0cf392fdd26e7c09d391a3b"
+        },
+        {
+          "path": "apps/relay/pyproject.toml",
+          "sha256": "cf9d137e195f42a4c524267d5c7100008127a832097d2ea2813024b49b457882"
+        },
+        {
+          "path": "apps/relay/uv.lock",
+          "sha256": "d6d341e17ff7dc2883ff08e99a252ba25492bd16fc09a477afe6c8039a145156"
+        }
+      ],
+      "websocket_paths": [
+        "/relay/v1/streams"
+      ]
+    },
+    "scorer": {
+      "dependency_substitutions": [
+        "manifest loading only; route code unchanged; model not loaded"
+      ],
+      "http_operations": [
+        {
+          "method": "post",
+          "path": "/internal/v1/embeddings"
+        }
+      ],
+      "source_files": [
+        {
+          "path": "apps/scorer/app/__init__.py",
+          "sha256": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27"
+        },
+        {
+          "path": "apps/scorer/app/batcher.py",
+          "sha256": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593"
+        },
+        {
+          "path": "apps/scorer/app/encoder.py",
+          "sha256": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76"
+        },
+        {
+          "path": "apps/scorer/app/main.py",
+          "sha256": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5"
+        },
+        {
+          "path": "apps/scorer/app/manifest.py",
+          "sha256": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930"
+        },
+        {
+          "path": "apps/scorer/app/protocol.py",
+          "sha256": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae"
+        },
+        {
+          "path": "apps/scorer/app/runtime_entry.py",
+          "sha256": "09a0eb9b790caa3e121559b827d08ceab9427e1563baa2c20afdc494c1859249"
+        },
+        {
+          "path": "apps/scorer/pyproject.toml",
+          "sha256": "c5d6e0ad5fc2b0bfb18df59c74e8eab4f9b628554b6285f27207071a947f0f47"
+        },
+        {
+          "path": "apps/scorer/uv.lock",
+          "sha256": "1ae15a9eda5f8ddfb7cdb0e632766a30edde50a042016ada5d78ac96dcde485a"
+        }
+      ],
+      "websocket_paths": []
+    }
+  },
+  "generator_inputs": [
+    {
+      "path": "scripts/backend/20261026-export-contracts.py",
+      "sha256": "a11ca09fee3187db6c2df51524b0615c0659cb24b63fbc5dc02572fbfe641360"
+    },
+    {
+      "path": "packages/contracts/export_models.py",
+      "sha256": "e571eb3dec0feffeb0ff5c2de39159d870fe4f80be20cd257926831c652f5348"
+    },
+    {
+      "path": "packages/contracts/compatibility.json",
+      "sha256": "b4aa42d5c0568a19a899c90f2630e82aaac084a24b2f8fc9264f59be99e16883"
+    },
+    {
+      "path": "packages/contracts/c1-baseline.json",
+      "sha256": "d69ae165a6d1169e00f20bb03b4cd66bdc9ed2fe7ef2a730c2a130934a88b4e8"
+    },
+    {
+      "path": "packages/contracts/relay.schema.json",
+      "sha256": "3cd659e2d59c27852abe6be3476e122c989e669c7d6df8c689a6c466ae12ee5e"
+    },
+    {
+      "path": "packages/contracts/runtime-manifest.schema.json",
+      "sha256": "d9c95f5e4472738afc7e4e9f7614ee379a8abd932ceecbb21425dc527deb1041"
+    },
+    {
+      "path": "packages/contracts/native-control.schema.json",
+      "sha256": "f7b3101eaf0b6ef9bc1192874610911c7577a188a38d563a175c2cf73ea675f4"
+    }
+  ],
+  "source_status": "FROZEN_INPUT",
+  "version": 1
+}

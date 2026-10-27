@@ -1,0 +1,21 @@
+{
+  "provenance": "synthetic contract expectations for the four confirmed fixes; application regression verifies durable effects",
+  "import_states": [
+    {"validation_id":"validation-1","operation":"confirm_valid_rows","puzzle_version_ids":[]},
+    {"validation_id":"validation-1","operation":"confirm_valid_rows","puzzle_version_ids":["draft-1","draft-2"]},
+    {"validation_id":"validation-1","operation":"cancel","puzzle_version_ids":[]}
+  ],
+  "ws_rejections": [
+    {"case":"legacy receipt without BE", "headers":{}, "frame":{"kind":"display.received","stream_seq":"7","receipt_id":"receipt-1"}, "expected":{"kind":"relay.error","reason_code":"BE_EXTENSION_VERSION_UNSUPPORTED","close_code":1008,"stage_writes":0,"job_writes":0}},
+    {"case":"BE receipt without time", "headers":{"X-BE-Extension-Version":"LW-BE/1.1.0"}, "frame":{"kind":"display.processed","stream_seq":"7","receipt_id":"receipt-1"}, "expected":{"kind":"relay.error","reason_code":"INPUT_INVALID","close_code":1008,"stage_writes":0,"job_writes":0}},
+    {"case":"time conflicts with same receipt", "headers":{"X-BE-Extension-Version":"LW-BE/1.1.0"}, "frame":{"kind":"display.received","stream_seq":"7","receipt_id":"receipt-1","client_time":"2026-10-27T00:00:00.124Z"}, "precondition":{"same_stage_receipt_time":"2026-10-27T00:00:00.123Z"}, "expected":{"kind":"relay.error","reason_code":"RECEIPT_CONFLICT","close_code":1008,"stage_writes":0,"job_writes":0}},
+    {"case":"historical receipt job has no actual time", "headers":{"X-BE-Extension-Version":"LW-BE/1.1.0"}, "frame":{"kind":"display.received","stream_seq":"7","receipt_id":"receipt-1","client_time":"2026-10-27T00:00:00.123Z"}, "precondition":{"existing_job_client_time":null}, "expected":{"kind":"relay.error","reason_code":"RECEIPT_CONFLICT","close_code":1008,"stage_writes":0,"job_writes":0}}
+  ],
+  "cross_channel_idempotency": {
+    "http_original_time":"2026-10-27T08:00:00.123+08:00",
+    "ws_time":"2026-10-27T00:00:00.123Z",
+    "same_stage_receipt":true,
+    "expected_new_jobs":0,
+    "expected_retained_original_time":"2026-10-27T08:00:00.123+08:00"
+  }
+}

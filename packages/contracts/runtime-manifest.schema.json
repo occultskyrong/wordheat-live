@@ -1,0 +1,223 @@
+{
+  "type": "object",
+  "properties": {
+    "manifest_version": {
+      "const": 1
+    },
+    "contract_version": {
+      "const": "LW-C1/1.0.0"
+    },
+    "app_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?$"
+    },
+    "build_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "platform": {
+      "const": "windows-x64"
+    },
+    "python_abi": {
+      "const": "cp312"
+    },
+    "python_version": {
+      "type": "string",
+      "pattern": "^3\\.12\\.\\d+$"
+    },
+    "components": {
+      "type": "object",
+      "properties": {
+        "launcher": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "string",
+              "pattern": "^\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "required": [
+            "version",
+            "sha256"
+          ],
+          "additionalProperties": false
+        },
+        "api": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "string",
+              "pattern": "^\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "required": [
+            "version",
+            "sha256"
+          ],
+          "additionalProperties": false
+        },
+        "scorer": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "string",
+              "pattern": "^\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "required": [
+            "version",
+            "sha256"
+          ],
+          "additionalProperties": false
+        },
+        "web": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "string",
+              "pattern": "^\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "required": [
+            "version",
+            "sha256"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "launcher",
+        "api",
+        "scorer",
+        "web"
+      ],
+      "additionalProperties": false
+    },
+    "compatibility": {
+      "type": "object",
+      "properties": {
+        "contract_versions": {
+          "type": "array",
+          "items": {
+            "const": "LW-C1/1.0.0"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "pg_major": {
+          "const": 16
+        },
+        "db_schema_read_versions": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "db_schema_write_version": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "upgrade_from_schema_versions": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "rollback_requires_restore": {
+          "const": true
+        }
+      },
+      "required": [
+        "contract_versions",
+        "pg_major",
+        "db_schema_read_versions",
+        "db_schema_write_version",
+        "upgrade_from_schema_versions",
+        "rollback_requires_restore"
+      ],
+      "additionalProperties": false
+    },
+    "dependency_lock_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "model_manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "wordbank_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "calibration_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)(?!.*:)[^<>]+$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "required": [
+          "path",
+          "bytes",
+          "sha256"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "manifest_version",
+    "contract_version",
+    "app_version",
+    "build_id",
+    "platform",
+    "python_abi",
+    "python_version",
+    "components",
+    "compatibility",
+    "dependency_lock_sha256",
+    "model_manifest_sha256",
+    "wordbank_version",
+    "calibration_version",
+    "files"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Windows release manifest shape; signing/path resolution checks remain external",
+  "x-contract-definition-status": "complete",
+  "x-definition-scope": "Wire shape only; not implementation, platform gates or Windows acceptance"
+}

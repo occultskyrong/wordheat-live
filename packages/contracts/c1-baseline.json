@@ -1,0 +1,596 @@
+{
+  "contract_version": "LW-C1/1.0.0",
+  "schema_version": 1,
+  "baseline": {
+    "solution_version": "1.1",
+    "plan_version": "1.0",
+    "solution_sha256": "e95b592d0401e41daff0e170dad8aabc9d98adb7f484d430c22df161041ccc54",
+    "plan_sha256": "f8752a1a4d6333100bba7e3b9c3dab919de31ce766ba511fae4c62d6dc1c5098"
+  },
+  "wire_types": {
+    "id": "opaque string",
+    "seq": "non-negative decimal string; compare with BigInt, never Number",
+    "generation": "non-negative decimal string",
+    "version": "non-negative integer",
+    "timestamp": "UTC RFC3339 with milliseconds",
+    "score": "finite number with one decimal; non-solved <=99.9; exact approved answer/alias=100",
+    "window_epoch": "non-negative decimal string; same BigInt handling as generation"
+  },
+  "session_modes": [
+    "official",
+    "rehearsal",
+    "replay"
+  ],
+  "round_states": [
+    "IDLE",
+    "PREPARING",
+    "RUNNING",
+    "PAUSED",
+    "DRAINING",
+    "REVEALED",
+    "INTERMISSION",
+    "FAULTED"
+  ],
+  "round_end_reasons": [
+    "SOLVED",
+    "TIMEOUT",
+    "VOID",
+    "INTERRUPTED"
+  ],
+  "transport_states": [
+    "DISCONNECTED",
+    "CONNECTING",
+    "CONNECTED",
+    "RECONNECTING",
+    "FAULTED"
+  ],
+  "launcher_states": [
+    "STOPPED",
+    "CHECKING",
+    "DB_READY",
+    "STARTING",
+    "WARMING",
+    "READY_REHEARSAL",
+    "READY_OFFICIAL",
+    "RECOVERY_REQUIRED",
+    "MAINTENANCE",
+    "FAULTED",
+    "STOPPING"
+  ],
+  "round_commands": [
+    "pause",
+    "resume",
+    "skip",
+    "void",
+    "reveal_hint"
+  ],
+  "session_commands": [
+    "start",
+    "end",
+    "recover",
+    "configure"
+  ],
+  "display_event_types": [
+    "round.started",
+    "round.paused",
+    "round.resumed",
+    "round.draining",
+    "guess.feedback",
+    "ranking.updated",
+    "hint.revealed",
+    "round.revealed",
+    "intermission.started",
+    "connection.status"
+  ],
+  "ws_control_kinds": [
+    "resume",
+    "resume_ready",
+    "heartbeat",
+    "resync_required"
+  ],
+  "error_http": {
+    "AUTH_REQUIRED": 401,
+    "FORBIDDEN": 403,
+    "DISPLAY_UNAUTHORIZED": 403,
+    "INPUT_INVALID": 422,
+    "RESOURCE_NOT_FOUND": 404,
+    "ROUND_CLOSED": 409,
+    "ROUND_VERSION_CONFLICT": 409,
+    "IDEMPOTENCY_KEY_REUSED": 409,
+    "CONTRACT_VERSION_UNSUPPORTED": 409,
+    "RATE_LIMITED": 429,
+    "SCORER_NOT_READY": 503,
+    "DEPENDENCY_UNAVAILABLE": 503,
+    "RELAY_GAP": 409,
+    "LEASE_EXPIRED": 409,
+    "WINDOW_VERSION_CONFLICT": 409,
+    "INSTALLATION_MISMATCH": 409,
+    "RESULT_STALE": 409,
+    "PAYLOAD_TOO_LARGE": 413,
+    "CLOCK_UNCERTAIN": 409
+  },
+  "defaults_ms": {
+    "heartbeat_interval": 2000,
+    "relay_disconnect_grace": 6000,
+    "lease_ttl": 15000,
+    "lease_safety_margin": 3000,
+    "transport_drain": 5000,
+    "score_drain": 2000,
+    "clock_uncertainty_limit": 500,
+    "api_start_timeout": 30000,
+    "model_warmup_timeout": 120000,
+    "shutdown_drain": 15000,
+    "display_bootstrap_ttl": 60000
+  },
+  "public_snapshot_fields": [
+    "schema_version",
+    "contract_version",
+    "session_id",
+    "mode",
+    "run_purpose",
+    "as_of_seq",
+    "server_time",
+    "round",
+    "transport",
+    "ranking",
+    "latest_feedbacks",
+    "reveal",
+    "pending_effects"
+  ],
+  "public_round_fields": [
+    "round_id",
+    "status",
+    "version",
+    "window_epoch",
+    "short_code",
+    "category",
+    "answer_length",
+    "published_hints",
+    "clock"
+  ],
+  "public_clock_fields": [
+    "time_origin",
+    "deadline_at",
+    "remaining_ms"
+  ],
+  "public_transport_fields": [
+    "state",
+    "reason_code",
+    "recoverable",
+    "last_confirmed_at"
+  ],
+  "public_forbidden_before_reveal": [
+    "answer",
+    "aliases",
+    "target_vector",
+    "neighbors",
+    "private_puzzle_id",
+    "platform_uid",
+    "platform_secret",
+    "debugAnswer"
+  ],
+  "command_request_fields": [
+    "command",
+    "expected_version",
+    "args"
+  ],
+  "command_result_fields": [
+    "command_id",
+    "status",
+    "resource_version",
+    "state",
+    "error"
+  ],
+  "business_command_status": [
+    "pending",
+    "applied",
+    "failed",
+    "cancelled"
+  ],
+  "event_envelope_fields": [
+    "kind",
+    "schema_version",
+    "contract_version",
+    "event_id",
+    "session_id",
+    "round_id",
+    "seq",
+    "server_time",
+    "type",
+    "delivery_ids",
+    "delivery_mode",
+    "payload"
+  ],
+  "event_delivery_modes": [
+    "live",
+    "replay"
+  ],
+  "receipt_request_fields": [
+    "display_instance_id",
+    "render_generation",
+    "batch_id",
+    "stage",
+    "deliveries"
+  ],
+  "receipt_stages": [
+    "received",
+    "processed"
+  ],
+  "receipt_delivery_fields": [
+    "delivery_id",
+    "client_time",
+    "feedback_id"
+  ],
+  "feedback_statuses": [
+    "scored",
+    "format_invalid",
+    "duplicate",
+    "rate_limited",
+    "round_closed",
+    "system_failed"
+  ],
+  "auth": {
+    "operator_cookie": "lw_operator",
+    "display_cookie": "lw_display",
+    "csrf_header": "X-CSRF-Token",
+    "idempotency_header": "Idempotency-Key",
+    "contract_header": "X-Contract-Version",
+    "session_ttl_seconds": 28800,
+    "display_ttl_seconds": 28800,
+    "ws_auth": "HttpOnly role-specific cookie + exact Origin/Host validation; no query token",
+    "display_bootstrap": "fragment ticket exchanged once, clear fragment before POST; primary display has server-issued display_instance_id/render_generation; previews cannot fulfill",
+    "bootstrap_exemptions": [
+      "POST /api/v1/auth/sessions",
+      "POST /api/v1/display-sessions"
+    ],
+    "bootstrap_guard": "only these two browser POSTs lack preexisting role CSRF; exact Host+Origin, application/json, no cross-origin CORS, body size+rate limits; login returns operator csrf_token; display exchange/current return receipt_csrf_token; all authenticated mutations use role-bound token",
+    "display_refresh": "valid cookie -> GET display current + snapshot -> WS resume; server rotates render_generation when assigning new primary connection, closes old connection; resume_ready delivers new generation and pending_effects under it; do not resend used fragment ticket or rewrite old batches"
+  },
+  "stream_rules": {
+    "public_ws_seq": "session+DISPLAY audience independent contiguous seq",
+    "studio_ws_seq": "session+STUDIO audience independent contiguous seq",
+    "relay_stream_seq": "separate transport seq for data AND barriers",
+    "resume": "snapshot as_of_seq -> WS resume(after_seq) -> ordered replay -> resume_ready; detect gap/refetch snapshot",
+    "receipts": "pending_effects recover unfinished effects; replay does not imply processed; apply/actual render before processed, no old victory animation",
+    "round_switch": "atomically replace round-scoped visual state, keep independent unfinished effect/receipt queues; pending effects carry origin_round_id/window_epoch; old effects render static history only and do not change current rankings or replay victory",
+    "effect_backpressure": "RESUMING snapshot/replay restores projections only; their pending_effects/effects are descriptions, never grants and consume no new generation credit. resume_ready at consistent boundary grants <=128 pending effects under new render_generation. LIVE events may include effects only with reserved credit; full credit sends visual feedbacks with effects=[], leaving durable pending. processed, not received, frees credit; then ordered guess.feedback(feedbacks=[] effects=historical grants) continues. Old generations/grants invalidated on reconnect; no snapshot/replay receipts."
+  },
+  "api_routes": [
+    [
+      "POST",
+      "/api/v1/auth/sessions",
+      "operator login"
+    ],
+    [
+      "GET",
+      "/api/v1/auth/sessions/current",
+      "actor+csrf token"
+    ],
+    [
+      "DELETE",
+      "/api/v1/auth/sessions/current",
+      "logout"
+    ],
+    [
+      "GET",
+      "/api/v1/health/live",
+      "minimal liveness"
+    ],
+    [
+      "GET",
+      "/api/v1/health/ready",
+      "private detailed readiness"
+    ],
+    [
+      "POST",
+      "/api/v1/live-sessions",
+      "create; mode+room binding"
+    ],
+    [
+      "GET",
+      "/api/v1/live-sessions/{session_id}",
+      "private session detail"
+    ],
+    [
+      "POST",
+      "/api/v1/live-sessions/{session_id}/commands",
+      "start/end/recover"
+    ],
+    [
+      "POST",
+      "/api/v1/rounds",
+      "create round from published version"
+    ],
+    [
+      "POST",
+      "/api/v1/rounds/{round_id}/commands",
+      "pause/resume/skip/void/reveal_hint"
+    ],
+    [
+      "GET",
+      "/api/v1/rounds/{round_id}/private-state",
+      "operator only"
+    ],
+    [
+      "GET",
+      "/api/v1/display/sessions/{session_id}/snapshot",
+      "public allowlist"
+    ],
+    [
+      "POST",
+      "/api/v1/display-tickets",
+      "operator issues bootstrap"
+    ],
+    [
+      "POST",
+      "/api/v1/display-sessions",
+      "exchange once"
+    ],
+    [
+      "DELETE",
+      "/api/v1/display-tickets/{ticket_id}",
+      "revoke related display sessions"
+    ],
+    [
+      "POST",
+      "/api/v1/display/receipts",
+      "primary display only"
+    ],
+    [
+      "WS",
+      "/api/v1/display/ws",
+      "DISPLAY channel"
+    ],
+    [
+      "WS",
+      "/api/v1/studio/ws",
+      "STUDIO channel"
+    ],
+    [
+      "POST",
+      "/api/v1/connectors/{connector_id}/commands",
+      "connect/start/stop/query; no arbitrary URL"
+    ],
+    [
+      "POST",
+      "/api/v1/rehearsal/guesses",
+      "rehearsal only"
+    ],
+    [
+      "POST",
+      "/api/v1/replays",
+      "isolated replay job"
+    ],
+    [
+      "GET",
+      "/api/v1/replays/{job_id}",
+      "replay status"
+    ],
+    [
+      "GET",
+      "/api/v1/puzzles",
+      "search/version/filter"
+    ],
+    [
+      "POST",
+      "/api/v1/puzzles",
+      "create draft"
+    ],
+    [
+      "PATCH",
+      "/api/v1/puzzles/{puzzle_id}",
+      "draft only + version"
+    ],
+    [
+      "POST",
+      "/api/v1/puzzle-imports",
+      "CSV validation job"
+    ],
+    [
+      "GET",
+      "/api/v1/puzzle-imports/{job_id}",
+      "row errors/report"
+    ],
+    [
+      "POST",
+      "/api/v1/puzzle-imports/{job_id}/commands",
+      "confirm valid rows/cancel"
+    ],
+    [
+      "POST",
+      "/api/v1/puzzles/{puzzle_id}/commands",
+      "evaluate/approve/publish/disable"
+    ],
+    [
+      "POST",
+      "/api/v1/scoring-evaluations",
+      "evaluation job"
+    ],
+    [
+      "GET",
+      "/api/v1/scoring-evaluations/{job_id}",
+      "evaluation status/results"
+    ],
+    [
+      "GET",
+      "/api/v1/messages/{message_id}/trace",
+      "private trace"
+    ],
+    [
+      "GET",
+      "/api/v1/live-sessions/{session_id}/analytics",
+      "private aggregates"
+    ],
+    [
+      "GET",
+      "/api/v1/runtime/status",
+      "launcher/model/DB/connector readiness, private"
+    ],
+    [
+      "POST",
+      "/api/v1/runtime/commands",
+      "authenticated stop/maintenance requests, no arbitrary process"
+    ],
+    [
+      "POST",
+      "/internal/v1/embeddings",
+      "internal auth+fixed manifest+batch"
+    ],
+    [
+      "POST",
+      "/relay/v1/douyin/callback",
+      "official signature -> relay commit -> HTTP ack"
+    ],
+    [
+      "POST",
+      "/relay/v1/device-pairings",
+      "authorized one-time binding"
+    ],
+    [
+      "POST",
+      "/relay/v1/leases",
+      "unique active owner per app/room"
+    ],
+    [
+      "WSS",
+      "/relay/v1/streams",
+      "outgoing device connection"
+    ],
+    [
+      "GET",
+      "/api/v1/messages",
+      "private diagnostic list; cursor/reason/session filters"
+    ],
+    [
+      "POST",
+      "/api/v1/replays/{job_id}/commands",
+      "start/pause/resume/cancel; rehearsal replay only"
+    ],
+    [
+      "GET",
+      "/api/v1/commands/{command_id}",
+      "query pending/applied/failed/cancelled; same actor/resource scope"
+    ],
+    [
+      "GET",
+      "/api/v1/studio/sessions/{session_id}/snapshot",
+      "atomic STUDIO snapshot+independent as_of_seq; operator only"
+    ],
+    [
+      "GET",
+      "/api/v1/display-sessions/current",
+      "display-role session+receipt_csrf_token recovery after refresh"
+    ]
+  ],
+  "time_origins": [
+    "relay",
+    "local_rehearsal",
+    "local_replay"
+  ],
+  "dto_shapes": {
+    "snapshot_round": "PublicRound|null; IDLE has null round",
+    "round_clock": "{time_origin,deadline_at:timestamp|null,remaining_ms:integer>=0|null}; PAUSED uses remaining_ms, RUNNING uses server deadline",
+    "ranking": "{words:[{word,first_display_name,participant_count,display_score}],players:[{display_name,points,rank}]}",
+    "latest_feedback": "{feedback_id,word:string|null,display_name,status,display_score:number|null,solved:boolean,message}",
+    "reveal": "null until REVEALED/INTERMISSION; then {round_id,answer,explanation,winner_display_name:string|null,reason,next_start_at:timestamp|null}",
+    "pending_effect": "{feedback_id,origin_round_id,window_epoch:decimal-string,delivery_ids:string[],outcome:feedback_statuses enum,status_message,word:string|null,display_name,display_score:number|null,solved:boolean}; generated effects always bind a persisted origin round; independent queue survives round switch",
+    "readiness": "{checks:{db,model,wordbank,relay,lease,display},gates:{G0,G1_Q,G1_R,G2,rc_verified},can_rehearse:boolean,can_test_live:boolean,can_go_live:boolean}; each check/gate={status:pass|fail|pending|not_applicable,reason_code,message}",
+    "command": "POST body {command,expected_version,args}; header Idempotency-Key; response {command_id,status:pending|applied|failed|cancelled,resource_version,state,error:null|{code,message,retryable}}; GET command query for pending operations",
+    "event_payloads": "round.* sends full public round or reveal; ranking.updated sends full ranking; connection.status sends full transport; guess.feedback sends latest_feedback[] and effect mappings; updates are absolute values, never additive points deltas",
+    "actor": "{actor_id,display_name,permissions:string[]}; role labels are display-only; permissions checked server side",
+    "published_hint": "{stage:1|2|3,text:string,revealed_at:timestamp}; published_hints is array of these objects",
+    "event_kind": "kind is literal event for business envelope; heartbeat/resume controls use their own kind",
+    "studio_snapshot": "{schema_version,contract_version,session_id,mode,run_purpose,as_of_seq,server_time,public_view,private_round,session_rules,next_rules,readiness,pending_commands}; independent STUDIO cursor; private_round may contain answer; not usable with display cookie",
+    "display_session": "{display_instance_id,render_generation,session_id,purpose:primary|preview,receipt_csrf_token,expires_at}; exchange and GET current both return this role-specific shape",
+    "job": "{job_id,status:queued|running|succeeded|failed|cancelled,version,progress:{done,total},result:null|typed-result,error:null|{code,message,retryable}}",
+    "backup_entry": "{backup_id:string|null,status:none|running|completed|verified|failed,last_completed_at:timestamp|null,last_verified_at:timestamp|null,app_version:string|null,schema_version:integer|null,model_manifest_id:string|null,location_hint:string|null,last_error:ErrorBrief|null}; relay model_manifest_id=null; location_hint never raw credential/path",
+    "backup_status": "{local:BackupEntry,relay:BackupEntry}; private runtime only"
+  },
+  "request_shapes": {
+    "session_create": "{label:string<=80,mode:official|rehearsal|replay,run_purpose:local|test_live|production,room_binding_id:string|null,rules:SessionRules}; official purpose must be test_live/production and server-authorized; local purpose only with rehearsal/replay; mode/room/purpose immutable; creates CREATED draft after identity/binding validation, does NOT require primary display/full start readiness; primary can then bind to this session; readiness gates enforced on start",
+    "session_rules": "{duration_seconds:30..600,intermission_seconds:3..30,auto_next:boolean,category_id:string|null,difficulty_min:1..5,difficulty_max:1..5,strict_round_code:boolean}; defaults 240/4/true/null/1/5/true; official strict_round_code=true for first release",
+    "session_configure": "{command:configure,expected_version,args:{apply:next_round,next_rules:SessionRules}}; mode/room immutable; running round frozen",
+    "session_recover": "args:{strategy:new_round|end_session|resume_local_round}; resume_local_round forbidden in official mode",
+    "round_create": "{session_id,expected_session_version,selection:{strategy:random|specific,puzzle_id?:string}}; never client answer/score; selection obeys server rules and published versions",
+    "round_command_args": "pause/resume:{}; skip/void:{reason:string<=200}; reveal_hint:{stage:1|2|3}",
+    "puzzle_draft": "{word:Han2..4,category_id,difficulty:1..5,aliases:string[],hints:[{stage:1..3,text:string<=120}],explanation:string<=500,source_ref:string<=500}; approved evaluation/model/calibration required for publish; no frontend pass boolean",
+    "puzzle_commands": "evaluate:{manifest_id}; approve:{evaluation_id,decision:approve|reject,notes:string<=500}; publish:{approved_version}; disable:{reason}; all have expected_version",
+    "scoring_evaluation": "{puzzle_version_id,manifest_id,split:explore|calibration|blind,pairs:[{guess,human_rating:hot|warm|cold|exclude}]}; backend computes raw/display/metrics, blind-set scores hidden until annotations locked",
+    "replay_commands": "{command:start|pause|resume|cancel,expected_version,args:{}}; official source can only be replayed into new replay session, never live ledger",
+    "runtime_commands": "{command:stop|request_maintenance,expected_version,args:{reason,operation?:backup_local|verify_local_backup|restore_new_instance|upgrade_app|switch_model}}; request only, native user confirmation/UAC/approved paths govern; no arbitrary executable/path/url",
+    "runtime_status": "{version,launcher_state,active_session_id,installation_id,app_version,model_manifest_id,schema_version,readiness,backup_status,maintenance_status}; private operator only",
+    "ready_official": "READY_OFFICIAL means official-mode shell ready with can_test_live OR can_go_live; the two booleans and visible test/production label remain mandatory; never infer release from enum alone",
+    "session_start": "{command:start,expected_version,args:{run_purpose:test_live|production|local}}; must equal server-bound purpose, verified against platform binding/permissions and corresponding readiness; arbitrary is_test never grants testing/production authority"
+  },
+  "http_payload_policies": "JSON success {data,request_id,contract_version}; JSON failure {error:{code,message,retryable,details},request_id,contract_version}; platform callback follows official response; private analytics?format=csv uses text/csv+attachment with formula escaping, not JSON",
+  "restart_policy": {
+    "retry_delays_ms": [
+      1000,
+      2000,
+      4000
+    ],
+    "max_retries": 3,
+    "counting": "initial attempt excluded; at most 4 start attempts; no automatic live-round revival"
+  },
+  "operator_permissions": [
+    "session.control",
+    "puzzle.edit",
+    "puzzle.review",
+    "diagnostics.read",
+    "replay.control",
+    "scoring.evaluate",
+    "maintenance.request",
+    "display.manage"
+  ],
+  "studio_event_types": [
+    "round.started",
+    "round.paused",
+    "round.resumed",
+    "round.draining",
+    "guess.feedback",
+    "ranking.updated",
+    "hint.revealed",
+    "round.revealed",
+    "intermission.started",
+    "connection.status",
+    "command.updated",
+    "runtime.updated",
+    "diagnostic.updated",
+    "job.updated"
+  ],
+  "run_purposes": [
+    "local",
+    "test_live",
+    "production"
+  ],
+  "event_payload_shapes": {
+    "round.started/paused/resumed/draining": "{round:PublicRound}",
+    "guess.feedback": "{feedbacks:Feedback[],effects:PendingEffect[]}",
+    "ranking.updated": "{ranking:Ranking}",
+    "hint.revealed": "{round_id,published_hints:PublishedHint[]}",
+    "round.revealed": "{round:PublicRound,reveal:PublicReveal,ranking:Ranking}",
+    "intermission.started": "{round:PublicRound,reveal:PublicReveal}",
+    "connection.status": "{transport:PublicTransport}",
+    "command.updated": "{command:CommandResult}; STUDIO only",
+    "runtime.updated": "{runtime:RuntimeStatus}; STUDIO only",
+    "diagnostic.updated": "{message_id,status,reason_code}; STUDIO only",
+    "job.updated": "{job:JobResult}; STUDIO only"
+  },
+  "ws_control_shapes": {
+    "resume": "{kind:resume,schema_version:1,contract_version,session_id,after_seq:decimal-string}; audience determined by authenticated route, not client field",
+    "resume_ready": "{kind:resume_ready,schema_version:1,contract_version,session_id,upto_seq:decimal-string,server_time,render_generation:decimal-string|null,pending_effects:PendingEffect[]}; after all projection replay (which creates no effect credit), DISPLAY primary receives new generation and at most128 actual grants; STUDIO null/[]; preview never fulfills",
+    "heartbeat": "{kind:heartbeat,schema_version:1,contract_version,session_id,server_time,latest_seq:decimal-string,transport:PublicTransport}; not a new event or permission to jump cursor",
+    "resync_required": "{kind:resync_required,schema_version:1,contract_version,session_id,reason_code,min_seq:decimal-string,latest_seq:decimal-string}; must refetch snapshot"
+  },
+  "limits": {
+    "display_effect_inflight": 128,
+    "effect_delivery_ids": 32,
+    "score_queue": 200,
+    "embedding_batch": 32,
+    "relay_callback_bytes": 1048576,
+    "relay_callback_items": 1000,
+    "relay_ws_frame_bytes": 65536,
+    "csv_bytes": 2097152,
+    "csv_rows": 10000
+  }
+}

@@ -1,0 +1,2300 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Relay transport and backend extension display receipt contract",
+  "$defs": {
+    "DeliveryFrame": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "relay.frame"
+        },
+        "stream_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stream_seq": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        },
+        "body_b64": {
+          "type": "string",
+          "contentEncoding": "base64",
+          "minLength": 1
+        },
+        "immutable_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "lease_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "installation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "delivery_generation": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        },
+        "connection_nonce": {
+          "type": "string",
+          "minLength": 1
+        },
+        "persisted_seq": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        }
+      },
+      "required": [
+        "kind",
+        "stream_id",
+        "stream_seq",
+        "body_b64",
+        "immutable_sha256",
+        "lease_id",
+        "installation_id",
+        "delivery_generation",
+        "connection_nonce",
+        "persisted_seq"
+      ],
+      "additionalProperties": false
+    },
+    "Resume": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "resume"
+        },
+        "lease_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "persisted_seq": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        }
+      },
+      "required": [
+        "kind",
+        "lease_id",
+        "persisted_seq"
+      ],
+      "additionalProperties": false
+    },
+    "ResumeReady": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "resume_ready"
+        },
+        "lease_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "installation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "delivery_generation": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        },
+        "connection_nonce": {
+          "type": "string",
+          "minLength": 1
+        },
+        "persisted_seq": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        }
+      },
+      "required": [
+        "kind",
+        "lease_id",
+        "installation_id",
+        "delivery_generation",
+        "connection_nonce",
+        "persisted_seq"
+      ],
+      "additionalProperties": false
+    },
+    "ClientControl": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "transport.persisted"
+            },
+            "persisted_seq": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            }
+          },
+          "required": [
+            "kind",
+            "persisted_seq"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "enum": [
+                "display.received",
+                "display.processed"
+              ]
+            },
+            "stream_seq": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "receipt_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "client_time": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]\\.[0-9]{3}Z$",
+              "description": "Actual client observation time, canonical UTC milliseconds; never synthesized by relay."
+            }
+          },
+          "required": [
+            "kind",
+            "stream_seq",
+            "receipt_id",
+            "client_time"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "ServerControl": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "transport.persisted.accepted"
+            },
+            "persisted_seq": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            }
+          },
+          "required": [
+            "kind",
+            "persisted_seq"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "delivery.stage.accepted"
+            },
+            "status": {
+              "const": "pending"
+            },
+            "stage": {
+              "enum": [
+                "display.received",
+                "display.processed"
+              ]
+            }
+          },
+          "required": [
+            "kind",
+            "status",
+            "stage"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "enum": [
+                "stream.gap",
+                "relay.error"
+              ]
+            },
+            "reason_code": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "kind",
+            "reason_code"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "JsonValue": {
+      "x-recursive-json-value": true,
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/JsonValue"
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          }
+        }
+      ],
+      "description": "C1 error diagnostic JSON values; never game/public event payloads."
+    },
+    "RelayRpo": {
+      "type": "object",
+      "properties": {
+        "previous_stream_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "previous_session_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "previous_installation_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "persisted_seq": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        },
+        "retained_from": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        },
+        "unprocessed_from": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unprocessed_through": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "expired_gap_from": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "expired_gap_through": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "old_history_reconstructed": {
+          "const": false
+        }
+      },
+      "required": [
+        "previous_stream_id",
+        "previous_session_id",
+        "previous_installation_id",
+        "persisted_seq",
+        "retained_from",
+        "unprocessed_from",
+        "unprocessed_through",
+        "expired_gap_from",
+        "expired_gap_through",
+        "old_history_reconstructed"
+      ],
+      "additionalProperties": false
+    },
+    "RelayLeaseC1": {
+      "type": "object",
+      "properties": {
+        "lease_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "owner_generation": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "lease_id",
+        "owner_generation",
+        "expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "RelayLeaseBE": {
+      "type": "object",
+      "properties": {
+        "lease_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "owner_generation": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "server_time": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "lease_ttl_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 15000
+        },
+        "official_ingress_ready": {
+          "type": "boolean"
+        },
+        "platform_ready": {
+          "type": "boolean"
+        },
+        "stream_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start_seq": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        },
+        "bootstrap_seq": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "previous_stream_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rpo": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RelayRpo"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "be_extension_version": {
+          "const": "LW-BE/1.1.0",
+          "type": "string"
+        }
+      },
+      "required": [
+        "lease_id",
+        "owner_generation",
+        "expires_at",
+        "server_time",
+        "lease_ttl_ms",
+        "official_ingress_ready",
+        "platform_ready",
+        "be_extension_version"
+      ],
+      "additionalProperties": false
+    },
+    "RelayLease": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/RelayLeaseC1"
+        },
+        {
+          "$ref": "#/$defs/RelayLeaseBE"
+        }
+      ]
+    },
+    "RelayWindow": {
+      "type": "object",
+      "properties": {
+        "round_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "epoch": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "OPEN",
+            "PAUSED",
+            "CLOSED"
+          ]
+        },
+        "close_seq": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "barrier_seq": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "round_id",
+        "epoch",
+        "version",
+        "state",
+        "close_seq",
+        "barrier_seq"
+      ],
+      "additionalProperties": false
+    },
+    "RelayWindowResult": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "epoch": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "version": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "stream_seq": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "deadline_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "remaining_ms": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "state": {
+              "type": "string",
+              "enum": [
+                "OPEN",
+                "PAUSED"
+              ]
+            },
+            "close_seq": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            }
+          },
+          "required": [
+            "epoch",
+            "version",
+            "stream_seq",
+            "deadline_at",
+            "remaining_ms"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "epoch": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "version": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "stream_seq": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "deadline_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "remaining_ms": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "state": {
+              "type": "string",
+              "enum": [
+                "OPEN",
+                "PAUSED"
+              ]
+            },
+            "close_seq": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "be_extension_version": {
+              "const": "LW-BE/1.1.0",
+              "type": "string"
+            }
+          },
+          "required": [
+            "epoch",
+            "version",
+            "stream_seq",
+            "deadline_at",
+            "remaining_ms",
+            "be_extension_version"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "CLOSED",
+              "type": "string"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            },
+            "version": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "close_seq": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "barrier_seq": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "winner_seq": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "state",
+            "reason",
+            "version",
+            "close_seq",
+            "barrier_seq",
+            "winner_seq"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "CLOSED",
+              "type": "string"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            },
+            "version": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "close_seq": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "barrier_seq": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "winner_seq": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "be_extension_version": {
+              "const": "LW-BE/1.1.0",
+              "type": "string"
+            }
+          },
+          "required": [
+            "state",
+            "reason",
+            "version",
+            "close_seq",
+            "barrier_seq",
+            "winner_seq",
+            "be_extension_version"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "RelayRevoke": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "revoked",
+              "type": "string"
+            },
+            "replacement_not_before": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "status",
+            "replacement_not_before"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "revoked",
+              "type": "string"
+            },
+            "replacement_not_before": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "be_extension_version": {
+              "const": "LW-BE/1.1.0",
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "replacement_not_before",
+            "be_extension_version"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "RelayError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string",
+              "minLength": 1
+            },
+            "message": {
+              "type": "string",
+              "minLength": 1
+            },
+            "retryable": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "code",
+            "message",
+            "retryable"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "error"
+      ],
+      "additionalProperties": false
+    },
+    "RelayPairing": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "pairing_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "pending",
+                "bound"
+              ]
+            },
+            "app_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "room_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "room_binding_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "installation_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "actor_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "challenge_b64": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "expires_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "room_verified_until": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "verification_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "device_key_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "provider_test": {
+              "type": "boolean"
+            },
+            "device_token": {
+              "type": "string",
+              "minLength": 1
+            },
+            "server_time": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "ttl_ms": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "be_extension_version": {
+              "const": "LW-BE/1.1.0",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pairing_id",
+            "status",
+            "app_id",
+            "room_id",
+            "room_binding_id",
+            "installation_id",
+            "actor_id",
+            "challenge_b64",
+            "expires_at",
+            "room_verified_until",
+            "verification_id",
+            "device_key_sha256",
+            "provider_test",
+            "be_extension_version"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "pairing_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "pending",
+                "bound",
+                "revoked"
+              ]
+            },
+            "installation_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "room_binding_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "provider_test": {
+              "type": "boolean"
+            },
+            "room_verified_until": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "be_extension_version": {
+              "const": "LW-BE/1.1.0",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pairing_id",
+            "status",
+            "provider_test",
+            "be_extension_version"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "RelayTokenChallenge": {
+      "type": "object",
+      "properties": {
+        "challenge_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "challenge_b64": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "be_extension_version": {
+          "const": "LW-BE/1.1.0",
+          "type": "string"
+        }
+      },
+      "required": [
+        "challenge_id",
+        "challenge_b64",
+        "expires_at",
+        "be_extension_version"
+      ],
+      "additionalProperties": false
+    },
+    "RelayToken": {
+      "type": "object",
+      "properties": {
+        "pairing_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "device_token": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "server_time": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "ttl_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "provider_test": {
+          "type": "boolean"
+        },
+        "be_extension_version": {
+          "const": "LW-BE/1.1.0",
+          "type": "string"
+        }
+      },
+      "required": [
+        "pairing_id",
+        "device_token",
+        "expires_at",
+        "server_time",
+        "ttl_ms",
+        "provider_test",
+        "be_extension_version"
+      ],
+      "additionalProperties": false
+    },
+    "RevocationPayload": {
+      "type": "object",
+      "properties": {
+        "object_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "issuer_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "issuer_revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "revocation_revision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "revoked_object_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "object_id",
+        "issuer_id",
+        "issuer_revision",
+        "revocation_revision",
+        "revoked_object_ids"
+      ],
+      "additionalProperties": false
+    },
+    "SignedRevocation": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "const": "wordheat-live.readiness",
+          "type": "string"
+        },
+        "type": {
+          "const": "revocation",
+          "type": "string"
+        },
+        "version": {
+          "const": 1,
+          "type": "integer"
+        },
+        "key_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "payload": {
+          "$ref": "#/$defs/RevocationPayload"
+        },
+        "signature": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{86}$"
+        }
+      },
+      "required": [
+        "domain",
+        "type",
+        "version",
+        "key_id",
+        "payload",
+        "signature"
+      ],
+      "additionalProperties": false
+    },
+    "RelayRevocations": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SignedRevocation"
+          },
+          "maxItems": 1000
+        },
+        "be_extension_version": {
+          "const": "LW-BE/1.1.0",
+          "type": "string"
+        }
+      },
+      "required": [
+        "items",
+        "be_extension_version"
+      ],
+      "additionalProperties": false
+    },
+    "FreshnessPayload": {
+      "type": "object",
+      "properties": {
+        "authorization_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidate_digest": {
+          "type": "string",
+          "minLength": 1
+        },
+        "installation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "boot_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "connection_nonce": {
+          "type": "string",
+          "minLength": 1
+        },
+        "request_nonce": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revocation_revision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "server_time": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "ttl_ms": {
+          "const": 10000,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "authorization_id",
+        "candidate_digest",
+        "installation_id",
+        "boot_id",
+        "connection_nonce",
+        "request_nonce",
+        "revocation_revision",
+        "server_time",
+        "ttl_ms"
+      ],
+      "additionalProperties": false
+    },
+    "SignedFreshness": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "const": "wordheat-live.readiness",
+          "type": "string"
+        },
+        "type": {
+          "const": "freshness_proof",
+          "type": "string"
+        },
+        "version": {
+          "const": 1,
+          "type": "integer"
+        },
+        "key_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "payload": {
+          "$ref": "#/$defs/FreshnessPayload"
+        },
+        "signature": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{86}$"
+        }
+      },
+      "required": [
+        "domain",
+        "type",
+        "version",
+        "key_id",
+        "payload",
+        "signature"
+      ],
+      "additionalProperties": false
+    },
+    "RelayFreshness": {
+      "type": "object",
+      "properties": {
+        "proof": {
+          "$ref": "#/$defs/SignedFreshness"
+        },
+        "be_extension_version": {
+          "const": "LW-BE/1.1.0",
+          "type": "string"
+        }
+      },
+      "required": [
+        "proof",
+        "be_extension_version"
+      ],
+      "additionalProperties": false
+    },
+    "RelayState": {
+      "type": "object",
+      "properties": {
+        "lease": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RelayLeaseC1"
+            },
+            {
+              "$ref": "#/$defs/RelayLeaseBE"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "lease_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "owner_generation": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)$"
+                },
+                "expires_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "server_time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "lease_ttl_ms": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 15000
+                },
+                "official_ingress_ready": {
+                  "type": "boolean"
+                },
+                "platform_ready": {
+                  "type": "boolean"
+                },
+                "stream_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "start_seq": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)$"
+                },
+                "bootstrap_seq": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^(0|[1-9][0-9]*)$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "previous_stream_id": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "rpo": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/RelayRpo"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "lease_id",
+                "owner_generation",
+                "expires_at",
+                "server_time",
+                "lease_ttl_ms",
+                "official_ingress_ready",
+                "platform_ready"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "stream_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "latest_seq": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        },
+        "retained_from": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        },
+        "window": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RelayWindow"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "remote_fulfillment_pending": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "command_result": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RelayWindowResult"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "be_extension_version": {
+          "const": "LW-BE/1.1.0",
+          "type": "string"
+        }
+      },
+      "required": [
+        "lease",
+        "stream_id",
+        "latest_seq",
+        "retained_from",
+        "window",
+        "remote_fulfillment_pending",
+        "be_extension_version"
+      ],
+      "additionalProperties": false
+    },
+    "RelayTask": {
+      "type": "object",
+      "properties": {
+        "job_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "pending",
+            "running",
+            "retry",
+            "succeeded",
+            "failed",
+            "cancelled"
+          ]
+        },
+        "attempts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cycle_attempts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "retry_cycle": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reason_code": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "platform_fulfilled": {
+          "type": "boolean"
+        },
+        "provider_test": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "be_extension_version": {
+          "const": "LW-BE/1.1.0",
+          "type": "string"
+        }
+      },
+      "required": [
+        "job_id",
+        "status",
+        "attempts",
+        "cycle_attempts",
+        "retry_cycle",
+        "reason_code",
+        "platform_fulfilled",
+        "provider_test",
+        "be_extension_version"
+      ],
+      "additionalProperties": false
+    },
+    "RelayDeliveryStage": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "accepted",
+          "type": "string"
+        },
+        "stage": {
+          "type": "string",
+          "enum": [
+            "transport.persisted",
+            "display.received",
+            "display.processed"
+          ]
+        },
+        "stream_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stream_seq": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        },
+        "remote_fulfillment_pending": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "provider_test": {
+          "type": "boolean"
+        },
+        "be_extension_version": {
+          "const": "LW-BE/1.1.0",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "stage",
+        "stream_id",
+        "stream_seq",
+        "remote_fulfillment_pending",
+        "provider_test",
+        "be_extension_version"
+      ],
+      "additionalProperties": false
+    },
+    "RelayBootstrap": {
+      "type": "object",
+      "properties": {
+        "lease_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "owner_generation": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "server_time": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "lease_ttl_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 15000
+        },
+        "official_ingress_ready": {
+          "type": "boolean"
+        },
+        "platform_ready": {
+          "type": "boolean"
+        },
+        "stream_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start_seq": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        },
+        "bootstrap_seq": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "previous_stream_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rpo": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RelayRpo"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "be_extension_version": {
+          "const": "LW-BE/1.1.0",
+          "type": "string"
+        },
+        "fresh_start": {
+          "const": true
+        }
+      },
+      "required": [
+        "lease_id",
+        "owner_generation",
+        "expires_at",
+        "server_time",
+        "lease_ttl_ms",
+        "official_ingress_ready",
+        "platform_ready",
+        "be_extension_version",
+        "fresh_start"
+      ],
+      "additionalProperties": false
+    },
+    "ImmutableBody": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": 1,
+              "type": "integer"
+            },
+            "contract_version": {
+              "const": "LW-C1/1.0.0",
+              "type": "string"
+            },
+            "stream_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "stream_seq": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "original_generation": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "round_id": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "window_epoch": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "relay_received_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "eligible": {
+              "type": "boolean"
+            },
+            "provider_test": {
+              "type": "boolean"
+            },
+            "run_purpose": {
+              "type": "string",
+              "enum": [
+                "test_live",
+                "production"
+              ]
+            },
+            "source_mode": {
+              "type": "string",
+              "enum": [
+                "official",
+                "synthetic"
+              ]
+            },
+            "type": {
+              "const": "comment",
+              "type": "string"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "source_msg_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "participant_key": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "display_name": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "content": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text"
+                  ],
+                  "additionalProperties": {
+                    "$ref": "#/$defs/JsonValue"
+                  }
+                }
+              },
+              "required": [
+                "source_msg_id",
+                "participant_key",
+                "display_name",
+                "content"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "schema_version",
+            "contract_version",
+            "stream_id",
+            "stream_seq",
+            "original_generation",
+            "round_id",
+            "window_epoch",
+            "relay_received_at",
+            "eligible",
+            "provider_test",
+            "run_purpose",
+            "source_mode",
+            "type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": 1,
+              "type": "integer"
+            },
+            "contract_version": {
+              "const": "LW-C1/1.0.0",
+              "type": "string"
+            },
+            "stream_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "stream_seq": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "original_generation": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "round_id": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "window_epoch": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "relay_received_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "eligible": {
+              "type": "boolean"
+            },
+            "provider_test": {
+              "type": "boolean"
+            },
+            "run_purpose": {
+              "type": "string",
+              "enum": [
+                "test_live",
+                "production"
+              ]
+            },
+            "source_mode": {
+              "type": "string",
+              "enum": [
+                "official",
+                "synthetic"
+              ]
+            },
+            "type": {
+              "const": "window.open",
+              "type": "string"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "deadline_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "window_version": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "deadline_at",
+                "window_version"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "schema_version",
+            "contract_version",
+            "stream_id",
+            "stream_seq",
+            "original_generation",
+            "round_id",
+            "window_epoch",
+            "relay_received_at",
+            "eligible",
+            "provider_test",
+            "run_purpose",
+            "source_mode",
+            "type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": 1,
+              "type": "integer"
+            },
+            "contract_version": {
+              "const": "LW-C1/1.0.0",
+              "type": "string"
+            },
+            "stream_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "stream_seq": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "original_generation": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "round_id": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "window_epoch": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "relay_received_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "eligible": {
+              "type": "boolean"
+            },
+            "provider_test": {
+              "type": "boolean"
+            },
+            "run_purpose": {
+              "type": "string",
+              "enum": [
+                "test_live",
+                "production"
+              ]
+            },
+            "source_mode": {
+              "type": "string",
+              "enum": [
+                "official",
+                "synthetic"
+              ]
+            },
+            "type": {
+              "const": "window.pause",
+              "type": "string"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "deadline_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "window_version": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "deadline_at",
+                "window_version"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "schema_version",
+            "contract_version",
+            "stream_id",
+            "stream_seq",
+            "original_generation",
+            "round_id",
+            "window_epoch",
+            "relay_received_at",
+            "eligible",
+            "provider_test",
+            "run_purpose",
+            "source_mode",
+            "type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": 1,
+              "type": "integer"
+            },
+            "contract_version": {
+              "const": "LW-C1/1.0.0",
+              "type": "string"
+            },
+            "stream_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "stream_seq": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "original_generation": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "round_id": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "window_epoch": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "relay_received_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "eligible": {
+              "type": "boolean"
+            },
+            "provider_test": {
+              "type": "boolean"
+            },
+            "run_purpose": {
+              "type": "string",
+              "enum": [
+                "test_live",
+                "production"
+              ]
+            },
+            "source_mode": {
+              "type": "string",
+              "enum": [
+                "official",
+                "synthetic"
+              ]
+            },
+            "type": {
+              "const": "window.resume",
+              "type": "string"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "deadline_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "window_version": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "deadline_at",
+                "window_version"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "schema_version",
+            "contract_version",
+            "stream_id",
+            "stream_seq",
+            "original_generation",
+            "round_id",
+            "window_epoch",
+            "relay_received_at",
+            "eligible",
+            "provider_test",
+            "run_purpose",
+            "source_mode",
+            "type",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": 1,
+              "type": "integer"
+            },
+            "contract_version": {
+              "const": "LW-C1/1.0.0",
+              "type": "string"
+            },
+            "stream_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "stream_seq": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "original_generation": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "round_id": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "window_epoch": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)$"
+            },
+            "relay_received_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "eligible": {
+              "type": "boolean"
+            },
+            "provider_test": {
+              "type": "boolean"
+            },
+            "run_purpose": {
+              "type": "string",
+              "enum": [
+                "test_live",
+                "production"
+              ]
+            },
+            "source_mode": {
+              "type": "string",
+              "enum": [
+                "official",
+                "synthetic"
+              ]
+            },
+            "type": {
+              "const": "window.close",
+              "type": "string"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "close_seq": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)$"
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "window_version": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "close_seq",
+                "reason",
+                "window_version"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "schema_version",
+            "contract_version",
+            "stream_id",
+            "stream_seq",
+            "original_generation",
+            "round_id",
+            "window_epoch",
+            "relay_received_at",
+            "eligible",
+            "provider_test",
+            "run_purpose",
+            "source_mode",
+            "type",
+            "payload"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "ClientControlExchange": {
+      "title": "Relay handshake negotiation plus client frame validation projection",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "headers": {
+              "type": "object",
+              "properties": {
+                "X-BE-Extension-Version": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "Canonicalized handshake headers supplied separately from the JSON frame; this is a validation projection, not a wire wrapper."
+            },
+            "frame": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Resume"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "const": "transport.persisted"
+                    },
+                    "persisted_seq": {
+                      "type": "string",
+                      "pattern": "^(0|[1-9][0-9]*)$"
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "persisted_seq"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "required": [
+            "frame"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "headers": {
+              "type": "object",
+              "properties": {
+                "X-BE-Extension-Version": {
+                  "const": "LW-BE/1.1.0",
+                  "type": "string"
+                }
+              },
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "Canonicalized handshake headers supplied separately from the JSON frame; this is a validation projection, not a wire wrapper.",
+              "required": [
+                "X-BE-Extension-Version"
+              ]
+            },
+            "frame": {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "display.received",
+                    "display.processed"
+                  ]
+                },
+                "stream_seq": {
+                  "type": "string",
+                  "pattern": "^(0|[1-9][0-9]*)$"
+                },
+                "receipt_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 256
+                },
+                "client_time": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]\\.[0-9]{3}Z$",
+                  "description": "Actual client observation time, canonical UTC milliseconds; never synthesized by relay."
+                }
+              },
+              "required": [
+                "kind",
+                "stream_seq",
+                "receipt_id",
+                "client_time"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "headers",
+            "frame"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "$ref": "#/$defs/DeliveryFrame",
+  "x-contract-definition-status": "complete",
+  "x-definition-scope": "Wire shape only; not implementation, platform gates or Windows acceptance",
+  "x-decoded-body-schema": "#/$defs/ImmutableBody",
+  "x-body-integrity": "base64-decode immutable bytes, verify SHA256 before parsing; replay never rewrites original_generation or window_epoch",
+  "x-be-negotiation": "Fresh stream segment requires X-BE-Extension-Version LW-BE/1.1.0; historical C1 resume envelope stays unchanged.",
+  "x-client-control-negotiation": {
+    "header": "X-BE-Extension-Version",
+    "version": "LW-BE/1.1.0",
+    "required_for": [
+      "display.received",
+      "display.processed"
+    ],
+    "legacy_unchanged": [
+      "resume",
+      "transport.persisted"
+    ],
+    "client_time_profile": "UTC milliseconds, YYYY-MM-DDTHH:mm:ss.sssZ",
+    "wire_body_contains_version": false,
+    "errors": {
+      "unsupported_or_missing_be": "BE_EXTENSION_VERSION_UNSUPPORTED",
+      "missing_or_invalid_time": "INPUT_INVALID",
+      "different_time_for_same_receipt_or_legacy_job_without_time": "RECEIPT_CONFLICT"
+    },
+    "error_frame": {
+      "kind": "relay.error",
+      "reason_code": "<error code>"
+    },
+    "error_close_code": 1008,
+    "on_rejected_frame": "No display-stage write or fulfillment job insertion; no fake pending receipt.",
+    "deduplication": "HTTP and WS share stage/outbox identity; time identity is UTC milliseconds, original existing HTTP timestamp bytes are retained."
+  }
+}
