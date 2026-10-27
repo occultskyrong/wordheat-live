@@ -1,0 +1,59 @@
+# Private environment files at every depth. Only blank .env.example is shareable.
+.env
+.env.*
+*.env
+*.env.*
+.env~
+*.env~
+!.env.example
+
+# Local credentials, signing material and secret directories.
+secrets/
+.secrets/
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+
+# Backups of private key material remain private.
+*.key.*
+*.key~
+*.pem.*
+*.pem~
+*.p12.*
+*.p12~
+*.pfx.*
+*.pfx~
+*.jks.*
+*.jks~
+*.keystore.*
+*.keystore~
+
+# Dependency, Python and test caches at any depth.
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage/
+
+# Generated build artifacts. Source resources and docs/assets stay shareable.
+/build/
+/dist/
+/artifacts/
+apps/*/build/
+apps/*/dist/
+
+# Private development runtime: DB data, weights, logs, backups and raw evidence.
+/.local/
