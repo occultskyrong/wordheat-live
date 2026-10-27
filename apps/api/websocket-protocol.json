@@ -1,0 +1,2122 @@
+{
+  "schema_version": 1,
+  "contract_version": "LW-C1/1.0.0",
+  "protocols": {
+    "/api/v1/display/ws": {
+      "transport": "websocket",
+      "http_operation": false,
+      "client_initial_frame_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "resume",
+            "title": "Kind",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": 1,
+            "title": "Schema Version",
+            "type": "integer"
+          },
+          "contract_version": {
+            "const": "LW-C1/1.0.0",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "session_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Session Id",
+            "type": "string"
+          },
+          "after_seq": {
+            "maxLength": 30,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "After Seq",
+            "type": "string"
+          },
+          "be_extension_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Be Extension Version"
+          }
+        },
+        "required": [
+          "kind",
+          "schema_version",
+          "contract_version",
+          "session_id",
+          "after_seq"
+        ],
+        "title": "Resume",
+        "type": "object",
+        "$id": "urn:wordheat:local-websocket-resume:1"
+      },
+      "server_frame_schema": {
+        "$defs": {
+          "Clock": {
+            "additionalProperties": false,
+            "properties": {
+              "time_origin": {
+                "enum": [
+                  "local_rehearsal",
+                  "local_replay",
+                  "relay"
+                ],
+                "title": "Time Origin",
+                "type": "string"
+              },
+              "deadline_at": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Deadline At"
+              },
+              "remaining_ms": {
+                "anyOf": [
+                  {
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Remaining Ms"
+              }
+            },
+            "required": [
+              "time_origin",
+              "deadline_at",
+              "remaining_ms"
+            ],
+            "title": "Clock",
+            "type": "object"
+          },
+          "CommandPayload": {
+            "additionalProperties": false,
+            "properties": {
+              "command": {
+                "$ref": "#/$defs/CommandResult"
+              }
+            },
+            "required": [
+              "command"
+            ],
+            "title": "CommandPayload",
+            "type": "object"
+          },
+          "CommandProjection": {
+            "additionalProperties": false,
+            "properties": {
+              "status": {
+                "title": "Status",
+                "type": "string"
+              }
+            },
+            "required": [
+              "status"
+            ],
+            "title": "CommandProjection",
+            "type": "object"
+          },
+          "CommandResult": {
+            "additionalProperties": false,
+            "properties": {
+              "command_id": {
+                "title": "Command Id",
+                "type": "string"
+              },
+              "status": {
+                "enum": [
+                  "pending",
+                  "applied",
+                  "failed",
+                  "cancelled"
+                ],
+                "title": "Status",
+                "type": "string"
+              },
+              "resource_version": {
+                "title": "Resource Version",
+                "type": "integer"
+              },
+              "state": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "$ref": "#/$defs/SelectionNotice"
+                  },
+                  {
+                    "$ref": "#/$defs/SelectionResult"
+                  },
+                  {
+                    "$ref": "#/$defs/CommandProjection"
+                  }
+                ],
+                "title": "State"
+              },
+              "error": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/ErrorBrief"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "be_extension_version": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Be Extension Version"
+              }
+            },
+            "required": [
+              "command_id",
+              "status",
+              "resource_version",
+              "state",
+              "error"
+            ],
+            "title": "CommandResult",
+            "type": "object"
+          },
+          "ErrorBrief": {
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "title": "Code",
+                "type": "string"
+              },
+              "message": {
+                "title": "Message",
+                "type": "string"
+              },
+              "retryable": {
+                "title": "Retryable",
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "code",
+              "message",
+              "retryable"
+            ],
+            "title": "ErrorBrief",
+            "type": "object"
+          },
+          "EventFrame": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "const": "event",
+                "title": "Kind",
+                "type": "string"
+              },
+              "schema_version": {
+                "const": 1,
+                "title": "Schema Version",
+                "type": "integer"
+              },
+              "contract_version": {
+                "const": "LW-C1/1.0.0",
+                "title": "Contract Version",
+                "type": "string"
+              },
+              "event_id": {
+                "title": "Event Id",
+                "type": "string"
+              },
+              "session_id": {
+                "title": "Session Id",
+                "type": "string"
+              },
+              "round_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Round Id"
+              },
+              "seq": {
+                "title": "Seq",
+                "type": "string"
+              },
+              "server_time": {
+                "title": "Server Time",
+                "type": "string"
+              },
+              "type": {
+                "title": "Type",
+                "type": "string"
+              },
+              "delivery_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Delivery Ids",
+                "type": "array"
+              },
+              "delivery_mode": {
+                "enum": [
+                  "live",
+                  "replay"
+                ],
+                "title": "Delivery Mode",
+                "type": "string"
+              },
+              "payload": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/RoundPayload"
+                  },
+                  {
+                    "$ref": "#/$defs/RevealPayload"
+                  },
+                  {
+                    "$ref": "#/$defs/FeedbackPayload"
+                  },
+                  {
+                    "$ref": "#/$defs/RankingPayload"
+                  },
+                  {
+                    "$ref": "#/$defs/HintPayload"
+                  },
+                  {
+                    "$ref": "#/$defs/CommandPayload"
+                  }
+                ],
+                "title": "Payload"
+              }
+            },
+            "required": [
+              "kind",
+              "schema_version",
+              "contract_version",
+              "event_id",
+              "session_id",
+              "round_id",
+              "seq",
+              "server_time",
+              "type",
+              "delivery_ids",
+              "delivery_mode",
+              "payload"
+            ],
+            "title": "EventFrame",
+            "type": "object"
+          },
+          "FeedbackPayload": {
+            "additionalProperties": false,
+            "properties": {
+              "feedbacks": {
+                "items": {
+                  "$ref": "#/$defs/LatestFeedback"
+                },
+                "title": "Feedbacks",
+                "type": "array"
+              },
+              "effects": {
+                "items": {
+                  "$ref": "#/$defs/PendingEffect"
+                },
+                "title": "Effects",
+                "type": "array"
+              }
+            },
+            "required": [
+              "feedbacks",
+              "effects"
+            ],
+            "title": "FeedbackPayload",
+            "type": "object"
+          },
+          "HeartbeatFrame": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "const": "heartbeat",
+                "title": "Kind",
+                "type": "string"
+              },
+              "schema_version": {
+                "const": 1,
+                "title": "Schema Version",
+                "type": "integer"
+              },
+              "contract_version": {
+                "const": "LW-C1/1.0.0",
+                "title": "Contract Version",
+                "type": "string"
+              },
+              "session_id": {
+                "title": "Session Id",
+                "type": "string"
+              },
+              "server_time": {
+                "title": "Server Time",
+                "type": "string"
+              },
+              "latest_seq": {
+                "title": "Latest Seq",
+                "type": "string"
+              },
+              "transport": {
+                "$ref": "#/$defs/Transport"
+              }
+            },
+            "required": [
+              "kind",
+              "schema_version",
+              "contract_version",
+              "session_id",
+              "server_time",
+              "latest_seq",
+              "transport"
+            ],
+            "title": "HeartbeatFrame",
+            "type": "object"
+          },
+          "HintPayload": {
+            "additionalProperties": false,
+            "properties": {
+              "round_id": {
+                "title": "Round Id",
+                "type": "string"
+              },
+              "published_hints": {
+                "items": {
+                  "$ref": "#/$defs/PublicHint"
+                },
+                "title": "Published Hints",
+                "type": "array"
+              }
+            },
+            "required": [
+              "round_id",
+              "published_hints"
+            ],
+            "title": "HintPayload",
+            "type": "object"
+          },
+          "LatestFeedback": {
+            "additionalProperties": false,
+            "properties": {
+              "feedback_id": {
+                "title": "Feedback Id",
+                "type": "string"
+              },
+              "word": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Word"
+              },
+              "display_name": {
+                "title": "Display Name",
+                "type": "string"
+              },
+              "status": {
+                "title": "Status",
+                "type": "string"
+              },
+              "display_score": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Display Score"
+              },
+              "solved": {
+                "title": "Solved",
+                "type": "boolean"
+              },
+              "message": {
+                "title": "Message",
+                "type": "string"
+              }
+            },
+            "required": [
+              "feedback_id",
+              "word",
+              "display_name",
+              "status",
+              "display_score",
+              "solved",
+              "message"
+            ],
+            "title": "LatestFeedback",
+            "type": "object"
+          },
+          "PendingEffect": {
+            "additionalProperties": false,
+            "properties": {
+              "feedback_id": {
+                "title": "Feedback Id",
+                "type": "string"
+              },
+              "origin_round_id": {
+                "title": "Origin Round Id",
+                "type": "string"
+              },
+              "window_epoch": {
+                "title": "Window Epoch",
+                "type": "string"
+              },
+              "delivery_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Delivery Ids",
+                "type": "array"
+              },
+              "outcome": {
+                "title": "Outcome",
+                "type": "string"
+              },
+              "status_message": {
+                "title": "Status Message",
+                "type": "string"
+              },
+              "word": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Word"
+              },
+              "display_name": {
+                "title": "Display Name",
+                "type": "string"
+              },
+              "display_score": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Display Score"
+              },
+              "solved": {
+                "title": "Solved",
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "feedback_id",
+              "origin_round_id",
+              "window_epoch",
+              "delivery_ids",
+              "outcome",
+              "status_message",
+              "word",
+              "display_name",
+              "display_score",
+              "solved"
+            ],
+            "title": "PendingEffect",
+            "type": "object"
+          },
+          "PlayerRanking": {
+            "additionalProperties": false,
+            "properties": {
+              "display_name": {
+                "title": "Display Name",
+                "type": "string"
+              },
+              "points": {
+                "title": "Points",
+                "type": "integer"
+              },
+              "rank": {
+                "title": "Rank",
+                "type": "integer"
+              }
+            },
+            "required": [
+              "display_name",
+              "points",
+              "rank"
+            ],
+            "title": "PlayerRanking",
+            "type": "object"
+          },
+          "PublicHint": {
+            "additionalProperties": false,
+            "properties": {
+              "stage": {
+                "enum": [
+                  1,
+                  2,
+                  3
+                ],
+                "title": "Stage",
+                "type": "integer"
+              },
+              "text": {
+                "title": "Text",
+                "type": "string"
+              },
+              "revealed_at": {
+                "title": "Revealed At",
+                "type": "string"
+              }
+            },
+            "required": [
+              "stage",
+              "text",
+              "revealed_at"
+            ],
+            "title": "PublicHint",
+            "type": "object"
+          },
+          "PublicRound": {
+            "additionalProperties": false,
+            "properties": {
+              "round_id": {
+                "title": "Round Id",
+                "type": "string"
+              },
+              "status": {
+                "title": "Status",
+                "type": "string"
+              },
+              "version": {
+                "title": "Version",
+                "type": "integer"
+              },
+              "window_epoch": {
+                "title": "Window Epoch",
+                "type": "string"
+              },
+              "short_code": {
+                "title": "Short Code",
+                "type": "string"
+              },
+              "category": {
+                "title": "Category",
+                "type": "string"
+              },
+              "answer_length": {
+                "title": "Answer Length",
+                "type": "integer"
+              },
+              "published_hints": {
+                "items": {
+                  "$ref": "#/$defs/PublicHint"
+                },
+                "title": "Published Hints",
+                "type": "array"
+              },
+              "clock": {
+                "$ref": "#/$defs/Clock"
+              }
+            },
+            "required": [
+              "round_id",
+              "status",
+              "version",
+              "window_epoch",
+              "short_code",
+              "category",
+              "answer_length",
+              "published_hints",
+              "clock"
+            ],
+            "title": "PublicRound",
+            "type": "object"
+          },
+          "Ranking": {
+            "additionalProperties": false,
+            "properties": {
+              "words": {
+                "items": {
+                  "$ref": "#/$defs/WordRanking"
+                },
+                "title": "Words",
+                "type": "array"
+              },
+              "players": {
+                "items": {
+                  "$ref": "#/$defs/PlayerRanking"
+                },
+                "title": "Players",
+                "type": "array"
+              }
+            },
+            "required": [
+              "words",
+              "players"
+            ],
+            "title": "Ranking",
+            "type": "object"
+          },
+          "RankingPayload": {
+            "additionalProperties": false,
+            "properties": {
+              "ranking": {
+                "$ref": "#/$defs/Ranking"
+              }
+            },
+            "required": [
+              "ranking"
+            ],
+            "title": "RankingPayload",
+            "type": "object"
+          },
+          "ReadyFrame": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "const": "resume_ready",
+                "title": "Kind",
+                "type": "string"
+              },
+              "schema_version": {
+                "const": 1,
+                "title": "Schema Version",
+                "type": "integer"
+              },
+              "contract_version": {
+                "const": "LW-C1/1.0.0",
+                "title": "Contract Version",
+                "type": "string"
+              },
+              "session_id": {
+                "title": "Session Id",
+                "type": "string"
+              },
+              "upto_seq": {
+                "title": "Upto Seq",
+                "type": "string"
+              },
+              "server_time": {
+                "title": "Server Time",
+                "type": "string"
+              },
+              "render_generation": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Render Generation"
+              },
+              "pending_effects": {
+                "items": {
+                  "$ref": "#/$defs/PendingEffect"
+                },
+                "title": "Pending Effects",
+                "type": "array"
+              }
+            },
+            "required": [
+              "kind",
+              "schema_version",
+              "contract_version",
+              "session_id",
+              "upto_seq",
+              "server_time",
+              "render_generation",
+              "pending_effects"
+            ],
+            "title": "ReadyFrame",
+            "type": "object"
+          },
+          "ResyncFrame": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "const": "resync_required",
+                "title": "Kind",
+                "type": "string"
+              },
+              "schema_version": {
+                "const": 1,
+                "title": "Schema Version",
+                "type": "integer"
+              },
+              "contract_version": {
+                "const": "LW-C1/1.0.0",
+                "title": "Contract Version",
+                "type": "string"
+              },
+              "session_id": {
+                "title": "Session Id",
+                "type": "string"
+              },
+              "reason_code": {
+                "title": "Reason Code",
+                "type": "string"
+              },
+              "min_seq": {
+                "title": "Min Seq",
+                "type": "string"
+              },
+              "latest_seq": {
+                "title": "Latest Seq",
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "schema_version",
+              "contract_version",
+              "session_id",
+              "reason_code",
+              "min_seq",
+              "latest_seq"
+            ],
+            "title": "ResyncFrame",
+            "type": "object"
+          },
+          "Reveal": {
+            "additionalProperties": false,
+            "properties": {
+              "round_id": {
+                "title": "Round Id",
+                "type": "string"
+              },
+              "answer": {
+                "title": "Answer",
+                "type": "string"
+              },
+              "explanation": {
+                "title": "Explanation",
+                "type": "string"
+              },
+              "winner_display_name": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Winner Display Name"
+              },
+              "reason": {
+                "title": "Reason",
+                "type": "string"
+              },
+              "next_start_at": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Next Start At"
+              }
+            },
+            "required": [
+              "round_id",
+              "answer",
+              "explanation",
+              "winner_display_name",
+              "reason",
+              "next_start_at"
+            ],
+            "title": "Reveal",
+            "type": "object"
+          },
+          "RevealPayload": {
+            "additionalProperties": false,
+            "properties": {
+              "round": {
+                "$ref": "#/$defs/PublicRound"
+              },
+              "reveal": {
+                "$ref": "#/$defs/Reveal"
+              },
+              "ranking": {
+                "$ref": "#/$defs/Ranking"
+              }
+            },
+            "required": [
+              "round",
+              "reveal",
+              "ranking"
+            ],
+            "title": "RevealPayload",
+            "type": "object"
+          },
+          "RoundPayload": {
+            "additionalProperties": false,
+            "properties": {
+              "round": {
+                "$ref": "#/$defs/PublicRound"
+              }
+            },
+            "required": [
+              "round"
+            ],
+            "title": "RoundPayload",
+            "type": "object"
+          },
+          "SelectionNotice": {
+            "additionalProperties": false,
+            "properties": {
+              "selection_id": {
+                "title": "Selection Id",
+                "type": "string"
+              },
+              "version": {
+                "title": "Version",
+                "type": "integer"
+              },
+              "status": {
+                "enum": [
+                  "READY",
+                  "EMPTY"
+                ],
+                "title": "Status",
+                "type": "string"
+              },
+              "old_selection_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Old Selection Id"
+              },
+              "reason": {
+                "title": "Reason",
+                "type": "string"
+              }
+            },
+            "required": [
+              "selection_id",
+              "version",
+              "status",
+              "old_selection_id",
+              "reason"
+            ],
+            "title": "SelectionNotice",
+            "type": "object"
+          },
+          "SelectionResult": {
+            "additionalProperties": false,
+            "properties": {
+              "selection_id": {
+                "title": "Selection Id",
+                "type": "string"
+              },
+              "version": {
+                "title": "Version",
+                "type": "integer"
+              },
+              "status": {
+                "enum": [
+                  "READY",
+                  "EMPTY"
+                ],
+                "title": "Status",
+                "type": "string"
+              }
+            },
+            "required": [
+              "selection_id",
+              "version",
+              "status"
+            ],
+            "title": "SelectionResult",
+            "type": "object"
+          },
+          "Transport": {
+            "additionalProperties": false,
+            "properties": {
+              "state": {
+                "title": "State",
+                "type": "string"
+              },
+              "reason_code": {
+                "title": "Reason Code",
+                "type": "string"
+              },
+              "recoverable": {
+                "title": "Recoverable",
+                "type": "boolean"
+              },
+              "last_confirmed_at": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Last Confirmed At"
+              }
+            },
+            "required": [
+              "state",
+              "reason_code",
+              "recoverable",
+              "last_confirmed_at"
+            ],
+            "title": "Transport",
+            "type": "object"
+          },
+          "WordRanking": {
+            "additionalProperties": false,
+            "properties": {
+              "word": {
+                "title": "Word",
+                "type": "string"
+              },
+              "first_display_name": {
+                "title": "First Display Name",
+                "type": "string"
+              },
+              "participant_count": {
+                "title": "Participant Count",
+                "type": "integer"
+              },
+              "display_score": {
+                "title": "Display Score",
+                "type": "number"
+              }
+            },
+            "required": [
+              "word",
+              "first_display_name",
+              "participant_count",
+              "display_score"
+            ],
+            "title": "WordRanking",
+            "type": "object"
+          }
+        },
+        "anyOf": [
+          {
+            "$ref": "#/$defs/ReadyFrame"
+          },
+          {
+            "$ref": "#/$defs/HeartbeatFrame"
+          },
+          {
+            "$ref": "#/$defs/ResyncFrame"
+          },
+          {
+            "$ref": "#/$defs/EventFrame"
+          }
+        ],
+        "$id": "urn:wordheat:local-websocket-server:1"
+      },
+      "max_frame_bytes": 65536,
+      "audience": "DISPLAY"
+    },
+    "/api/v1/studio/ws": {
+      "transport": "websocket",
+      "http_operation": false,
+      "client_initial_frame_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "resume",
+            "title": "Kind",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": 1,
+            "title": "Schema Version",
+            "type": "integer"
+          },
+          "contract_version": {
+            "const": "LW-C1/1.0.0",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "session_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Session Id",
+            "type": "string"
+          },
+          "after_seq": {
+            "maxLength": 30,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "After Seq",
+            "type": "string"
+          },
+          "be_extension_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Be Extension Version"
+          }
+        },
+        "required": [
+          "kind",
+          "schema_version",
+          "contract_version",
+          "session_id",
+          "after_seq"
+        ],
+        "title": "Resume",
+        "type": "object",
+        "$id": "urn:wordheat:local-websocket-resume:1"
+      },
+      "server_frame_schema": {
+        "$defs": {
+          "Clock": {
+            "additionalProperties": false,
+            "properties": {
+              "time_origin": {
+                "enum": [
+                  "local_rehearsal",
+                  "local_replay",
+                  "relay"
+                ],
+                "title": "Time Origin",
+                "type": "string"
+              },
+              "deadline_at": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Deadline At"
+              },
+              "remaining_ms": {
+                "anyOf": [
+                  {
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Remaining Ms"
+              }
+            },
+            "required": [
+              "time_origin",
+              "deadline_at",
+              "remaining_ms"
+            ],
+            "title": "Clock",
+            "type": "object"
+          },
+          "CommandPayload": {
+            "additionalProperties": false,
+            "properties": {
+              "command": {
+                "$ref": "#/$defs/CommandResult"
+              }
+            },
+            "required": [
+              "command"
+            ],
+            "title": "CommandPayload",
+            "type": "object"
+          },
+          "CommandProjection": {
+            "additionalProperties": false,
+            "properties": {
+              "status": {
+                "title": "Status",
+                "type": "string"
+              }
+            },
+            "required": [
+              "status"
+            ],
+            "title": "CommandProjection",
+            "type": "object"
+          },
+          "CommandResult": {
+            "additionalProperties": false,
+            "properties": {
+              "command_id": {
+                "title": "Command Id",
+                "type": "string"
+              },
+              "status": {
+                "enum": [
+                  "pending",
+                  "applied",
+                  "failed",
+                  "cancelled"
+                ],
+                "title": "Status",
+                "type": "string"
+              },
+              "resource_version": {
+                "title": "Resource Version",
+                "type": "integer"
+              },
+              "state": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "$ref": "#/$defs/SelectionNotice"
+                  },
+                  {
+                    "$ref": "#/$defs/SelectionResult"
+                  },
+                  {
+                    "$ref": "#/$defs/CommandProjection"
+                  }
+                ],
+                "title": "State"
+              },
+              "error": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/ErrorBrief"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "be_extension_version": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Be Extension Version"
+              }
+            },
+            "required": [
+              "command_id",
+              "status",
+              "resource_version",
+              "state",
+              "error"
+            ],
+            "title": "CommandResult",
+            "type": "object"
+          },
+          "ErrorBrief": {
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "title": "Code",
+                "type": "string"
+              },
+              "message": {
+                "title": "Message",
+                "type": "string"
+              },
+              "retryable": {
+                "title": "Retryable",
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "code",
+              "message",
+              "retryable"
+            ],
+            "title": "ErrorBrief",
+            "type": "object"
+          },
+          "EventFrame": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "const": "event",
+                "title": "Kind",
+                "type": "string"
+              },
+              "schema_version": {
+                "const": 1,
+                "title": "Schema Version",
+                "type": "integer"
+              },
+              "contract_version": {
+                "const": "LW-C1/1.0.0",
+                "title": "Contract Version",
+                "type": "string"
+              },
+              "event_id": {
+                "title": "Event Id",
+                "type": "string"
+              },
+              "session_id": {
+                "title": "Session Id",
+                "type": "string"
+              },
+              "round_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Round Id"
+              },
+              "seq": {
+                "title": "Seq",
+                "type": "string"
+              },
+              "server_time": {
+                "title": "Server Time",
+                "type": "string"
+              },
+              "type": {
+                "title": "Type",
+                "type": "string"
+              },
+              "delivery_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Delivery Ids",
+                "type": "array"
+              },
+              "delivery_mode": {
+                "enum": [
+                  "live",
+                  "replay"
+                ],
+                "title": "Delivery Mode",
+                "type": "string"
+              },
+              "payload": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/RoundPayload"
+                  },
+                  {
+                    "$ref": "#/$defs/RevealPayload"
+                  },
+                  {
+                    "$ref": "#/$defs/FeedbackPayload"
+                  },
+                  {
+                    "$ref": "#/$defs/RankingPayload"
+                  },
+                  {
+                    "$ref": "#/$defs/HintPayload"
+                  },
+                  {
+                    "$ref": "#/$defs/CommandPayload"
+                  }
+                ],
+                "title": "Payload"
+              }
+            },
+            "required": [
+              "kind",
+              "schema_version",
+              "contract_version",
+              "event_id",
+              "session_id",
+              "round_id",
+              "seq",
+              "server_time",
+              "type",
+              "delivery_ids",
+              "delivery_mode",
+              "payload"
+            ],
+            "title": "EventFrame",
+            "type": "object"
+          },
+          "FeedbackPayload": {
+            "additionalProperties": false,
+            "properties": {
+              "feedbacks": {
+                "items": {
+                  "$ref": "#/$defs/LatestFeedback"
+                },
+                "title": "Feedbacks",
+                "type": "array"
+              },
+              "effects": {
+                "items": {
+                  "$ref": "#/$defs/PendingEffect"
+                },
+                "title": "Effects",
+                "type": "array"
+              }
+            },
+            "required": [
+              "feedbacks",
+              "effects"
+            ],
+            "title": "FeedbackPayload",
+            "type": "object"
+          },
+          "HeartbeatFrame": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "const": "heartbeat",
+                "title": "Kind",
+                "type": "string"
+              },
+              "schema_version": {
+                "const": 1,
+                "title": "Schema Version",
+                "type": "integer"
+              },
+              "contract_version": {
+                "const": "LW-C1/1.0.0",
+                "title": "Contract Version",
+                "type": "string"
+              },
+              "session_id": {
+                "title": "Session Id",
+                "type": "string"
+              },
+              "server_time": {
+                "title": "Server Time",
+                "type": "string"
+              },
+              "latest_seq": {
+                "title": "Latest Seq",
+                "type": "string"
+              },
+              "transport": {
+                "$ref": "#/$defs/Transport"
+              }
+            },
+            "required": [
+              "kind",
+              "schema_version",
+              "contract_version",
+              "session_id",
+              "server_time",
+              "latest_seq",
+              "transport"
+            ],
+            "title": "HeartbeatFrame",
+            "type": "object"
+          },
+          "HintPayload": {
+            "additionalProperties": false,
+            "properties": {
+              "round_id": {
+                "title": "Round Id",
+                "type": "string"
+              },
+              "published_hints": {
+                "items": {
+                  "$ref": "#/$defs/PublicHint"
+                },
+                "title": "Published Hints",
+                "type": "array"
+              }
+            },
+            "required": [
+              "round_id",
+              "published_hints"
+            ],
+            "title": "HintPayload",
+            "type": "object"
+          },
+          "LatestFeedback": {
+            "additionalProperties": false,
+            "properties": {
+              "feedback_id": {
+                "title": "Feedback Id",
+                "type": "string"
+              },
+              "word": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Word"
+              },
+              "display_name": {
+                "title": "Display Name",
+                "type": "string"
+              },
+              "status": {
+                "title": "Status",
+                "type": "string"
+              },
+              "display_score": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Display Score"
+              },
+              "solved": {
+                "title": "Solved",
+                "type": "boolean"
+              },
+              "message": {
+                "title": "Message",
+                "type": "string"
+              }
+            },
+            "required": [
+              "feedback_id",
+              "word",
+              "display_name",
+              "status",
+              "display_score",
+              "solved",
+              "message"
+            ],
+            "title": "LatestFeedback",
+            "type": "object"
+          },
+          "PendingEffect": {
+            "additionalProperties": false,
+            "properties": {
+              "feedback_id": {
+                "title": "Feedback Id",
+                "type": "string"
+              },
+              "origin_round_id": {
+                "title": "Origin Round Id",
+                "type": "string"
+              },
+              "window_epoch": {
+                "title": "Window Epoch",
+                "type": "string"
+              },
+              "delivery_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Delivery Ids",
+                "type": "array"
+              },
+              "outcome": {
+                "title": "Outcome",
+                "type": "string"
+              },
+              "status_message": {
+                "title": "Status Message",
+                "type": "string"
+              },
+              "word": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Word"
+              },
+              "display_name": {
+                "title": "Display Name",
+                "type": "string"
+              },
+              "display_score": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Display Score"
+              },
+              "solved": {
+                "title": "Solved",
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "feedback_id",
+              "origin_round_id",
+              "window_epoch",
+              "delivery_ids",
+              "outcome",
+              "status_message",
+              "word",
+              "display_name",
+              "display_score",
+              "solved"
+            ],
+            "title": "PendingEffect",
+            "type": "object"
+          },
+          "PlayerRanking": {
+            "additionalProperties": false,
+            "properties": {
+              "display_name": {
+                "title": "Display Name",
+                "type": "string"
+              },
+              "points": {
+                "title": "Points",
+                "type": "integer"
+              },
+              "rank": {
+                "title": "Rank",
+                "type": "integer"
+              }
+            },
+            "required": [
+              "display_name",
+              "points",
+              "rank"
+            ],
+            "title": "PlayerRanking",
+            "type": "object"
+          },
+          "PublicHint": {
+            "additionalProperties": false,
+            "properties": {
+              "stage": {
+                "enum": [
+                  1,
+                  2,
+                  3
+                ],
+                "title": "Stage",
+                "type": "integer"
+              },
+              "text": {
+                "title": "Text",
+                "type": "string"
+              },
+              "revealed_at": {
+                "title": "Revealed At",
+                "type": "string"
+              }
+            },
+            "required": [
+              "stage",
+              "text",
+              "revealed_at"
+            ],
+            "title": "PublicHint",
+            "type": "object"
+          },
+          "PublicRound": {
+            "additionalProperties": false,
+            "properties": {
+              "round_id": {
+                "title": "Round Id",
+                "type": "string"
+              },
+              "status": {
+                "title": "Status",
+                "type": "string"
+              },
+              "version": {
+                "title": "Version",
+                "type": "integer"
+              },
+              "window_epoch": {
+                "title": "Window Epoch",
+                "type": "string"
+              },
+              "short_code": {
+                "title": "Short Code",
+                "type": "string"
+              },
+              "category": {
+                "title": "Category",
+                "type": "string"
+              },
+              "answer_length": {
+                "title": "Answer Length",
+                "type": "integer"
+              },
+              "published_hints": {
+                "items": {
+                  "$ref": "#/$defs/PublicHint"
+                },
+                "title": "Published Hints",
+                "type": "array"
+              },
+              "clock": {
+                "$ref": "#/$defs/Clock"
+              }
+            },
+            "required": [
+              "round_id",
+              "status",
+              "version",
+              "window_epoch",
+              "short_code",
+              "category",
+              "answer_length",
+              "published_hints",
+              "clock"
+            ],
+            "title": "PublicRound",
+            "type": "object"
+          },
+          "Ranking": {
+            "additionalProperties": false,
+            "properties": {
+              "words": {
+                "items": {
+                  "$ref": "#/$defs/WordRanking"
+                },
+                "title": "Words",
+                "type": "array"
+              },
+              "players": {
+                "items": {
+                  "$ref": "#/$defs/PlayerRanking"
+                },
+                "title": "Players",
+                "type": "array"
+              }
+            },
+            "required": [
+              "words",
+              "players"
+            ],
+            "title": "Ranking",
+            "type": "object"
+          },
+          "RankingPayload": {
+            "additionalProperties": false,
+            "properties": {
+              "ranking": {
+                "$ref": "#/$defs/Ranking"
+              }
+            },
+            "required": [
+              "ranking"
+            ],
+            "title": "RankingPayload",
+            "type": "object"
+          },
+          "ReadyFrame": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "const": "resume_ready",
+                "title": "Kind",
+                "type": "string"
+              },
+              "schema_version": {
+                "const": 1,
+                "title": "Schema Version",
+                "type": "integer"
+              },
+              "contract_version": {
+                "const": "LW-C1/1.0.0",
+                "title": "Contract Version",
+                "type": "string"
+              },
+              "session_id": {
+                "title": "Session Id",
+                "type": "string"
+              },
+              "upto_seq": {
+                "title": "Upto Seq",
+                "type": "string"
+              },
+              "server_time": {
+                "title": "Server Time",
+                "type": "string"
+              },
+              "render_generation": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Render Generation"
+              },
+              "pending_effects": {
+                "items": {
+                  "$ref": "#/$defs/PendingEffect"
+                },
+                "title": "Pending Effects",
+                "type": "array"
+              }
+            },
+            "required": [
+              "kind",
+              "schema_version",
+              "contract_version",
+              "session_id",
+              "upto_seq",
+              "server_time",
+              "render_generation",
+              "pending_effects"
+            ],
+            "title": "ReadyFrame",
+            "type": "object"
+          },
+          "ResyncFrame": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "const": "resync_required",
+                "title": "Kind",
+                "type": "string"
+              },
+              "schema_version": {
+                "const": 1,
+                "title": "Schema Version",
+                "type": "integer"
+              },
+              "contract_version": {
+                "const": "LW-C1/1.0.0",
+                "title": "Contract Version",
+                "type": "string"
+              },
+              "session_id": {
+                "title": "Session Id",
+                "type": "string"
+              },
+              "reason_code": {
+                "title": "Reason Code",
+                "type": "string"
+              },
+              "min_seq": {
+                "title": "Min Seq",
+                "type": "string"
+              },
+              "latest_seq": {
+                "title": "Latest Seq",
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "schema_version",
+              "contract_version",
+              "session_id",
+              "reason_code",
+              "min_seq",
+              "latest_seq"
+            ],
+            "title": "ResyncFrame",
+            "type": "object"
+          },
+          "Reveal": {
+            "additionalProperties": false,
+            "properties": {
+              "round_id": {
+                "title": "Round Id",
+                "type": "string"
+              },
+              "answer": {
+                "title": "Answer",
+                "type": "string"
+              },
+              "explanation": {
+                "title": "Explanation",
+                "type": "string"
+              },
+              "winner_display_name": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Winner Display Name"
+              },
+              "reason": {
+                "title": "Reason",
+                "type": "string"
+              },
+              "next_start_at": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Next Start At"
+              }
+            },
+            "required": [
+              "round_id",
+              "answer",
+              "explanation",
+              "winner_display_name",
+              "reason",
+              "next_start_at"
+            ],
+            "title": "Reveal",
+            "type": "object"
+          },
+          "RevealPayload": {
+            "additionalProperties": false,
+            "properties": {
+              "round": {
+                "$ref": "#/$defs/PublicRound"
+              },
+              "reveal": {
+                "$ref": "#/$defs/Reveal"
+              },
+              "ranking": {
+                "$ref": "#/$defs/Ranking"
+              }
+            },
+            "required": [
+              "round",
+              "reveal",
+              "ranking"
+            ],
+            "title": "RevealPayload",
+            "type": "object"
+          },
+          "RoundPayload": {
+            "additionalProperties": false,
+            "properties": {
+              "round": {
+                "$ref": "#/$defs/PublicRound"
+              }
+            },
+            "required": [
+              "round"
+            ],
+            "title": "RoundPayload",
+            "type": "object"
+          },
+          "SelectionNotice": {
+            "additionalProperties": false,
+            "properties": {
+              "selection_id": {
+                "title": "Selection Id",
+                "type": "string"
+              },
+              "version": {
+                "title": "Version",
+                "type": "integer"
+              },
+              "status": {
+                "enum": [
+                  "READY",
+                  "EMPTY"
+                ],
+                "title": "Status",
+                "type": "string"
+              },
+              "old_selection_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Old Selection Id"
+              },
+              "reason": {
+                "title": "Reason",
+                "type": "string"
+              }
+            },
+            "required": [
+              "selection_id",
+              "version",
+              "status",
+              "old_selection_id",
+              "reason"
+            ],
+            "title": "SelectionNotice",
+            "type": "object"
+          },
+          "SelectionResult": {
+            "additionalProperties": false,
+            "properties": {
+              "selection_id": {
+                "title": "Selection Id",
+                "type": "string"
+              },
+              "version": {
+                "title": "Version",
+                "type": "integer"
+              },
+              "status": {
+                "enum": [
+                  "READY",
+                  "EMPTY"
+                ],
+                "title": "Status",
+                "type": "string"
+              }
+            },
+            "required": [
+              "selection_id",
+              "version",
+              "status"
+            ],
+            "title": "SelectionResult",
+            "type": "object"
+          },
+          "Transport": {
+            "additionalProperties": false,
+            "properties": {
+              "state": {
+                "title": "State",
+                "type": "string"
+              },
+              "reason_code": {
+                "title": "Reason Code",
+                "type": "string"
+              },
+              "recoverable": {
+                "title": "Recoverable",
+                "type": "boolean"
+              },
+              "last_confirmed_at": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Last Confirmed At"
+              }
+            },
+            "required": [
+              "state",
+              "reason_code",
+              "recoverable",
+              "last_confirmed_at"
+            ],
+            "title": "Transport",
+            "type": "object"
+          },
+          "WordRanking": {
+            "additionalProperties": false,
+            "properties": {
+              "word": {
+                "title": "Word",
+                "type": "string"
+              },
+              "first_display_name": {
+                "title": "First Display Name",
+                "type": "string"
+              },
+              "participant_count": {
+                "title": "Participant Count",
+                "type": "integer"
+              },
+              "display_score": {
+                "title": "Display Score",
+                "type": "number"
+              }
+            },
+            "required": [
+              "word",
+              "first_display_name",
+              "participant_count",
+              "display_score"
+            ],
+            "title": "WordRanking",
+            "type": "object"
+          }
+        },
+        "anyOf": [
+          {
+            "$ref": "#/$defs/ReadyFrame"
+          },
+          {
+            "$ref": "#/$defs/HeartbeatFrame"
+          },
+          {
+            "$ref": "#/$defs/ResyncFrame"
+          },
+          {
+            "$ref": "#/$defs/EventFrame"
+          }
+        ],
+        "$id": "urn:wordheat:local-websocket-server:1"
+      },
+      "max_frame_bytes": 65536,
+      "audience": "STUDIO"
+    }
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "source_spec_sha256": "6c582420ea7d80d66cea1178e8629e7358a6a23a88c1d5ea65843a47f821f63b",
+  "authoritative_contract_owner": "packages/contracts; not changed here",
+  "coverage": "all registered HTTP success schemas and C1 error responses including 422",
+  "typed_successes": [
+    {
+      "method": "GET",
+      "path": "/api/v1/puzzles",
+      "status": "200"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/puzzles",
+      "status": "200"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/puzzles/{puzzle_id}",
+      "status": "200"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/puzzle-imports",
+      "status": "202"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/puzzle-imports/{job_id}",
+      "status": "200"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/puzzle-imports/{job_id}/commands",
+      "status": "200"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/scoring-evaluations",
+      "status": "202"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/scoring-evaluations/{job_id}",
+      "status": "200"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/puzzles/{puzzle_id}/commands",
+      "status": "200"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/puzzles/{puzzle_id}/commands",
+      "status": "202"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/replays",
+      "status": "202"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/replays/{job_id}",
+      "status": "200"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/replays/{job_id}/commands",
+      "status": "200"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/messages",
+      "status": "200"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/messages/{message_id}/trace",
+      "status": "200"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/health/live",
+      "status": "200"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/health/ready",
+      "status": "200"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/runtime/status",
+      "status": "200"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/sessions",
+      "status": "200"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/sessions/current",
+      "status": "200"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/auth/sessions/current",
+      "status": "200"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/sessions",
+      "status": "200"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/auth/sessions/{session_id}",
+      "status": "200"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/live-sessions",
+      "status": "200"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/live-sessions/{session_id}",
+      "status": "200"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/live-sessions/{session_id}/commands",
+      "status": "200"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/display-tickets",
+      "status": "200"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/display-sessions",
+      "status": "200"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/display-sessions/current",
+      "status": "200"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/display-tickets/{ticket_id}",
+      "status": "200"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/rounds",
+      "status": "200"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/rounds/{round_id}/commands",
+      "status": "200"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/rounds/{round_id}/private-state",
+      "status": "200"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/rehearsal/guesses",
+      "status": "200"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/display/receipts",
+      "status": "200"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/studio/sessions/{session_id}/snapshot",
+      "status": "200"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/commands/{command_id}",
+      "status": "200"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/display/sessions/{session_id}/snapshot",
+      "status": "200"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/live-sessions/{session_id}/analytics",
+      "status": "200"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/live-sessions/{session_id}/analytics/rounds",
+      "status": "200"
+    }
+  ],
+  "declaration_gaps": [],
+  "fixed_previous_declaration_gap_count": 56,
+  "websocket_protocol_file": "apps/api/websocket-protocol.json",
+  "remaining_dependency_drift": [
+    {
+      "owner": "analytics",
+      "source": "frozen app.modules.analytics.service.calculate",
+      "scenario": "Legacy round has frozen_puzzle={} and no hints observation; trace_ref is known. All remaining fields are supplied by calculate/aggregate.",
+      "minimal_round": {
+        "id": "legacy-round",
+        "status": "REVEALED",
+        "end_reason": "TIMEOUT",
+        "puzzle_version_id": "legacy-puzzle",
+        "frozen_puzzle": {}
+      },
+      "observed_validation_errors": [
+        {
+          "field": "round_details.items.0.category_id",
+          "type": "string_type",
+          "input": null
+        },
+        {
+          "field": "round_details.items.0.difficulty",
+          "type": "int_type",
+          "input": null
+        },
+        {
+          "field": "round_details.items.0.hints_revealed",
+          "type": "int_type",
+          "input": null
+        }
+      ],
+      "treatment": "Spec required category/difficulty/hints fields remain strict; no invented defaults or nullable relaxation. Response contract failure is sanitized as C1 RESPONSE_CONTRACT_INVALID (500). Analytics owner must decide explicit historical-unavailable handling or supply actual legacy observations.",
+      "proposed_owner_resolution": "Coordinate with analytics owner on explicit 503 SOURCE_INCOMPLETE for unknown historical required observations; no analytics source change in this P2 patch."
+    }
+  ],
+  "cross_cutting_remaining": [
+    "Origin/Host/Cookie/CSRF/Idempotency-Key/BE-extension guards are enforced; complete OpenAPI security/header parameter annotation remains unmodeled and is not claimed complete",
+    "Shared packages/contracts and absent official/native endpoints are outside this extraction; no fake endpoints registered",
+    "WebSocket schemas describe the implemented frame union; they are not HTTP operations or evidence of rendering/official fulfillment"
+  ],
+  "review_p2": {
+    "puzzle_pagination": "Signed keyset cursor with actor/filter/page-size binding, PG insert visibility boundary, read-set stale rejection, next_cursor/has_more/as_of/expires_at",
+    "difficulty": "Exact difficulty and difficulty_min/max constrained 1..5; min<=max and exact/range consistency checked",
+    "replay": "Explicit None check for zero end timestamp; all required checkpoint fields validated"
+  }
+}
