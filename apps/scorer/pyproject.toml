@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wordheat-scorer"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "fastapi==0.162.0", "uvicorn==0.54.0", "httpx==0.28.1", "rfc8785==0.1.4",
+  "numpy==2.5.4", "sentence-transformers==6.2.0", "torch==2.14.1", "transformers==5.20.2",
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.1.1"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["real_model: real pinned offline model component integration; not G1-Q/G1-R"]
+
+[tool.setuptools.packages.find]
+include = ["app*"]

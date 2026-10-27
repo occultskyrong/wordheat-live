@@ -1,0 +1,1 @@
+"""WordHeat private embedding process."""
