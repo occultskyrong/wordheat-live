@@ -1,0 +1,19 @@
+apps/api/tests/integration/test_wordbank_flow.py::test_real_jobs_calibration_blind_review_publish_immutable_patch
+apps/api/tests/integration/test_wordbank_flow.py::test_csv_requires_explicit_valid_rows_and_preserves_security
+apps/api/tests/integration/test_wordbank_flow.py::test_word_ranking_contains_scored_current_round_words
+apps/api/tests/integration/test_wordbank_flow.py::test_runtime_maintenance_reports_unimplemented_truthfully
+apps/api/tests/integration/test_wordbank_flow.py::test_auto_next_waits_frozen_intermission_and_readiness
+apps/api/tests/integration/test_wordbank_flow.py::test_selection_rejects_published_version_from_different_model
+apps/api/tests/integration/test_wordbank_flow.py::test_puzzle_editor_needs_no_session_permission_and_revocation_beats_cache
+apps/api/tests/integration/test_wordbank_flow.py::test_missing_model_is_rejected_before_freeze_and_wrong_job_route_denied
+apps/api/tests/integration/test_wordbank_flow.py::test_wordbank_difficulty_filter_is_applied_and_invalid_range_rejected
+apps/api/tests/integration/test_wordbank_flow.py::test_wordbank_cursor_binds_filters_and_freezes_concurrent_versions
+apps/api/tests/integration/test_wordbank_flow.py::test_evaluation_freezes_input_and_rejects_changed_target_version
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/jiachenclaw/code/wordheat-live/apps/api/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+11 tests collected in 0.22s

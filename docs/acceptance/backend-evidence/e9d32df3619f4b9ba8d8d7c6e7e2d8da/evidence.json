@@ -1,0 +1,422 @@
+{
+  "report_version": 1,
+  "spec_sha256": "6c582420ea7d80d66cea1178e8629e7358a6a23a88c1d5ea65843a47f821f63b",
+  "manifest_sha256": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+  "run_id": "e9d32df3619f4b9ba8d8d7c6e7e2d8da",
+  "started_at": "2026-10-27T01:10:16.500580+00:00",
+  "finished_at": "2026-10-27T01:10:21.132314+00:00",
+  "collected_node_ids": [
+    "scripts/backend/tests/test_completion.py::CompletionTests::test_a19_dependency_allowlist_preserves_owner_environment_and_path_guards",
+    "scripts/backend/tests/test_completion.py::CompletionTests::test_a19_evidence_guards_reject_stale_spec_junit_and_newer_failure",
+    "scripts/backend/tests/test_completion.py::CompletionTests::test_a19_exact_cross_module_dependencies_bind_and_each_drift_invalidates",
+    "scripts/backend/tests/test_completion.py::CompletionTests::test_a19_omitted_dependencies_cannot_leave_old_evidence_passed",
+    "scripts/backend/tests/test_completion.py::CompletionTests::test_empty_report_is_not_evidence",
+    "scripts/backend/tests/test_completion.py::CompletionTests::test_environment_owner_and_source_each_have_fixed_guards",
+    "scripts/backend/tests/test_completion.py::CompletionTests::test_forged_success_without_junit_cannot_pass",
+    "scripts/backend/tests/test_completion.py::CompletionTests::test_junit_skipped_and_empty_are_rejected",
+    "scripts/backend/tests/test_completion.py::CompletionTests::test_manifest_covers_expected_acceptance_ids",
+    "scripts/backend/tests/test_completion.py::CompletionTests::test_manifest_omission_is_invalid",
+    "scripts/backend/tests/test_completion.py::CompletionTests::test_manifest_rebinding_all_ids_to_fake_local_test_is_invalid",
+    "scripts/backend/tests/test_completion.py::CompletionTests::test_matching_junit_passes_then_implementation_drift_fails",
+    "scripts/backend/tests/test_completion.py::CompletionTests::test_no_evidence_never_complete",
+    "scripts/backend/tests/test_completion.py::CompletionTests::test_runner_cannot_promote_declared_external_or_model_environment",
+    "scripts/backend/tests/test_completion.py::CompletionTests::test_runner_rejects_non_test_paths_and_uses_actual_pytest",
+    "scripts/backend/tests/test_completion.py::CompletionTests::test_runner_rootdir_and_service_imports_are_isolated",
+    "scripts/backend/tests/test_completion.py::CompletionTests::test_skipped_and_old_spec_do_not_pass",
+    "scripts/backend/tests/test_completion.py::CompletionTests::test_timestamp_order_uses_utc_instants"
+  ],
+  "declared_environment": "local",
+  "observed_runtime": {
+    "sys_platform": "darwin",
+    "python_version": "3.12.13",
+    "service": null,
+    "cwd": ".",
+    "postgres_nodes": [],
+    "relay_postgres_nodes": [],
+    "real_model_nodes": [],
+    "integration_qualified": true,
+    "external_runner_available": false
+  },
+  "exit_code": 0,
+  "junit_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+  "checks": [
+    {
+      "id": "COMPLETION-TOOL",
+      "node_id": "scripts/backend/tests/test_completion.py::CompletionTests::test_no_evidence_never_complete",
+      "outcome": "passed",
+      "executed": true,
+      "exit_code": 0,
+      "tests_run": 1,
+      "skipped": 0,
+      "environment": "local",
+      "artifact_format": "junit",
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "implementation_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      }
+    },
+    {
+      "id": "COMPLETION-TOOL",
+      "node_id": "scripts/backend/tests/test_completion.py::CompletionTests::test_manifest_rebinding_all_ids_to_fake_local_test_is_invalid",
+      "outcome": "passed",
+      "executed": true,
+      "exit_code": 0,
+      "tests_run": 1,
+      "skipped": 0,
+      "environment": "local",
+      "artifact_format": "junit",
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "implementation_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      }
+    },
+    {
+      "id": "COMPLETION-TOOL",
+      "node_id": "scripts/backend/tests/test_completion.py::CompletionTests::test_environment_owner_and_source_each_have_fixed_guards",
+      "outcome": "passed",
+      "executed": true,
+      "exit_code": 0,
+      "tests_run": 1,
+      "skipped": 0,
+      "environment": "local",
+      "artifact_format": "junit",
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "implementation_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      }
+    },
+    {
+      "id": "COMPLETION-TOOL",
+      "node_id": "scripts/backend/tests/test_completion.py::CompletionTests::test_runner_rejects_non_test_paths_and_uses_actual_pytest",
+      "outcome": "passed",
+      "executed": true,
+      "exit_code": 0,
+      "tests_run": 1,
+      "skipped": 0,
+      "environment": "local",
+      "artifact_format": "junit",
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "implementation_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      }
+    },
+    {
+      "id": "COMPLETION-TOOL",
+      "node_id": "scripts/backend/tests/test_completion.py::CompletionTests::test_runner_cannot_promote_declared_external_or_model_environment",
+      "outcome": "passed",
+      "executed": true,
+      "exit_code": 0,
+      "tests_run": 1,
+      "skipped": 0,
+      "environment": "local",
+      "artifact_format": "junit",
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "implementation_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      }
+    },
+    {
+      "id": "COMPLETION-TOOL",
+      "node_id": "scripts/backend/tests/test_completion.py::CompletionTests::test_runner_rootdir_and_service_imports_are_isolated",
+      "outcome": "passed",
+      "executed": true,
+      "exit_code": 0,
+      "tests_run": 1,
+      "skipped": 0,
+      "environment": "local",
+      "artifact_format": "junit",
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "implementation_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      }
+    },
+    {
+      "id": "COMPLETION-TOOL",
+      "node_id": "scripts/backend/tests/test_completion.py::CompletionTests::test_timestamp_order_uses_utc_instants",
+      "outcome": "passed",
+      "executed": true,
+      "exit_code": 0,
+      "tests_run": 1,
+      "skipped": 0,
+      "environment": "local",
+      "artifact_format": "junit",
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "implementation_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      }
+    },
+    {
+      "id": "COMPLETION-TOOL",
+      "node_id": "scripts/backend/tests/test_completion.py::CompletionTests::test_empty_report_is_not_evidence",
+      "outcome": "passed",
+      "executed": true,
+      "exit_code": 0,
+      "tests_run": 1,
+      "skipped": 0,
+      "environment": "local",
+      "artifact_format": "junit",
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "implementation_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      }
+    },
+    {
+      "id": "COMPLETION-TOOL",
+      "node_id": "scripts/backend/tests/test_completion.py::CompletionTests::test_skipped_and_old_spec_do_not_pass",
+      "outcome": "passed",
+      "executed": true,
+      "exit_code": 0,
+      "tests_run": 1,
+      "skipped": 0,
+      "environment": "local",
+      "artifact_format": "junit",
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "implementation_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      }
+    },
+    {
+      "id": "COMPLETION-TOOL",
+      "node_id": "scripts/backend/tests/test_completion.py::CompletionTests::test_forged_success_without_junit_cannot_pass",
+      "outcome": "passed",
+      "executed": true,
+      "exit_code": 0,
+      "tests_run": 1,
+      "skipped": 0,
+      "environment": "local",
+      "artifact_format": "junit",
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "implementation_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      }
+    },
+    {
+      "id": "COMPLETION-TOOL",
+      "node_id": "scripts/backend/tests/test_completion.py::CompletionTests::test_junit_skipped_and_empty_are_rejected",
+      "outcome": "passed",
+      "executed": true,
+      "exit_code": 0,
+      "tests_run": 1,
+      "skipped": 0,
+      "environment": "local",
+      "artifact_format": "junit",
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "implementation_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      }
+    },
+    {
+      "id": "COMPLETION-TOOL",
+      "node_id": "scripts/backend/tests/test_completion.py::CompletionTests::test_matching_junit_passes_then_implementation_drift_fails",
+      "outcome": "passed",
+      "executed": true,
+      "exit_code": 0,
+      "tests_run": 1,
+      "skipped": 0,
+      "environment": "local",
+      "artifact_format": "junit",
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "implementation_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      }
+    },
+    {
+      "id": "COMPLETION-TOOL",
+      "node_id": "scripts/backend/tests/test_completion.py::CompletionTests::test_manifest_omission_is_invalid",
+      "outcome": "passed",
+      "executed": true,
+      "exit_code": 0,
+      "tests_run": 1,
+      "skipped": 0,
+      "environment": "local",
+      "artifact_format": "junit",
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "implementation_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      }
+    },
+    {
+      "id": "COMPLETION-TOOL",
+      "node_id": "scripts/backend/tests/test_completion.py::CompletionTests::test_manifest_covers_expected_acceptance_ids",
+      "outcome": "passed",
+      "executed": true,
+      "exit_code": 0,
+      "tests_run": 1,
+      "skipped": 0,
+      "environment": "local",
+      "artifact_format": "junit",
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "implementation_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      }
+    },
+    {
+      "id": "COMPLETION-TOOL",
+      "node_id": "scripts/backend/tests/test_completion.py::CompletionTests::test_a19_exact_cross_module_dependencies_bind_and_each_drift_invalidates",
+      "outcome": "passed",
+      "executed": true,
+      "exit_code": 0,
+      "tests_run": 1,
+      "skipped": 0,
+      "environment": "local",
+      "artifact_format": "junit",
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "implementation_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      }
+    },
+    {
+      "id": "COMPLETION-TOOL",
+      "node_id": "scripts/backend/tests/test_completion.py::CompletionTests::test_a19_evidence_guards_reject_stale_spec_junit_and_newer_failure",
+      "outcome": "passed",
+      "executed": true,
+      "exit_code": 0,
+      "tests_run": 1,
+      "skipped": 0,
+      "environment": "local",
+      "artifact_format": "junit",
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "implementation_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      }
+    },
+    {
+      "id": "COMPLETION-TOOL",
+      "node_id": "scripts/backend/tests/test_completion.py::CompletionTests::test_a19_omitted_dependencies_cannot_leave_old_evidence_passed",
+      "outcome": "passed",
+      "executed": true,
+      "exit_code": 0,
+      "tests_run": 1,
+      "skipped": 0,
+      "environment": "local",
+      "artifact_format": "junit",
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "implementation_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      }
+    },
+    {
+      "id": "COMPLETION-TOOL",
+      "node_id": "scripts/backend/tests/test_completion.py::CompletionTests::test_a19_dependency_allowlist_preserves_owner_environment_and_path_guards",
+      "outcome": "passed",
+      "executed": true,
+      "exit_code": 0,
+      "tests_run": 1,
+      "skipped": 0,
+      "environment": "local",
+      "artifact_format": "junit",
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "implementation_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      }
+    }
+  ],
+  "component_results": [
+    {
+      "component_id": "scripts/backend/tests/test_completion.py",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": null,
+        "cwd": ".",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 18,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/e9d32df3619f4b9ba8d8d7c6e7e2d8da/results.xml",
+      "artifact_sha256": "2c4946466fb80d3e9886620d07f5cf223fb5fe8aba1b5190cf70ecb0fda21d45",
+      "source_sha256": {
+        "docs/acceptance/backend-checks.json": "7e861d4df421c547d00318adfa12e50cbfd1f6274d49e903015c6d2a5a06ef65",
+        "scripts/backend/20261025-check-completion.py": "0af352f516aa692f69c48f4a5f7240e60500036f2f265651040ea9618900438b",
+        "scripts/backend/20261025-run-local.py": "2019c3f90f0c14985167a8e31c9431b96fa0873f514d639819a1fddf4300e9eb",
+        "scripts/backend/20261026-export-contracts.py": "4a90820af094ba886a5681e974983e25743804226ac585b2e68fa7097b936bbb",
+        "scripts/backend/tests/test_completion.py": "0c2f556504ba146355422c6edb16240b4ca8e7ea89e20b42f7c463a880a2fb52"
+      },
+      "collected_node_ids": [
+        "scripts/backend/tests/test_completion.py::CompletionTests::test_a19_dependency_allowlist_preserves_owner_environment_and_path_guards",
+        "scripts/backend/tests/test_completion.py::CompletionTests::test_a19_evidence_guards_reject_stale_spec_junit_and_newer_failure",
+        "scripts/backend/tests/test_completion.py::CompletionTests::test_a19_exact_cross_module_dependencies_bind_and_each_drift_invalidates",
+        "scripts/backend/tests/test_completion.py::CompletionTests::test_a19_omitted_dependencies_cannot_leave_old_evidence_passed",
+        "scripts/backend/tests/test_completion.py::CompletionTests::test_empty_report_is_not_evidence",
+        "scripts/backend/tests/test_completion.py::CompletionTests::test_environment_owner_and_source_each_have_fixed_guards",
+        "scripts/backend/tests/test_completion.py::CompletionTests::test_forged_success_without_junit_cannot_pass",
+        "scripts/backend/tests/test_completion.py::CompletionTests::test_junit_skipped_and_empty_are_rejected",
+        "scripts/backend/tests/test_completion.py::CompletionTests::test_manifest_covers_expected_acceptance_ids",
+        "scripts/backend/tests/test_completion.py::CompletionTests::test_manifest_omission_is_invalid",
+        "scripts/backend/tests/test_completion.py::CompletionTests::test_manifest_rebinding_all_ids_to_fake_local_test_is_invalid",
+        "scripts/backend/tests/test_completion.py::CompletionTests::test_matching_junit_passes_then_implementation_drift_fails",
+        "scripts/backend/tests/test_completion.py::CompletionTests::test_no_evidence_never_complete",
+        "scripts/backend/tests/test_completion.py::CompletionTests::test_runner_cannot_promote_declared_external_or_model_environment",
+        "scripts/backend/tests/test_completion.py::CompletionTests::test_runner_rejects_non_test_paths_and_uses_actual_pytest",
+        "scripts/backend/tests/test_completion.py::CompletionTests::test_runner_rootdir_and_service_imports_are_isolated",
+        "scripts/backend/tests/test_completion.py::CompletionTests::test_skipped_and_old_spec_do_not_pass",
+        "scripts/backend/tests/test_completion.py::CompletionTests::test_timestamp_order_uses_utc_instants"
+      ]
+    }
+  ],
+  "subcase_results": []
+}

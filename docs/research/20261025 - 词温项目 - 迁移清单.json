@@ -1,0 +1,173 @@
+{
+  "migration_date": "2026-10-25",
+  "source_root": "[REDACTED_LOCAL_SOURCE]",
+  "target_root": ".",
+  "repository": "occultskyrong/wordheat-live",
+  "migrated_file_count": 19,
+  "scope": "document and artifact migration only; no product implementation, Git commit or push",
+  "changes": "directory layout, relative links, repository-relative planned paths and dependent baseline hashes; protocol semantics unchanged",
+  "baselines": {
+    "solution_sha256": "e95b592d0401e41daff0e170dad8aabc9d98adb7f484d430c22df161041ccc54",
+    "plan_sha256": "f8752a1a4d6333100bba7e3b9c3dab919de31ce766ba511fae4c62d6dc1c5098",
+    "contract_sha256": "d69ae165a6d1169e00f20bb03b4cd66bdc9ed2fe7ef2a730c2a130934a88b4e8"
+  },
+  "files": [
+    {
+      "source_relative": "20261025 - 直播语义猜词 - Windows开发计划.md",
+      "target_relative": "docs/plans/20261025 - 直播语义猜词 - Windows开发计划.md",
+      "source_sha256": "a59a2041b4446d46bd408eb563e462ea2cba67642a063d55e4342c55159fcc25",
+      "target_sha256": "f8752a1a4d6333100bba7e3b9c3dab919de31ce766ba511fae4c62d6dc1c5098",
+      "source_bytes": 62346,
+      "target_bytes": 62787
+    },
+    {
+      "source_relative": "20261025 - 直播语义猜词 - 前端开发Spec.md",
+      "target_relative": "docs/specs/20261025 - 直播语义猜词 - 前端开发Spec.md",
+      "source_sha256": "3e932f3591c1345137f8fb9b2ae9b45665e52e6321aec72b56acf94f12b51b5b",
+      "target_sha256": "3cafb3a2a43f780e8c8684e638ff6ef2048a587f8b093cb5f015c97c07a73d1b",
+      "source_bytes": 108404,
+      "target_bytes": 108807
+    },
+    {
+      "source_relative": "20261025 - 直播语义猜词 - 后端开发Spec.md",
+      "target_relative": "docs/specs/20261025 - 直播语义猜词 - 后端开发Spec.md",
+      "source_sha256": "2a5df7fe48448e90869efacf4a14e1b5442f7f88bc7603542a6726943141e58e",
+      "target_sha256": "fbc2abe00d5e55ef650edf54eba0861ae5ff11e64c2b3cd9efff8c811984bbd0",
+      "source_bytes": 93112,
+      "target_bytes": 93542
+    },
+    {
+      "source_relative": "20261025 - 直播语义猜词 - 开发任务清单.json",
+      "target_relative": "docs/plans/20261025 - 直播语义猜词 - 开发任务清单.json",
+      "source_sha256": "4cd80c47d7d1c2026e463dc36a6d8ca4de778a94fa2674ea13e95debeb01c7a0",
+      "target_sha256": "2d81f60f06cceefd1fc2541c64499105844470b633d05a24ab32acb6e5936382",
+      "source_bytes": 51657,
+      "target_bytes": 43388
+    },
+    {
+      "source_relative": "20261025 - 直播语义猜词 - 方案阅读版.html",
+      "target_relative": "docs/solution/20261025 - 直播语义猜词 - 方案阅读版.html",
+      "source_sha256": "ca510a8622fa521f16d5957f4007607ad41865e0d0ad493a81eb8443b9b8f365",
+      "target_sha256": "3309d57c258694105e0bef2eae3e0177261f1feb9aa335d92391f393a563508d",
+      "source_bytes": 311736,
+      "target_bytes": 311678
+    },
+    {
+      "source_relative": "20261025 - 直播语义猜词 - 落地解决方案.md",
+      "target_relative": "docs/solution/20261025 - 直播语义猜词 - 落地解决方案.md",
+      "source_sha256": "edb4c8bc39ed12a6a75145e936391f6eb9ac8fffc79c96e69ab4d84bee333e25",
+      "target_sha256": "e95b592d0401e41daff0e170dad8aabc9d98adb7f484d430c22df161041ccc54",
+      "source_bytes": 112577,
+      "target_bytes": 113054
+    },
+    {
+      "source_relative": "20261025 - 直播语义猜词 - 阅读版构建器.cjs",
+      "target_relative": "scripts/docs/20261025-build-solution.cjs",
+      "source_sha256": "acf9cb2509aea18449b2095771990301c96fe9d3b706e73ca2cb3d5326260d49",
+      "target_sha256": "77a356bdcd4a1541caab57ece52a6161a285713171bc0165f3d08ceeebef0cee",
+      "source_bytes": 16170,
+      "target_bytes": 16535
+    },
+    {
+      "source_relative": "研究证据/20261025 - Web直播与联机项目 - 源码审计.md",
+      "target_relative": "docs/research/20261025 - Web直播与联机项目 - 源码审计.md",
+      "source_sha256": "f242b59a7afc696dc3813d1e35601cb161f0b78a9246b6cbe034ee8b5b4d4087",
+      "target_sha256": "f242b59a7afc696dc3813d1e35601cb161f0b78a9246b6cbe034ee8b5b4d4087",
+      "source_bytes": 38945,
+      "target_bytes": 38945
+    },
+    {
+      "source_relative": "研究证据/20261025 - 中文语义与轻量内核 - 源码审计.md",
+      "target_relative": "docs/research/20261025 - 中文语义与轻量内核 - 源码审计.md",
+      "source_sha256": "0d23104cc21084da12f5d789e3462bc20414fa292faf087ac948c7cb1a34a515",
+      "target_sha256": "0d23104cc21084da12f5d789e3462bc20414fa292faf087ac948c7cb1a34a515",
+      "source_bytes": 32913,
+      "target_bytes": 32913
+    },
+    {
+      "source_relative": "研究证据/20261025 - 平台接入与运行约束 - 官方依据.md",
+      "target_relative": "docs/research/20261025 - 平台接入与运行约束 - 官方依据.md",
+      "source_sha256": "e91252631fa01093792a70f404b9c472590bcde24102cf6269048097b6bd45f1",
+      "target_sha256": "e91252631fa01093792a70f404b9c472590bcde24102cf6269048097b6bd45f1",
+      "source_bytes": 4764,
+      "target_bytes": 4764
+    },
+    {
+      "source_relative": "研究证据/20261025 - 桌面与Java直播项目 - 源码审计.md",
+      "target_relative": "docs/research/20261025 - 桌面与Java直播项目 - 源码审计.md",
+      "source_sha256": "bbaa293394043789055f5a34c8e07f40c2e302287f067de19d40e2b33933f07b",
+      "target_sha256": "bbaa293394043789055f5a34c8e07f40c2e302287f067de19d40e2b33933f07b",
+      "source_bytes": 34944,
+      "target_bytes": 34944
+    },
+    {
+      "source_relative": "页面参考/20261025 - Windows本地与公网中继 - 架构示意.svg",
+      "target_relative": "docs/assets/diagrams/20261025 - Windows本地与公网中继 - 架构示意.svg",
+      "source_sha256": "32eac6327cb45ddb50f82756d4ace54fa2b0231ab232d6f237dadad50922199a",
+      "target_sha256": "32eac6327cb45ddb50f82756d4ace54fa2b0231ab232d6f237dadad50922199a",
+      "source_bytes": 7423,
+      "target_bytes": 7423
+    },
+    {
+      "source_relative": "页面参考/20261025 - Windows本地与公网中继 - 架构预览.png",
+      "target_relative": "docs/assets/diagrams/20261025 - Windows本地与公网中继 - 架构预览.png",
+      "source_sha256": "3eae634954101ce1480cec810b50ead32525ba55bf89c142f3bd09d56e8228c1",
+      "target_sha256": "3eae634954101ce1480cec810b50ead32525ba55bf89c142f3bd09d56e8228c1",
+      "source_bytes": 300655,
+      "target_bytes": 300655
+    },
+    {
+      "source_relative": "页面参考/20261025 - 主播控制台 - 概念示意.svg",
+      "target_relative": "docs/assets/mockups/20261025 - 主播控制台 - 概念示意.svg",
+      "source_sha256": "e4c4c14ec584b4907b8f05e41b397a50cf9786c5c66ab1b0bcf329368c4813fe",
+      "target_sha256": "e4c4c14ec584b4907b8f05e41b397a50cf9786c5c66ab1b0bcf329368c4813fe",
+      "source_bytes": 5497,
+      "target_bytes": 5497
+    },
+    {
+      "source_relative": "页面参考/20261025 - 主播控制台 - 概念预览.png",
+      "target_relative": "docs/assets/mockups/20261025 - 主播控制台 - 概念预览.png",
+      "source_sha256": "ec98863d531d50c32efbbcb5f898a6379bac2970fac23f564c2a8169521d96dc",
+      "target_sha256": "ec98863d531d50c32efbbcb5f898a6379bac2970fac23f564c2a8169521d96dc",
+      "source_bytes": 185855,
+      "target_bytes": 185855
+    },
+    {
+      "source_relative": "页面参考/20261025 - 直播观众画面 - 概念示意.svg",
+      "target_relative": "docs/assets/mockups/20261025 - 直播观众画面 - 概念示意.svg",
+      "source_sha256": "d0357b8a142f91b86da1338427eccf851b925d40741387886f4fa9d320230297",
+      "target_sha256": "d0357b8a142f91b86da1338427eccf851b925d40741387886f4fa9d320230297",
+      "source_bytes": 6507,
+      "target_bytes": 6507
+    },
+    {
+      "source_relative": "页面参考/20261025 - 直播观众画面 - 概念预览.png",
+      "target_relative": "docs/assets/mockups/20261025 - 直播观众画面 - 概念预览.png",
+      "source_sha256": "a470f3a61b657ac5a0ae178ec44406a5e6c79e54616a0d9284884e18d2ec1706",
+      "target_sha256": "a470f3a61b657ac5a0ae178ec44406a5e6c79e54616a0d9284884e18d2ec1706",
+      "source_bytes": 177865,
+      "target_bytes": 177865
+    },
+    {
+      "source_relative": "页面参考/20261025 - 评分实验室 - 概念示意.svg",
+      "target_relative": "docs/assets/mockups/20261025 - 评分实验室 - 概念示意.svg",
+      "source_sha256": "ca6e798daa13b3d70ebc67adefa8b7b2e391e8001a3adf2fd736fb388c20ccfe",
+      "target_sha256": "ca6e798daa13b3d70ebc67adefa8b7b2e391e8001a3adf2fd736fb388c20ccfe",
+      "source_bytes": 5418,
+      "target_bytes": 5418
+    },
+    {
+      "source_relative": "页面参考/20261025 - 评分实验室 - 概念预览.png",
+      "target_relative": "docs/assets/mockups/20261025 - 评分实验室 - 概念预览.png",
+      "source_sha256": "0bdaa92e10e74041228b55e4ac4e2e62cac229ff64cc45bff22f05560a06af34",
+      "target_sha256": "0bdaa92e10e74041228b55e4ac4e2e62cac229ff64cc45bff22f05560a06af34",
+      "source_bytes": 158853,
+      "target_bytes": 158853
+    }
+  ],
+  "completion": {
+    "target_copy_verified": true,
+    "source_cleanup_verified": true
+  },
+  "privacy_note": "本机绝对路径已脱敏；source_relative/target_relative保留迁移对应关系。文件摘要与字节数是迁移完成时的历史快照，后续配置与文档修订不回写该历史摘要。"
+}

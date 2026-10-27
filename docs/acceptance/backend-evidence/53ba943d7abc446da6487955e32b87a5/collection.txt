@@ -1,0 +1,54 @@
+apps/relay/tests/integration/test_relay_components.py::test_empty_core_has_fail_closed_entrypoint
+apps/relay/tests/integration/test_relay_components.py::test_commit_dedup_hash_and_restart
+apps/relay/tests/integration/test_relay_components.py::test_transaction_rollback_has_no_seq_gap
+apps/relay/tests/integration/test_relay_components.py::test_deadline_barrier_precedes_late_input_and_late_winner_does_not_reopen
+apps/relay/tests/integration/test_relay_components.py::test_owner_unique_nonce_fencing_contiguous_ack_and_no_fake_processed
+apps/relay/tests/integration/test_relay_components.py::test_concurrent_callbacks_are_deduplicated_and_contiguous
+apps/relay/tests/integration/test_relay_components.py::test_http_signature_and_ws_persisted_ack
+apps/relay/tests/integration/test_relay_components.py::test_pause_resume_revoke_and_expiry_are_durable_barriers
+apps/relay/tests/integration/test_relay_components.py::test_clock_rollback_closes_window_even_though_operation_rejected
+apps/relay/tests/integration/test_relay_components.py::test_retention_keeps_dedup_metadata_and_reports_gap
+apps/relay/tests/integration/test_relay_components.py::test_delivery_stages_and_unsupported_fulfillment_are_independent
+apps/relay/tests/integration/test_relay_components.py::test_runtime_cannot_ddl_or_change_immutable_bytes
+apps/relay/tests/integration/test_relay_components.py::test_ack_loss_reconnect_uses_relay_durable_cursor
+apps/relay/tests/integration/test_relay_components.py::test_quota_rollback_and_room_registration_rejection
+apps/relay/tests/integration/test_relay_components.py::test_expired_lease_closes_before_rejected_connection
+apps/relay/tests/integration/test_relay_components.py::test_control_plane_is_required_and_device_scope_is_checked
+apps/relay/tests/integration/test_relay_components.py::test_full_quota_still_allows_safety_close
+apps/relay/tests/integration/test_relay_components.py::test_old_epoch_cannot_close_a_new_window_with_same_version
+apps/relay/tests/integration/test_relay_components.py::test_rv1_game_deadline_is_independent_of_short_lease
+apps/relay/tests/integration/test_relay_components.py::test_rv2_revoked_grant_cannot_write_processed_or_ack
+apps/relay/tests/integration/test_relay_components.py::test_rv3_oversized_ws_message_cannot_write_receipt[False]
+apps/relay/tests/integration/test_relay_components.py::test_rv3_oversized_ws_message_cannot_write_receipt[True]
+apps/relay/tests/integration/test_relay_components.py::test_rv3_receipt_id_and_json_depth_are_bounded
+apps/relay/tests/integration/test_relay_components.py::test_rv4_void_or_interrupted_cannot_gain_winner[VOID]
+apps/relay/tests/integration/test_relay_components.py::test_rv4_void_or_interrupted_cannot_gain_winner[INTERRUPTED]
+apps/relay/tests/integration/test_relay_components.py::test_rv4_solved_result_returns_same_winner_and_rejects_different
+apps/relay/tests/integration/test_relay_components.py::test_rv5_control_barrier_has_no_display_fulfillment
+apps/relay/tests/integration/test_relay_components.py::test_rv2_revoked_grant_cannot_advance_durable_ack
+apps/relay/tests/integration/test_relay_components.py::test_rv5_wrong_original_round_mapping_cannot_create_display_stage
+apps/relay/tests/integration/test_relay_components.py::test_rv6_pending_source_receipts_continue_across_rounds[False-SOLVED]
+apps/relay/tests/integration/test_relay_components.py::test_rv6_pending_source_receipts_continue_across_rounds[False-TIMEOUT]
+apps/relay/tests/integration/test_relay_components.py::test_rv6_pending_source_receipts_continue_across_rounds[True-SOLVED]
+apps/relay/tests/integration/test_relay_components.py::test_rv6_pending_source_receipts_continue_across_rounds[True-TIMEOUT]
+apps/relay/tests/integration/test_relay_components.py::test_rv6_received_effect_can_finish_after_historical_cancellation[VOID]
+apps/relay/tests/integration/test_relay_components.py::test_rv6_received_effect_can_finish_after_historical_cancellation[INTERRUPTED]
+apps/relay/tests/integration/test_relay_components.py::test_rv6_new_owner_cannot_fulfill_old_owner_source
+apps/relay/tests/test_config.py::test_config_repr_hides_database_url
+apps/relay/tests/test_config.py::test_config_missing_fields_and_production_synthetic_fail_closed
+apps/relay/tests/test_config.py::test_synthetic_provider_is_not_client_selectable_for_production
+apps/relay/tests/test_config.py::test_connection_query_cannot_override_validated_database_identity
+apps/relay/tests/test_config.py::test_wrong_database_name_rejected_before_any_connection
+apps/relay/tests/test_config.py::test_connect_errors_never_expose_driver_payload
+apps/relay/tests/test_config.py::test_low_level_factory_also_requires_trusted_verifier
+apps/relay/tests/test_config.py::test_bounded_json_rejects_depth_and_collection_expansion
+apps/relay/tests/test_config.py::test_migration_connect_errors_are_sanitized
+apps/relay/tests/test_config.py::test_direct_settings_cannot_enable_synthetic_production
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/jiachenclaw/code/wordheat-live/apps/relay/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+46 tests collected in 0.50s

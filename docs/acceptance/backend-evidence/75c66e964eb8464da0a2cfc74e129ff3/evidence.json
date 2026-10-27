@@ -1,0 +1,784 @@
+{
+  "report_version": 1,
+  "spec_sha256": "6c582420ea7d80d66cea1178e8629e7358a6a23a88c1d5ea65843a47f821f63b",
+  "manifest_sha256": "6fe5c95c5d80393cd40c6974e980c3f4b682eaaf318bee5727a97e20da944dc4",
+  "run_id": "75c66e964eb8464da0a2cfc74e129ff3",
+  "started_at": "2026-10-27T01:36:54.292988+00:00",
+  "finished_at": "2026-10-27T01:36:56.092460+00:00",
+  "collected_node_ids": [
+    "apps/relay/tests/test_config.py::test_config_repr_hides_database_url",
+    "apps/relay/tests/test_config.py::test_config_missing_fields_and_production_synthetic_fail_closed",
+    "apps/relay/tests/test_config.py::test_synthetic_provider_is_not_client_selectable_for_production",
+    "apps/relay/tests/test_config.py::test_connection_query_cannot_override_validated_database_identity",
+    "apps/relay/tests/test_config.py::test_wrong_database_name_rejected_before_any_connection",
+    "apps/relay/tests/test_config.py::test_connect_errors_never_expose_driver_payload",
+    "apps/relay/tests/test_config.py::test_low_level_factory_also_requires_trusted_verifier",
+    "apps/relay/tests/test_config.py::test_bounded_json_rejects_depth_and_collection_expansion",
+    "apps/relay/tests/test_config.py::test_migration_connect_errors_are_sanitized",
+    "apps/relay/tests/test_config.py::test_direct_settings_cannot_enable_synthetic_production"
+  ],
+  "declared_environment": "local",
+  "observed_runtime": {
+    "sys_platform": "darwin",
+    "python_version": "3.12.13",
+    "service": "relay",
+    "cwd": "apps/relay",
+    "postgres_nodes": [],
+    "relay_postgres_nodes": [],
+    "real_model_nodes": [],
+    "integration_qualified": true,
+    "external_runner_available": false
+  },
+  "exit_code": 0,
+  "junit_path": "docs/acceptance/backend-evidence/75c66e964eb8464da0a2cfc74e129ff3/results.xml",
+  "checks": [],
+  "component_results": [
+    {
+      "component_id": "apps/relay/tests/test_config.py",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "relay",
+        "cwd": "apps/relay",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 10,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/75c66e964eb8464da0a2cfc74e129ff3/results.xml",
+      "artifact_sha256": "7c4cc269a48b2ec79b49a21e2b15775b1cb179d47307ba3b26748a4cc69ece8b",
+      "source_sha256": {
+        "apps/relay/app/__init__.py": "d17fe0567257966cfb5d8f96f658e9e6cdf01896d637a49d0abb915f99af914b",
+        "apps/relay/app/cli.py": "2e8339f11bceeb3a1a73912c03adb151bf782af933f4d4fe515fa2bc79e6b67e",
+        "apps/relay/app/composition.py": "bc8fb6387a0a18453cf50275104a7312f233938dd050cca22e4a4c9b8a341926",
+        "apps/relay/app/config.py": "59a5b13edf2dd97d130b6abf59f0db0e68f681fd613af96cddc7b54a6583a43c",
+        "apps/relay/app/control.py": "fe4b8126a521b15f3bbbebc387a06e5ec076fb727d7d7b8a4051ea464e8aa26a",
+        "apps/relay/app/control_routes.py": "a820aec71c3006ae856f3fce3bab369101bd1a9ffd720115925066055aca1bbf",
+        "apps/relay/app/core.py": "f1ec9b91bb4f8268155524f4e91ab7adb5db28dc5fa6bc74cd5c5d000a0ea87c",
+        "apps/relay/app/fulfillment.py": "6f5d3931379cad9ef70fb384c389692c31efbb186b76974b537bd60e99d28420",
+        "apps/relay/app/historical.py": "270f3d8241b0be2eafffbe4d7e16fb49dbddbe162010ee4e2d6bed8eb18d30c0",
+        "apps/relay/app/main.py": "bd47234e3b1842dd51076ac1f6d3a5723452c828ebb668be0208b00ae8068c54",
+        "apps/relay/app/pairing_intent.py": "e241fc7130808081fa77736d1305f9ccba3a45bd56fc459285fb858e86f9155a",
+        "apps/relay/app/platform_state.py": "5f8a48fa71b0f887b0a545349184aab46a2ddcd9570d52520dc01000a7156ff7",
+        "apps/relay/app/provider.py": "67e9a1f263b06017b67938e23b91b42793ecacc5e1eeb7e987af9b083305a87b",
+        "apps/relay/app/segments.py": "b2ab96bcd551d61f3600b71fb6303594816b24c5dfa026202309c81e9123db02",
+        "apps/relay/app/server_config.py": "1d817079f1956373933e5b4973b215a739fe26f4197049ded40620a968e36f19",
+        "apps/relay/app/trust_keys.py": "95698992a22d24a98c30f951f59434dba9d490cfa0cf392fdd26e7c09d391a3b",
+        "apps/relay/tests/test_config.py": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844"
+      },
+      "collected_node_ids": [
+        "apps/relay/tests/test_config.py::test_config_repr_hides_database_url",
+        "apps/relay/tests/test_config.py::test_config_missing_fields_and_production_synthetic_fail_closed",
+        "apps/relay/tests/test_config.py::test_synthetic_provider_is_not_client_selectable_for_production",
+        "apps/relay/tests/test_config.py::test_connection_query_cannot_override_validated_database_identity",
+        "apps/relay/tests/test_config.py::test_wrong_database_name_rejected_before_any_connection",
+        "apps/relay/tests/test_config.py::test_connect_errors_never_expose_driver_payload",
+        "apps/relay/tests/test_config.py::test_low_level_factory_also_requires_trusted_verifier",
+        "apps/relay/tests/test_config.py::test_bounded_json_rejects_depth_and_collection_expansion",
+        "apps/relay/tests/test_config.py::test_migration_connect_errors_are_sanitized",
+        "apps/relay/tests/test_config.py::test_direct_settings_cannot_enable_synthetic_production"
+      ]
+    },
+    {
+      "component_id": "apps-relay-tests-test_config-test_config_repr_hides_database_url",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "relay",
+        "cwd": "apps/relay",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/75c66e964eb8464da0a2cfc74e129ff3/results.xml",
+      "artifact_sha256": "7c4cc269a48b2ec79b49a21e2b15775b1cb179d47307ba3b26748a4cc69ece8b",
+      "source_sha256": {
+        "apps/relay/app/__init__.py": "d17fe0567257966cfb5d8f96f658e9e6cdf01896d637a49d0abb915f99af914b",
+        "apps/relay/app/cli.py": "2e8339f11bceeb3a1a73912c03adb151bf782af933f4d4fe515fa2bc79e6b67e",
+        "apps/relay/app/composition.py": "bc8fb6387a0a18453cf50275104a7312f233938dd050cca22e4a4c9b8a341926",
+        "apps/relay/app/config.py": "59a5b13edf2dd97d130b6abf59f0db0e68f681fd613af96cddc7b54a6583a43c",
+        "apps/relay/app/control.py": "fe4b8126a521b15f3bbbebc387a06e5ec076fb727d7d7b8a4051ea464e8aa26a",
+        "apps/relay/app/control_routes.py": "a820aec71c3006ae856f3fce3bab369101bd1a9ffd720115925066055aca1bbf",
+        "apps/relay/app/core.py": "f1ec9b91bb4f8268155524f4e91ab7adb5db28dc5fa6bc74cd5c5d000a0ea87c",
+        "apps/relay/app/fulfillment.py": "6f5d3931379cad9ef70fb384c389692c31efbb186b76974b537bd60e99d28420",
+        "apps/relay/app/historical.py": "270f3d8241b0be2eafffbe4d7e16fb49dbddbe162010ee4e2d6bed8eb18d30c0",
+        "apps/relay/app/main.py": "bd47234e3b1842dd51076ac1f6d3a5723452c828ebb668be0208b00ae8068c54",
+        "apps/relay/app/pairing_intent.py": "e241fc7130808081fa77736d1305f9ccba3a45bd56fc459285fb858e86f9155a",
+        "apps/relay/app/platform_state.py": "5f8a48fa71b0f887b0a545349184aab46a2ddcd9570d52520dc01000a7156ff7",
+        "apps/relay/app/provider.py": "67e9a1f263b06017b67938e23b91b42793ecacc5e1eeb7e987af9b083305a87b",
+        "apps/relay/app/segments.py": "b2ab96bcd551d61f3600b71fb6303594816b24c5dfa026202309c81e9123db02",
+        "apps/relay/app/server_config.py": "1d817079f1956373933e5b4973b215a739fe26f4197049ded40620a968e36f19",
+        "apps/relay/app/trust_keys.py": "95698992a22d24a98c30f951f59434dba9d490cfa0cf392fdd26e7c09d391a3b",
+        "apps/relay/tests/test_config.py": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844"
+      },
+      "collected_node_ids": [
+        "apps/relay/tests/test_config.py::test_config_repr_hides_database_url"
+      ],
+      "junit_cases": [
+        [
+          "apps.relay.tests.test_config",
+          "test_config_repr_hides_database_url"
+        ]
+      ],
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-relay-tests-test_config-test_config_missing_fields_and_production_synthetic_fail_closed",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "relay",
+        "cwd": "apps/relay",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/75c66e964eb8464da0a2cfc74e129ff3/results.xml",
+      "artifact_sha256": "7c4cc269a48b2ec79b49a21e2b15775b1cb179d47307ba3b26748a4cc69ece8b",
+      "source_sha256": {
+        "apps/relay/app/__init__.py": "d17fe0567257966cfb5d8f96f658e9e6cdf01896d637a49d0abb915f99af914b",
+        "apps/relay/app/cli.py": "2e8339f11bceeb3a1a73912c03adb151bf782af933f4d4fe515fa2bc79e6b67e",
+        "apps/relay/app/composition.py": "bc8fb6387a0a18453cf50275104a7312f233938dd050cca22e4a4c9b8a341926",
+        "apps/relay/app/config.py": "59a5b13edf2dd97d130b6abf59f0db0e68f681fd613af96cddc7b54a6583a43c",
+        "apps/relay/app/control.py": "fe4b8126a521b15f3bbbebc387a06e5ec076fb727d7d7b8a4051ea464e8aa26a",
+        "apps/relay/app/control_routes.py": "a820aec71c3006ae856f3fce3bab369101bd1a9ffd720115925066055aca1bbf",
+        "apps/relay/app/core.py": "f1ec9b91bb4f8268155524f4e91ab7adb5db28dc5fa6bc74cd5c5d000a0ea87c",
+        "apps/relay/app/fulfillment.py": "6f5d3931379cad9ef70fb384c389692c31efbb186b76974b537bd60e99d28420",
+        "apps/relay/app/historical.py": "270f3d8241b0be2eafffbe4d7e16fb49dbddbe162010ee4e2d6bed8eb18d30c0",
+        "apps/relay/app/main.py": "bd47234e3b1842dd51076ac1f6d3a5723452c828ebb668be0208b00ae8068c54",
+        "apps/relay/app/pairing_intent.py": "e241fc7130808081fa77736d1305f9ccba3a45bd56fc459285fb858e86f9155a",
+        "apps/relay/app/platform_state.py": "5f8a48fa71b0f887b0a545349184aab46a2ddcd9570d52520dc01000a7156ff7",
+        "apps/relay/app/provider.py": "67e9a1f263b06017b67938e23b91b42793ecacc5e1eeb7e987af9b083305a87b",
+        "apps/relay/app/segments.py": "b2ab96bcd551d61f3600b71fb6303594816b24c5dfa026202309c81e9123db02",
+        "apps/relay/app/server_config.py": "1d817079f1956373933e5b4973b215a739fe26f4197049ded40620a968e36f19",
+        "apps/relay/app/trust_keys.py": "95698992a22d24a98c30f951f59434dba9d490cfa0cf392fdd26e7c09d391a3b",
+        "apps/relay/tests/test_config.py": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844"
+      },
+      "collected_node_ids": [
+        "apps/relay/tests/test_config.py::test_config_missing_fields_and_production_synthetic_fail_closed"
+      ],
+      "junit_cases": [
+        [
+          "apps.relay.tests.test_config",
+          "test_config_missing_fields_and_production_synthetic_fail_closed"
+        ]
+      ],
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-relay-tests-test_config-test_synthetic_provider_is_not_client_selectable_for_production",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "relay",
+        "cwd": "apps/relay",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/75c66e964eb8464da0a2cfc74e129ff3/results.xml",
+      "artifact_sha256": "7c4cc269a48b2ec79b49a21e2b15775b1cb179d47307ba3b26748a4cc69ece8b",
+      "source_sha256": {
+        "apps/relay/app/__init__.py": "d17fe0567257966cfb5d8f96f658e9e6cdf01896d637a49d0abb915f99af914b",
+        "apps/relay/app/cli.py": "2e8339f11bceeb3a1a73912c03adb151bf782af933f4d4fe515fa2bc79e6b67e",
+        "apps/relay/app/composition.py": "bc8fb6387a0a18453cf50275104a7312f233938dd050cca22e4a4c9b8a341926",
+        "apps/relay/app/config.py": "59a5b13edf2dd97d130b6abf59f0db0e68f681fd613af96cddc7b54a6583a43c",
+        "apps/relay/app/control.py": "fe4b8126a521b15f3bbbebc387a06e5ec076fb727d7d7b8a4051ea464e8aa26a",
+        "apps/relay/app/control_routes.py": "a820aec71c3006ae856f3fce3bab369101bd1a9ffd720115925066055aca1bbf",
+        "apps/relay/app/core.py": "f1ec9b91bb4f8268155524f4e91ab7adb5db28dc5fa6bc74cd5c5d000a0ea87c",
+        "apps/relay/app/fulfillment.py": "6f5d3931379cad9ef70fb384c389692c31efbb186b76974b537bd60e99d28420",
+        "apps/relay/app/historical.py": "270f3d8241b0be2eafffbe4d7e16fb49dbddbe162010ee4e2d6bed8eb18d30c0",
+        "apps/relay/app/main.py": "bd47234e3b1842dd51076ac1f6d3a5723452c828ebb668be0208b00ae8068c54",
+        "apps/relay/app/pairing_intent.py": "e241fc7130808081fa77736d1305f9ccba3a45bd56fc459285fb858e86f9155a",
+        "apps/relay/app/platform_state.py": "5f8a48fa71b0f887b0a545349184aab46a2ddcd9570d52520dc01000a7156ff7",
+        "apps/relay/app/provider.py": "67e9a1f263b06017b67938e23b91b42793ecacc5e1eeb7e987af9b083305a87b",
+        "apps/relay/app/segments.py": "b2ab96bcd551d61f3600b71fb6303594816b24c5dfa026202309c81e9123db02",
+        "apps/relay/app/server_config.py": "1d817079f1956373933e5b4973b215a739fe26f4197049ded40620a968e36f19",
+        "apps/relay/app/trust_keys.py": "95698992a22d24a98c30f951f59434dba9d490cfa0cf392fdd26e7c09d391a3b",
+        "apps/relay/tests/test_config.py": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844"
+      },
+      "collected_node_ids": [
+        "apps/relay/tests/test_config.py::test_synthetic_provider_is_not_client_selectable_for_production"
+      ],
+      "junit_cases": [
+        [
+          "apps.relay.tests.test_config",
+          "test_synthetic_provider_is_not_client_selectable_for_production"
+        ]
+      ],
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-relay-tests-test_config-test_connection_query_cannot_override_validated_database_identity",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "relay",
+        "cwd": "apps/relay",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/75c66e964eb8464da0a2cfc74e129ff3/results.xml",
+      "artifact_sha256": "7c4cc269a48b2ec79b49a21e2b15775b1cb179d47307ba3b26748a4cc69ece8b",
+      "source_sha256": {
+        "apps/relay/app/__init__.py": "d17fe0567257966cfb5d8f96f658e9e6cdf01896d637a49d0abb915f99af914b",
+        "apps/relay/app/cli.py": "2e8339f11bceeb3a1a73912c03adb151bf782af933f4d4fe515fa2bc79e6b67e",
+        "apps/relay/app/composition.py": "bc8fb6387a0a18453cf50275104a7312f233938dd050cca22e4a4c9b8a341926",
+        "apps/relay/app/config.py": "59a5b13edf2dd97d130b6abf59f0db0e68f681fd613af96cddc7b54a6583a43c",
+        "apps/relay/app/control.py": "fe4b8126a521b15f3bbbebc387a06e5ec076fb727d7d7b8a4051ea464e8aa26a",
+        "apps/relay/app/control_routes.py": "a820aec71c3006ae856f3fce3bab369101bd1a9ffd720115925066055aca1bbf",
+        "apps/relay/app/core.py": "f1ec9b91bb4f8268155524f4e91ab7adb5db28dc5fa6bc74cd5c5d000a0ea87c",
+        "apps/relay/app/fulfillment.py": "6f5d3931379cad9ef70fb384c389692c31efbb186b76974b537bd60e99d28420",
+        "apps/relay/app/historical.py": "270f3d8241b0be2eafffbe4d7e16fb49dbddbe162010ee4e2d6bed8eb18d30c0",
+        "apps/relay/app/main.py": "bd47234e3b1842dd51076ac1f6d3a5723452c828ebb668be0208b00ae8068c54",
+        "apps/relay/app/pairing_intent.py": "e241fc7130808081fa77736d1305f9ccba3a45bd56fc459285fb858e86f9155a",
+        "apps/relay/app/platform_state.py": "5f8a48fa71b0f887b0a545349184aab46a2ddcd9570d52520dc01000a7156ff7",
+        "apps/relay/app/provider.py": "67e9a1f263b06017b67938e23b91b42793ecacc5e1eeb7e987af9b083305a87b",
+        "apps/relay/app/segments.py": "b2ab96bcd551d61f3600b71fb6303594816b24c5dfa026202309c81e9123db02",
+        "apps/relay/app/server_config.py": "1d817079f1956373933e5b4973b215a739fe26f4197049ded40620a968e36f19",
+        "apps/relay/app/trust_keys.py": "95698992a22d24a98c30f951f59434dba9d490cfa0cf392fdd26e7c09d391a3b",
+        "apps/relay/tests/test_config.py": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844"
+      },
+      "collected_node_ids": [
+        "apps/relay/tests/test_config.py::test_connection_query_cannot_override_validated_database_identity"
+      ],
+      "junit_cases": [
+        [
+          "apps.relay.tests.test_config",
+          "test_connection_query_cannot_override_validated_database_identity"
+        ]
+      ],
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-relay-tests-test_config-test_wrong_database_name_rejected_before_any_connection",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "relay",
+        "cwd": "apps/relay",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/75c66e964eb8464da0a2cfc74e129ff3/results.xml",
+      "artifact_sha256": "7c4cc269a48b2ec79b49a21e2b15775b1cb179d47307ba3b26748a4cc69ece8b",
+      "source_sha256": {
+        "apps/relay/app/__init__.py": "d17fe0567257966cfb5d8f96f658e9e6cdf01896d637a49d0abb915f99af914b",
+        "apps/relay/app/cli.py": "2e8339f11bceeb3a1a73912c03adb151bf782af933f4d4fe515fa2bc79e6b67e",
+        "apps/relay/app/composition.py": "bc8fb6387a0a18453cf50275104a7312f233938dd050cca22e4a4c9b8a341926",
+        "apps/relay/app/config.py": "59a5b13edf2dd97d130b6abf59f0db0e68f681fd613af96cddc7b54a6583a43c",
+        "apps/relay/app/control.py": "fe4b8126a521b15f3bbbebc387a06e5ec076fb727d7d7b8a4051ea464e8aa26a",
+        "apps/relay/app/control_routes.py": "a820aec71c3006ae856f3fce3bab369101bd1a9ffd720115925066055aca1bbf",
+        "apps/relay/app/core.py": "f1ec9b91bb4f8268155524f4e91ab7adb5db28dc5fa6bc74cd5c5d000a0ea87c",
+        "apps/relay/app/fulfillment.py": "6f5d3931379cad9ef70fb384c389692c31efbb186b76974b537bd60e99d28420",
+        "apps/relay/app/historical.py": "270f3d8241b0be2eafffbe4d7e16fb49dbddbe162010ee4e2d6bed8eb18d30c0",
+        "apps/relay/app/main.py": "bd47234e3b1842dd51076ac1f6d3a5723452c828ebb668be0208b00ae8068c54",
+        "apps/relay/app/pairing_intent.py": "e241fc7130808081fa77736d1305f9ccba3a45bd56fc459285fb858e86f9155a",
+        "apps/relay/app/platform_state.py": "5f8a48fa71b0f887b0a545349184aab46a2ddcd9570d52520dc01000a7156ff7",
+        "apps/relay/app/provider.py": "67e9a1f263b06017b67938e23b91b42793ecacc5e1eeb7e987af9b083305a87b",
+        "apps/relay/app/segments.py": "b2ab96bcd551d61f3600b71fb6303594816b24c5dfa026202309c81e9123db02",
+        "apps/relay/app/server_config.py": "1d817079f1956373933e5b4973b215a739fe26f4197049ded40620a968e36f19",
+        "apps/relay/app/trust_keys.py": "95698992a22d24a98c30f951f59434dba9d490cfa0cf392fdd26e7c09d391a3b",
+        "apps/relay/tests/test_config.py": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844"
+      },
+      "collected_node_ids": [
+        "apps/relay/tests/test_config.py::test_wrong_database_name_rejected_before_any_connection"
+      ],
+      "junit_cases": [
+        [
+          "apps.relay.tests.test_config",
+          "test_wrong_database_name_rejected_before_any_connection"
+        ]
+      ],
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-relay-tests-test_config-test_connect_errors_never_expose_driver_payload",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "relay",
+        "cwd": "apps/relay",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/75c66e964eb8464da0a2cfc74e129ff3/results.xml",
+      "artifact_sha256": "7c4cc269a48b2ec79b49a21e2b15775b1cb179d47307ba3b26748a4cc69ece8b",
+      "source_sha256": {
+        "apps/relay/app/__init__.py": "d17fe0567257966cfb5d8f96f658e9e6cdf01896d637a49d0abb915f99af914b",
+        "apps/relay/app/cli.py": "2e8339f11bceeb3a1a73912c03adb151bf782af933f4d4fe515fa2bc79e6b67e",
+        "apps/relay/app/composition.py": "bc8fb6387a0a18453cf50275104a7312f233938dd050cca22e4a4c9b8a341926",
+        "apps/relay/app/config.py": "59a5b13edf2dd97d130b6abf59f0db0e68f681fd613af96cddc7b54a6583a43c",
+        "apps/relay/app/control.py": "fe4b8126a521b15f3bbbebc387a06e5ec076fb727d7d7b8a4051ea464e8aa26a",
+        "apps/relay/app/control_routes.py": "a820aec71c3006ae856f3fce3bab369101bd1a9ffd720115925066055aca1bbf",
+        "apps/relay/app/core.py": "f1ec9b91bb4f8268155524f4e91ab7adb5db28dc5fa6bc74cd5c5d000a0ea87c",
+        "apps/relay/app/fulfillment.py": "6f5d3931379cad9ef70fb384c389692c31efbb186b76974b537bd60e99d28420",
+        "apps/relay/app/historical.py": "270f3d8241b0be2eafffbe4d7e16fb49dbddbe162010ee4e2d6bed8eb18d30c0",
+        "apps/relay/app/main.py": "bd47234e3b1842dd51076ac1f6d3a5723452c828ebb668be0208b00ae8068c54",
+        "apps/relay/app/pairing_intent.py": "e241fc7130808081fa77736d1305f9ccba3a45bd56fc459285fb858e86f9155a",
+        "apps/relay/app/platform_state.py": "5f8a48fa71b0f887b0a545349184aab46a2ddcd9570d52520dc01000a7156ff7",
+        "apps/relay/app/provider.py": "67e9a1f263b06017b67938e23b91b42793ecacc5e1eeb7e987af9b083305a87b",
+        "apps/relay/app/segments.py": "b2ab96bcd551d61f3600b71fb6303594816b24c5dfa026202309c81e9123db02",
+        "apps/relay/app/server_config.py": "1d817079f1956373933e5b4973b215a739fe26f4197049ded40620a968e36f19",
+        "apps/relay/app/trust_keys.py": "95698992a22d24a98c30f951f59434dba9d490cfa0cf392fdd26e7c09d391a3b",
+        "apps/relay/tests/test_config.py": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844"
+      },
+      "collected_node_ids": [
+        "apps/relay/tests/test_config.py::test_connect_errors_never_expose_driver_payload"
+      ],
+      "junit_cases": [
+        [
+          "apps.relay.tests.test_config",
+          "test_connect_errors_never_expose_driver_payload"
+        ]
+      ],
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-relay-tests-test_config-test_low_level_factory_also_requires_trusted_verifier",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "relay",
+        "cwd": "apps/relay",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/75c66e964eb8464da0a2cfc74e129ff3/results.xml",
+      "artifact_sha256": "7c4cc269a48b2ec79b49a21e2b15775b1cb179d47307ba3b26748a4cc69ece8b",
+      "source_sha256": {
+        "apps/relay/app/__init__.py": "d17fe0567257966cfb5d8f96f658e9e6cdf01896d637a49d0abb915f99af914b",
+        "apps/relay/app/cli.py": "2e8339f11bceeb3a1a73912c03adb151bf782af933f4d4fe515fa2bc79e6b67e",
+        "apps/relay/app/composition.py": "bc8fb6387a0a18453cf50275104a7312f233938dd050cca22e4a4c9b8a341926",
+        "apps/relay/app/config.py": "59a5b13edf2dd97d130b6abf59f0db0e68f681fd613af96cddc7b54a6583a43c",
+        "apps/relay/app/control.py": "fe4b8126a521b15f3bbbebc387a06e5ec076fb727d7d7b8a4051ea464e8aa26a",
+        "apps/relay/app/control_routes.py": "a820aec71c3006ae856f3fce3bab369101bd1a9ffd720115925066055aca1bbf",
+        "apps/relay/app/core.py": "f1ec9b91bb4f8268155524f4e91ab7adb5db28dc5fa6bc74cd5c5d000a0ea87c",
+        "apps/relay/app/fulfillment.py": "6f5d3931379cad9ef70fb384c389692c31efbb186b76974b537bd60e99d28420",
+        "apps/relay/app/historical.py": "270f3d8241b0be2eafffbe4d7e16fb49dbddbe162010ee4e2d6bed8eb18d30c0",
+        "apps/relay/app/main.py": "bd47234e3b1842dd51076ac1f6d3a5723452c828ebb668be0208b00ae8068c54",
+        "apps/relay/app/pairing_intent.py": "e241fc7130808081fa77736d1305f9ccba3a45bd56fc459285fb858e86f9155a",
+        "apps/relay/app/platform_state.py": "5f8a48fa71b0f887b0a545349184aab46a2ddcd9570d52520dc01000a7156ff7",
+        "apps/relay/app/provider.py": "67e9a1f263b06017b67938e23b91b42793ecacc5e1eeb7e987af9b083305a87b",
+        "apps/relay/app/segments.py": "b2ab96bcd551d61f3600b71fb6303594816b24c5dfa026202309c81e9123db02",
+        "apps/relay/app/server_config.py": "1d817079f1956373933e5b4973b215a739fe26f4197049ded40620a968e36f19",
+        "apps/relay/app/trust_keys.py": "95698992a22d24a98c30f951f59434dba9d490cfa0cf392fdd26e7c09d391a3b",
+        "apps/relay/tests/test_config.py": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844"
+      },
+      "collected_node_ids": [
+        "apps/relay/tests/test_config.py::test_low_level_factory_also_requires_trusted_verifier"
+      ],
+      "junit_cases": [
+        [
+          "apps.relay.tests.test_config",
+          "test_low_level_factory_also_requires_trusted_verifier"
+        ]
+      ],
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-relay-tests-test_config-test_bounded_json_rejects_depth_and_collection_expansion",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "relay",
+        "cwd": "apps/relay",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/75c66e964eb8464da0a2cfc74e129ff3/results.xml",
+      "artifact_sha256": "7c4cc269a48b2ec79b49a21e2b15775b1cb179d47307ba3b26748a4cc69ece8b",
+      "source_sha256": {
+        "apps/relay/app/__init__.py": "d17fe0567257966cfb5d8f96f658e9e6cdf01896d637a49d0abb915f99af914b",
+        "apps/relay/app/cli.py": "2e8339f11bceeb3a1a73912c03adb151bf782af933f4d4fe515fa2bc79e6b67e",
+        "apps/relay/app/composition.py": "bc8fb6387a0a18453cf50275104a7312f233938dd050cca22e4a4c9b8a341926",
+        "apps/relay/app/config.py": "59a5b13edf2dd97d130b6abf59f0db0e68f681fd613af96cddc7b54a6583a43c",
+        "apps/relay/app/control.py": "fe4b8126a521b15f3bbbebc387a06e5ec076fb727d7d7b8a4051ea464e8aa26a",
+        "apps/relay/app/control_routes.py": "a820aec71c3006ae856f3fce3bab369101bd1a9ffd720115925066055aca1bbf",
+        "apps/relay/app/core.py": "f1ec9b91bb4f8268155524f4e91ab7adb5db28dc5fa6bc74cd5c5d000a0ea87c",
+        "apps/relay/app/fulfillment.py": "6f5d3931379cad9ef70fb384c389692c31efbb186b76974b537bd60e99d28420",
+        "apps/relay/app/historical.py": "270f3d8241b0be2eafffbe4d7e16fb49dbddbe162010ee4e2d6bed8eb18d30c0",
+        "apps/relay/app/main.py": "bd47234e3b1842dd51076ac1f6d3a5723452c828ebb668be0208b00ae8068c54",
+        "apps/relay/app/pairing_intent.py": "e241fc7130808081fa77736d1305f9ccba3a45bd56fc459285fb858e86f9155a",
+        "apps/relay/app/platform_state.py": "5f8a48fa71b0f887b0a545349184aab46a2ddcd9570d52520dc01000a7156ff7",
+        "apps/relay/app/provider.py": "67e9a1f263b06017b67938e23b91b42793ecacc5e1eeb7e987af9b083305a87b",
+        "apps/relay/app/segments.py": "b2ab96bcd551d61f3600b71fb6303594816b24c5dfa026202309c81e9123db02",
+        "apps/relay/app/server_config.py": "1d817079f1956373933e5b4973b215a739fe26f4197049ded40620a968e36f19",
+        "apps/relay/app/trust_keys.py": "95698992a22d24a98c30f951f59434dba9d490cfa0cf392fdd26e7c09d391a3b",
+        "apps/relay/tests/test_config.py": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844"
+      },
+      "collected_node_ids": [
+        "apps/relay/tests/test_config.py::test_bounded_json_rejects_depth_and_collection_expansion"
+      ],
+      "junit_cases": [
+        [
+          "apps.relay.tests.test_config",
+          "test_bounded_json_rejects_depth_and_collection_expansion"
+        ]
+      ],
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-relay-tests-test_config-test_migration_connect_errors_are_sanitized",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "relay",
+        "cwd": "apps/relay",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/75c66e964eb8464da0a2cfc74e129ff3/results.xml",
+      "artifact_sha256": "7c4cc269a48b2ec79b49a21e2b15775b1cb179d47307ba3b26748a4cc69ece8b",
+      "source_sha256": {
+        "apps/relay/app/__init__.py": "d17fe0567257966cfb5d8f96f658e9e6cdf01896d637a49d0abb915f99af914b",
+        "apps/relay/app/cli.py": "2e8339f11bceeb3a1a73912c03adb151bf782af933f4d4fe515fa2bc79e6b67e",
+        "apps/relay/app/composition.py": "bc8fb6387a0a18453cf50275104a7312f233938dd050cca22e4a4c9b8a341926",
+        "apps/relay/app/config.py": "59a5b13edf2dd97d130b6abf59f0db0e68f681fd613af96cddc7b54a6583a43c",
+        "apps/relay/app/control.py": "fe4b8126a521b15f3bbbebc387a06e5ec076fb727d7d7b8a4051ea464e8aa26a",
+        "apps/relay/app/control_routes.py": "a820aec71c3006ae856f3fce3bab369101bd1a9ffd720115925066055aca1bbf",
+        "apps/relay/app/core.py": "f1ec9b91bb4f8268155524f4e91ab7adb5db28dc5fa6bc74cd5c5d000a0ea87c",
+        "apps/relay/app/fulfillment.py": "6f5d3931379cad9ef70fb384c389692c31efbb186b76974b537bd60e99d28420",
+        "apps/relay/app/historical.py": "270f3d8241b0be2eafffbe4d7e16fb49dbddbe162010ee4e2d6bed8eb18d30c0",
+        "apps/relay/app/main.py": "bd47234e3b1842dd51076ac1f6d3a5723452c828ebb668be0208b00ae8068c54",
+        "apps/relay/app/pairing_intent.py": "e241fc7130808081fa77736d1305f9ccba3a45bd56fc459285fb858e86f9155a",
+        "apps/relay/app/platform_state.py": "5f8a48fa71b0f887b0a545349184aab46a2ddcd9570d52520dc01000a7156ff7",
+        "apps/relay/app/provider.py": "67e9a1f263b06017b67938e23b91b42793ecacc5e1eeb7e987af9b083305a87b",
+        "apps/relay/app/segments.py": "b2ab96bcd551d61f3600b71fb6303594816b24c5dfa026202309c81e9123db02",
+        "apps/relay/app/server_config.py": "1d817079f1956373933e5b4973b215a739fe26f4197049ded40620a968e36f19",
+        "apps/relay/app/trust_keys.py": "95698992a22d24a98c30f951f59434dba9d490cfa0cf392fdd26e7c09d391a3b",
+        "apps/relay/tests/test_config.py": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844"
+      },
+      "collected_node_ids": [
+        "apps/relay/tests/test_config.py::test_migration_connect_errors_are_sanitized"
+      ],
+      "junit_cases": [
+        [
+          "apps.relay.tests.test_config",
+          "test_migration_connect_errors_are_sanitized"
+        ]
+      ],
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-relay-tests-test_config-test_direct_settings_cannot_enable_synthetic_production",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "relay",
+        "cwd": "apps/relay",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/75c66e964eb8464da0a2cfc74e129ff3/results.xml",
+      "artifact_sha256": "7c4cc269a48b2ec79b49a21e2b15775b1cb179d47307ba3b26748a4cc69ece8b",
+      "source_sha256": {
+        "apps/relay/app/__init__.py": "d17fe0567257966cfb5d8f96f658e9e6cdf01896d637a49d0abb915f99af914b",
+        "apps/relay/app/cli.py": "2e8339f11bceeb3a1a73912c03adb151bf782af933f4d4fe515fa2bc79e6b67e",
+        "apps/relay/app/composition.py": "bc8fb6387a0a18453cf50275104a7312f233938dd050cca22e4a4c9b8a341926",
+        "apps/relay/app/config.py": "59a5b13edf2dd97d130b6abf59f0db0e68f681fd613af96cddc7b54a6583a43c",
+        "apps/relay/app/control.py": "fe4b8126a521b15f3bbbebc387a06e5ec076fb727d7d7b8a4051ea464e8aa26a",
+        "apps/relay/app/control_routes.py": "a820aec71c3006ae856f3fce3bab369101bd1a9ffd720115925066055aca1bbf",
+        "apps/relay/app/core.py": "f1ec9b91bb4f8268155524f4e91ab7adb5db28dc5fa6bc74cd5c5d000a0ea87c",
+        "apps/relay/app/fulfillment.py": "6f5d3931379cad9ef70fb384c389692c31efbb186b76974b537bd60e99d28420",
+        "apps/relay/app/historical.py": "270f3d8241b0be2eafffbe4d7e16fb49dbddbe162010ee4e2d6bed8eb18d30c0",
+        "apps/relay/app/main.py": "bd47234e3b1842dd51076ac1f6d3a5723452c828ebb668be0208b00ae8068c54",
+        "apps/relay/app/pairing_intent.py": "e241fc7130808081fa77736d1305f9ccba3a45bd56fc459285fb858e86f9155a",
+        "apps/relay/app/platform_state.py": "5f8a48fa71b0f887b0a545349184aab46a2ddcd9570d52520dc01000a7156ff7",
+        "apps/relay/app/provider.py": "67e9a1f263b06017b67938e23b91b42793ecacc5e1eeb7e987af9b083305a87b",
+        "apps/relay/app/segments.py": "b2ab96bcd551d61f3600b71fb6303594816b24c5dfa026202309c81e9123db02",
+        "apps/relay/app/server_config.py": "1d817079f1956373933e5b4973b215a739fe26f4197049ded40620a968e36f19",
+        "apps/relay/app/trust_keys.py": "95698992a22d24a98c30f951f59434dba9d490cfa0cf392fdd26e7c09d391a3b",
+        "apps/relay/tests/test_config.py": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844"
+      },
+      "collected_node_ids": [
+        "apps/relay/tests/test_config.py::test_direct_settings_cannot_enable_synthetic_production"
+      ],
+      "junit_cases": [
+        [
+          "apps.relay.tests.test_config",
+          "test_direct_settings_cannot_enable_synthetic_production"
+        ]
+      ],
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    }
+  ],
+  "subcase_results": [
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_config_repr_hides_database_url",
+      "node_id": "apps/relay/tests/test_config.py::test_config_repr_hides_database_url",
+      "status": "passed",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_config_missing_fields_and_production_synthetic_fail_closed",
+      "node_id": "apps/relay/tests/test_config.py::test_config_missing_fields_and_production_synthetic_fail_closed",
+      "status": "passed",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_synthetic_provider_is_not_client_selectable_for_production",
+      "node_id": "apps/relay/tests/test_config.py::test_synthetic_provider_is_not_client_selectable_for_production",
+      "status": "passed",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_connection_query_cannot_override_validated_database_identity",
+      "node_id": "apps/relay/tests/test_config.py::test_connection_query_cannot_override_validated_database_identity",
+      "status": "passed",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_wrong_database_name_rejected_before_any_connection",
+      "node_id": "apps/relay/tests/test_config.py::test_wrong_database_name_rejected_before_any_connection",
+      "status": "passed",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_connect_errors_never_expose_driver_payload",
+      "node_id": "apps/relay/tests/test_config.py::test_connect_errors_never_expose_driver_payload",
+      "status": "passed",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_low_level_factory_also_requires_trusted_verifier",
+      "node_id": "apps/relay/tests/test_config.py::test_low_level_factory_also_requires_trusted_verifier",
+      "status": "passed",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_bounded_json_rejects_depth_and_collection_expansion",
+      "node_id": "apps/relay/tests/test_config.py::test_bounded_json_rejects_depth_and_collection_expansion",
+      "status": "passed",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_migration_connect_errors_are_sanitized",
+      "node_id": "apps/relay/tests/test_config.py::test_migration_connect_errors_are_sanitized",
+      "status": "passed",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_direct_settings_cannot_enable_synthetic_production",
+      "node_id": "apps/relay/tests/test_config.py::test_direct_settings_cannot_enable_synthetic_production",
+      "status": "passed",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "entire_acceptance_group_complete": false
+    }
+  ]
+}

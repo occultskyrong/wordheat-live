@@ -1,0 +1,333 @@
+{
+  "review_version": 1,
+  "checkpoint": "final-frozen-candidate-review",
+  "created_at": "2026-10-25T17:08:29.633524+00:00",
+  "repo": "/Users/jiachenclaw/code/wordheat-live",
+  "workspace": "/Users/jiachenclaw/code/wordheat-live",
+  "branch": "master",
+  "head": "unborn",
+  "scope_verdict": "PASS",
+  "new_delivery_blockers": [],
+  "full_spec_verdict": "BLOCKED_INCOMPLETE",
+  "snapshot": {
+    "ledger_files": 124,
+    "ledger_sha256": "efb5b7e0fc5ae5ca30e7031beceec4a0056937c1bb17977d7a72b42224b42b88",
+    "initial_manifest_sha256": "879e088d25277084432cb4f2fe3b163a42d8867d6e69586fe281000bbf74930e",
+    "final_contracts_snapshot_sha256": "7d938c744667302c62f7206299125438f4d815c4fb4bccd2ef4fd1a2791a498f",
+    "composite_snapshot_equals_ledger": true,
+    "actual_files_equal_ledger": true,
+    "spec_sha256": "6c582420ea7d80d66cea1178e8629e7358a6a23a88c1d5ea65843a47f821f63b"
+  },
+  "evidence": {
+    "reports": [
+      {
+        "name": "api",
+        "path": "docs/acceptance/backend-evidence/9aadff59894b4db984c3e75119230a64/evidence.json",
+        "report_sha256": "5380778f1a7104bdc2c6dec908230d5fc999c37df3380a0dc9c7e83645da5ed7",
+        "tests": 126,
+        "failures_errors_skips": 0,
+        "source_files": 87,
+        "source_hashes_match": true,
+        "junit_sha256_matches": true,
+        "manifest_matches": true,
+        "environment": "postgres",
+        "observed_platform": "darwin",
+        "integration_qualified": true,
+        "external_runner_available": false,
+        "subcases": 43,
+        "subset_of_first_four": true
+      },
+      {
+        "name": "relay",
+        "path": "docs/acceptance/backend-evidence/53ba943d7abc446da6487955e32b87a5/evidence.json",
+        "report_sha256": "d1e59941350690a953d7c7e6826d305b583ad8d26c996d7177c7c038dd71a434",
+        "tests": 46,
+        "failures_errors_skips": 0,
+        "source_files": 6,
+        "source_hashes_match": true,
+        "junit_sha256_matches": true,
+        "manifest_matches": true,
+        "environment": "relay_postgres",
+        "observed_platform": "darwin",
+        "integration_qualified": true,
+        "external_runner_available": false,
+        "subcases": 26,
+        "subset_of_first_four": true
+      },
+      {
+        "name": "scorer",
+        "path": "docs/acceptance/backend-evidence/6f3e0b8eac264505a2427922acfcb8c9/evidence.json",
+        "report_sha256": "e4e391a65846aa4d22e44d6344f30b31dbb4c5e4fb920d9aa79cbd4e2a2e9770",
+        "tests": 32,
+        "failures_errors_skips": 0,
+        "source_files": 13,
+        "source_hashes_match": true,
+        "junit_sha256_matches": true,
+        "manifest_matches": true,
+        "environment": "model",
+        "observed_platform": "darwin",
+        "integration_qualified": true,
+        "external_runner_available": false,
+        "subcases": 1,
+        "subset_of_first_four": true
+      },
+      {
+        "name": "tools",
+        "path": "docs/acceptance/backend-evidence/0494bb33e7df48b19c9b4d618b038eee/evidence.json",
+        "report_sha256": "947f855ed9a81e20e14098e54272c9815ca7b7a28780d64c24316ee4840db1dd",
+        "tests": 38,
+        "failures_errors_skips": 0,
+        "source_files": 13,
+        "source_hashes_match": true,
+        "junit_sha256_matches": true,
+        "manifest_matches": true,
+        "environment": "local",
+        "observed_platform": "darwin",
+        "integration_qualified": true,
+        "external_runner_available": false,
+        "subcases": 0,
+        "subset_of_first_four": true
+      },
+      {
+        "name": "api-local",
+        "path": "docs/acceptance/backend-evidence/f0ce9c73139c4a7aa8508c65c7213d8e/evidence.json",
+        "report_sha256": "c0fd9c15faf895bba7ba56e64dcd49208dbc8ebd68306290a9b8ad648610e000",
+        "tests": 21,
+        "failures_errors_skips": 0,
+        "source_files": 79,
+        "source_hashes_match": true,
+        "junit_sha256_matches": true,
+        "manifest_matches": true,
+        "environment": "local",
+        "observed_platform": "darwin",
+        "integration_qualified": true,
+        "external_runner_available": false,
+        "subcases": 16,
+        "subset_of_first_four": true
+      },
+      {
+        "name": "scorer-local",
+        "path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/evidence.json",
+        "report_sha256": "923a7b280dd261d1a4563c8695f485df8939daf457d2bacf9028a71a55f5a769",
+        "tests": 31,
+        "failures_errors_skips": 0,
+        "source_files": 12,
+        "source_hashes_match": true,
+        "junit_sha256_matches": true,
+        "manifest_matches": true,
+        "environment": "local",
+        "observed_platform": "darwin",
+        "integration_qualified": true,
+        "external_runner_available": false,
+        "subcases": 17,
+        "subset_of_first_four": true
+      },
+      {
+        "name": "relay-local",
+        "path": "docs/acceptance/backend-evidence/aad771a7ab9249e8838d2cceb59ac08e/evidence.json",
+        "report_sha256": "6e61be205b0f9afd2e0e3a0fcf10ac1a3dd84700650d14dd12edfac52ab0c085",
+        "tests": 10,
+        "failures_errors_skips": 0,
+        "source_files": 5,
+        "source_hashes_match": true,
+        "junit_sha256_matches": true,
+        "manifest_matches": true,
+        "environment": "local",
+        "observed_platform": "darwin",
+        "integration_qualified": true,
+        "external_runner_available": false,
+        "subcases": 10,
+        "subset_of_first_four": true
+      }
+    ],
+    "test_executions": 304,
+    "unique_test_nodes": 242,
+    "first_four_unique_test_nodes": 242,
+    "local_supplements_add_unique_tests": 0,
+    "batch_components": 7,
+    "subcase_components": 113,
+    "component_total": 120,
+    "component_statuses": {
+      "passed": 120
+    },
+    "progress_matches_read_only_recomputation": true,
+    "full_spec": {
+      "report_version": 1,
+      "spec_sha256": "6c582420ea7d80d66cea1178e8629e7358a6a23a88c1d5ea65843a47f821f63b",
+      "source_matches": true,
+      "manifest_valid": true,
+      "boundary_version": 1,
+      "contracts_complete": false,
+      "mode": "overall",
+      "all_complete": false,
+      "local_complete": false,
+      "passed": 2,
+      "total": 100
+    },
+    "full_spec_status_counts": {
+      "pending_external": 79,
+      "not_implemented": 19,
+      "passed": 2
+    }
+  },
+  "findings": [
+    {
+      "id": "BDV-001",
+      "status": "KNOWN_OPEN",
+      "severity": "whole_spec_blocker",
+      "summary": "Whole Spec remains incomplete: only CONTRACTS-SUBSET and COMPLETION-TOOL pass out of 100 strict groups. Component evidence does not discharge BE groups. pending_external means an unaccepted nonlocal group, not necessarily missing PG/model infrastructure."
+    },
+    {
+      "id": "BDV-002",
+      "status": "REVIEW_BLOCKED_EXCLUDED",
+      "severity": "connector_scope_blocker",
+      "summary": "Connector candidate remains excluded after automatic safety review rejection; no candidate read, retry, execution or review was performed in this task."
+    },
+    {
+      "id": "BDV-101",
+      "status": "RESOLVED",
+      "severity": "documentation_correction",
+      "summary": "Both contract count statements now say 42/46 baseline = 39 HTTP + 3 WS/WSS, plus 6 HTTP relay extensions, total 48."
+    },
+    {
+      "id": "BDV-102",
+      "status": "RESOLVED",
+      "severity": "documentation_correction",
+      "summary": "The unsupported worldwide labeling interpretation is removed in both the execution plan and verification record; G1-Q remains authorization/data and complete quality evaluation."
+    },
+    {
+      "id": "BDV-103",
+      "status": "RESOLVED",
+      "severity": "documentation_correction",
+      "summary": "Verification record now explicitly refers to empty secret fields in the public templates, without saying private configured .env values are empty."
+    },
+    {
+      "id": "BDV-104",
+      "status": "RESOLVED",
+      "severity": "evidence_presentation",
+      "summary": "The unlinked exact smoke timing is removed. The qualitative independent review note is explicitly outside current runner machine nodes; no new smoke was run."
+    }
+  ],
+  "limits": [
+    "No pytest rerun, database/container/service access, .env value read or repository write.",
+    "Read-only checker used project API .venv Python 3.12.13; system Python lacks jsonschema and is not the accepted checker runtime.",
+    "uv.lock/.venv were independently generated and are outside the applied source ledger.",
+    "Real model integration is component evidence; BGE 512 manifest quality_gate=not_evaluated does not establish G1-Q or Windows/OBS G1-R.",
+    "Final PASS applies to the frozen incremental delivery candidate and its truthful documentation, not full-Spec acceptance or production/platform/Windows release."
+  ],
+  "code_and_evidence_verdict": "PASS",
+  "documentation_candidate_verdict": "PASS",
+  "actual_repository_application": "PENDING_PRIMARY_INTEGRATION",
+  "documentation": {
+    "manifest_path": "/private/tmp/wordheat-backend-development-4u1eo07u/delivery-docs-manifest.json",
+    "manifest_sha256": "0a90807b1f4a0b3f4c037bd05287ba3a22e4c0073eb041e14bb37aec5bf4b3af",
+    "file_count": 12,
+    "files": [
+      {
+        "path": ".env.example",
+        "sha256": "561a313ed9a0d5dab34c17817d282e368c4b309a1f670df034389f432c044fe0",
+        "baseline_sha256": "c0aac4cde6e39910fbedb85cb60e125ec04bb91b0533a143bbddd2c7ae08f2dc",
+        "candidate_match": true,
+        "baseline_match": true
+      },
+      {
+        "path": "AGENTS.md",
+        "sha256": "e713446e1b5439b087fb58b92d791f226eb5052b8d959f05e33a218b35972710",
+        "baseline_sha256": "cd24a17fec73e741bc353d45c7a78ab08ddc38f9510a7b0d05508192c4a179a2",
+        "candidate_match": true,
+        "baseline_match": true
+      },
+      {
+        "path": "README.md",
+        "sha256": "fed789e620a2ffc7e8b45f6736dd9571a1ac458974a3d4699c8449ba8cf76d01",
+        "baseline_sha256": "a8881ad200cf1e670fd2a8d69888d87c0209b3df282e5535ef37a3e91fd2e4e2",
+        "candidate_match": true,
+        "baseline_match": true
+      },
+      {
+        "path": "deploy/public-relay/.env.example",
+        "sha256": "c2782ad82808f5bb653b295956b4786c8f3b883887fd83e397b2d4e4881f6816",
+        "baseline_sha256": "f1a38758e8ddd8fbf47da3f1c0d4b410228e185ae3e38158edb2fd2b770b3948",
+        "candidate_match": true,
+        "baseline_match": true
+      },
+      {
+        "path": "docs/README.md",
+        "sha256": "a25c6bdd515c00fc17b6acb3d77338c59a6935716a62fe894f6cf1b0d368b413",
+        "baseline_sha256": "ca68dceabaec31de98b560411f0e25c4dfda1492f8827fe0060eceec91a73711",
+        "candidate_match": true,
+        "baseline_match": true
+      },
+      {
+        "path": "docs/acceptance/20261026 - 后端迭代 - 验证记录.md",
+        "sha256": "ea92f55d9cd579b5007864a26ba736e4e8a1b19fe73e00b47ef836661b1bbe2f",
+        "baseline_sha256": null,
+        "candidate_match": true,
+        "baseline_match": true
+      },
+      {
+        "path": "docs/acceptance/README.md",
+        "sha256": "927e8c9fa170a72828600b0d973b5560ef286fbf1aaef3fe533ef14b115f04fd",
+        "baseline_sha256": "98331d4709a94201389c719429f028c7d35592c3e590d7fbac8724cbf06ef8d4",
+        "candidate_match": true,
+        "baseline_match": true
+      },
+      {
+        "path": "docs/architecture/20261025 - 词温项目 - 工程目录与迭代规范.md",
+        "sha256": "e8a727089760444e838ce6f32f597043453b81f203a57f9f74dfadc0c19f8ac2",
+        "baseline_sha256": "4b22d98f5f25fc5e6bb6f37bb8b22592966cf14846b7e7f032278d6f5d05db44",
+        "candidate_match": true,
+        "baseline_match": true
+      },
+      {
+        "path": "docs/plans/20261025 - 后端开发迭代 - 执行计划.md",
+        "sha256": "8eaed0ab2829bd66a368f7e69f5a07b767974fc285f273ed00cf04a5780f16d8",
+        "baseline_sha256": "f96395a34d7712280989be39f1cc65c998dbb2a929424427db630d81c1a187ec",
+        "candidate_match": true,
+        "baseline_match": true
+      },
+      {
+        "path": "docs/security/20261025 - 词温项目 - 敏感信息与配置规范.md",
+        "sha256": "335652622fe4290fa41dd418ac5b870d9a2c7ca4b4473a987bff76b6995b7dba",
+        "baseline_sha256": "c589a31806d3210ad7a0dabf29f1f1070907900717f730b480bb161daffef239",
+        "candidate_match": true,
+        "baseline_match": true
+      },
+      {
+        "path": "packages/contracts/AGENTS.md",
+        "sha256": "e401d859cade4d1df0c69ed21654ae6f7ab6f2118713d6993b476776c748d1eb",
+        "baseline_sha256": "8edfcdda6ea07ea1f8b499eded334907633680526815a292a1b481c570b41cdf",
+        "candidate_match": true,
+        "baseline_match": true
+      },
+      {
+        "path": "packages/contracts/README.md",
+        "sha256": "e91b8f40181f316a7bab3571a5beedd51eb07d38352b75b6afe9851d1c0b0106",
+        "baseline_sha256": "9486fd4a8a25c3d63b955ead4a9ceece2b2078bd9a3cbf111c655cf948242561",
+        "candidate_match": true,
+        "baseline_match": true
+      }
+    ],
+    "local_links_checked_before_final_sentence_only_revision": 81,
+    "local_link_errors": [],
+    "public_env_template_noncomment_lines_unchanged": true,
+    "final_sentence_checks": [
+      {
+        "line": 17,
+        "text": "| Mac/Linux 开发进程 | 自有 API/scorer 启动身份确认、真实认证健康、生命周期清理 | WP04/WP08 组件；机制测试及独立真实启动 smoke；不等于 Windows 原生 |"
+      },
+      {
+        "line": 52,
+        "text": "主线程对 153 份公开源文件/报告执行当前生成秘密值的精确匹配扫描，0 个实际秘密匹配；模板字段检查通过，模板中的秘密字段保持空值，`WORDHEAT_ENV=development` 为合法非秘密值。两份私有 `.env` 权限为 0600，Git 忽略覆盖 `.env`、`.local` 与 `.venv`。本次检查不等同于 gitleaks/trufflehog 或对所有编码/隐藏秘密的完整审计。"
+      }
+    ]
+  },
+  "independent_review_scope": {
+    "source_lineage": "122-file frozen candidate + final 13 contracts overlay excluding placeholder progress = exact 124-file ledger and actual files at checkpoint",
+    "reports": "Seven actual repository reports, JUnit, source hashes, Spec/manifest binding and duplicate nodes independently read and reconciled. evaluate/build_progress read-only recomputation matches current progress.",
+    "environment": "Historical runner and source-bound qualification, actual darwin/Python3.12.13; no live database/model/service requery in this review.",
+    "smoke": "Qualitative independent smoke result supplied by primary from a prior verifier tool result, not independently rerun here and not counted as current runner evidence.",
+    "secret_scan": "The exact generated-secret scan and private file metadata are primary-supplied evidence; this reviewer did not read private .env values."
+  },
+  "required_primary_integration_note": "Preserve historical applied-files snapshot and apply the frozen documentation manifest as an explicit overlay; update current ledger where documentation overlaps the historical source snapshot."
+}

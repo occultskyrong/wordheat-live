@@ -1,0 +1,12 @@
+apps/relay/tests/test_config.py::test_config_repr_hides_database_url
+apps/relay/tests/test_config.py::test_config_missing_fields_and_production_synthetic_fail_closed
+apps/relay/tests/test_config.py::test_synthetic_provider_is_not_client_selectable_for_production
+apps/relay/tests/test_config.py::test_connection_query_cannot_override_validated_database_identity
+apps/relay/tests/test_config.py::test_wrong_database_name_rejected_before_any_connection
+apps/relay/tests/test_config.py::test_connect_errors_never_expose_driver_payload
+apps/relay/tests/test_config.py::test_low_level_factory_also_requires_trusted_verifier
+apps/relay/tests/test_config.py::test_bounded_json_rejects_depth_and_collection_expansion
+apps/relay/tests/test_config.py::test_migration_connect_errors_are_sanitized
+apps/relay/tests/test_config.py::test_direct_settings_cannot_enable_synthetic_production
+
+10 tests collected in 0.00s

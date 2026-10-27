@@ -1,0 +1,18 @@
+{
+  "verification_version": 1,
+  "observed_at": "2026-10-26T00:36:52.492361+00:00",
+  "database": "wordheat_test",
+  "schema": "public",
+  "server_version": "16.14",
+  "migration_role": "wordheat_test_migrator",
+  "runtime_role": "wordheat_test_app",
+  "actual_migrate_entry": "app.infrastructure.db.migrate.migrate",
+  "production_migrate_code_path_executed": true,
+  "packaged_revision_count": 9,
+  "new_revisions": [],
+  "existing_public_table_row_counts_unchanged": true,
+  "tables_checked": 37,
+  "runtime_identity_schema_and_role_verified": true,
+  "new_migration_sha256": "462537b965a5a748ed635eda94f17be962e3f165392ea6850f9bd106704c5d4d",
+  "result": "passed"
+}

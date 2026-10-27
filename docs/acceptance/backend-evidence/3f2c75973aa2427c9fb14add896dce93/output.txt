@@ -1,0 +1,8 @@
+..................                                                       [100%]
+=============================== warnings summary ===============================
+apps/api/tests/integration/sessions/test_selection_acceptance.py::test_one_hundred_http_ready_reads_do_not_write_or_select
+  /Users/jiachenclaw/code/wordheat-live/apps/api/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+18 passed, 1 warning in 9.45s

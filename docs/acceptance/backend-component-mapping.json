@@ -1,0 +1,2225 @@
+{
+  "mapping_version": 1,
+  "spec_sha256": "6c582420ea7d80d66cea1178e8629e7358a6a23a88c1d5ea65843a47f821f63b",
+  "status": "pending trusted execution; source-checked mapping only",
+  "subcases": [
+    {
+      "subcase_id": "apps-api-tests-unit-test_config_input-test_reject_foreign_database_without_exposing_secret",
+      "node_id": "apps/api/tests/unit/test_config_input.py::test_reject_foreign_database_without_exposing_secret",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-09",
+        "BE-A10",
+        "WT01"
+      ],
+      "test_source_sha256": "a390e8b8646e9d3df68c9cd9a774315bdd82b47758af10ebc162b4c63a1585f3",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-unit-test_config_input-test_han_normalization_is_explicit",
+      "node_id": "apps/api/tests/unit/test_config_input.py::test_han_normalization_is_explicit",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-09",
+        "BE-A10",
+        "WT01"
+      ],
+      "test_source_sha256": "a390e8b8646e9d3df68c9cd9a774315bdd82b47758af10ebc162b4c63a1585f3",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-unit-test_database_verification-test_connected_identity_rejects_wrong_pg_or_database_marker",
+      "node_id": "apps/api/tests/unit/test_database_verification.py::test_connected_identity_rejects_wrong_pg_or_database_marker",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-09",
+        "BE-A10",
+        "WT01"
+      ],
+      "test_source_sha256": "d3f0ba45f5b8b854d279c005dc416f2604db68b1d7fd85bdfac959c1f1996ec8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-unit-test_database_verification-test_runtime_requires_every_packaged_checksum",
+      "node_id": "apps/api/tests/unit/test_database_verification.py::test_runtime_requires_every_packaged_checksum",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-09",
+        "BE-A10",
+        "WT01"
+      ],
+      "test_source_sha256": "d3f0ba45f5b8b854d279c005dc416f2604db68b1d7fd85bdfac959c1f1996ec8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-unit-test_http_contracts-test_every_registered_http_success_is_concrete_and_422_is_c1",
+      "node_id": "apps/api/tests/unit/test_http_contracts.py::test_every_registered_http_success_is_concrete_and_422_is_c1",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-04",
+        "BE-A04",
+        "T16"
+      ],
+      "test_source_sha256": "aebf73950805c430eb87d4562eaf90d0552111159936187b70e198df3f6aa148",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-unit-test_http_contracts-test_known_envelopes_and_analytics_csv_are_not_arbitrary_objects",
+      "node_id": "apps/api/tests/unit/test_http_contracts.py::test_known_envelopes_and_analytics_csv_are_not_arbitrary_objects",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-04",
+        "BE-A04",
+        "T16"
+      ],
+      "test_source_sha256": "aebf73950805c430eb87d4562eaf90d0552111159936187b70e198df3f6aa148",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-unit-test_http_contracts-test_nested_command_state_rejects_unknown_shape",
+      "node_id": "apps/api/tests/unit/test_http_contracts.py::test_nested_command_state_rejects_unknown_shape",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-04",
+        "BE-A04",
+        "T16"
+      ],
+      "test_source_sha256": "aebf73950805c430eb87d4562eaf90d0552111159936187b70e198df3f6aa148",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-unit-test_http_contracts-test_c1_error_model_and_analytics_models_match_known_payloads",
+      "node_id": "apps/api/tests/unit/test_http_contracts.py::test_c1_error_model_and_analytics_models_match_known_payloads",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-04",
+        "BE-A04",
+        "T16"
+      ],
+      "test_source_sha256": "aebf73950805c430eb87d4562eaf90d0552111159936187b70e198df3f6aa148",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-unit-test_http_contracts-test_http_known_auth_and_validation_envelopes_without_database",
+      "node_id": "apps/api/tests/unit/test_http_contracts.py::test_http_known_auth_and_validation_envelopes_without_database",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-04",
+        "BE-A04",
+        "T16"
+      ],
+      "test_source_sha256": "aebf73950805c430eb87d4562eaf90d0552111159936187b70e198df3f6aa148",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-unit-test_http_contracts-test_analytics_adapter_executes_strict_projection_without_database",
+      "node_id": "apps/api/tests/unit/test_http_contracts.py::test_analytics_adapter_executes_strict_projection_without_database",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-04",
+        "BE-A04",
+        "T16"
+      ],
+      "test_source_sha256": "aebf73950805c430eb87d4562eaf90d0552111159936187b70e198df3f6aa148",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-unit-test_http_contracts-test_analytics_legacy_missing_required_fields_is_not_silently_relaxed",
+      "node_id": "apps/api/tests/unit/test_http_contracts.py::test_analytics_legacy_missing_required_fields_is_not_silently_relaxed",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-04",
+        "BE-A04",
+        "T16"
+      ],
+      "test_source_sha256": "aebf73950805c430eb87d4562eaf90d0552111159936187b70e198df3f6aa148",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-unit-test_realtime_protocol-test_resume_is_strict_and_decimal_cursor_never_float",
+      "node_id": "apps/api/tests/unit/test_realtime_protocol.py::test_resume_is_strict_and_decimal_cursor_never_float",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A05",
+        "BE-A13",
+        "T15",
+        "T20"
+      ],
+      "test_source_sha256": "3bf0dde2af36cc5c477c872d86bed760fcaedf008c67c10c7186755c723b15af",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-unit-test_realtime_protocol-test_receipt_limits_and_processing_evidence_shape",
+      "node_id": "apps/api/tests/unit/test_realtime_protocol.py::test_receipt_limits_and_processing_evidence_shape",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A05",
+        "BE-A13",
+        "T15",
+        "T20"
+      ],
+      "test_source_sha256": "3bf0dde2af36cc5c477c872d86bed760fcaedf008c67c10c7186755c723b15af",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-unit-test_wordbank_input-test_draft_rejects_server_quality_fields_and_non_han",
+      "node_id": "apps/api/tests/unit/test_wordbank_input.py::test_draft_rejects_server_quality_fields_and_non_han",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A09",
+        "BE-A16",
+        "BE-A19",
+        "T17",
+        "T21"
+      ],
+      "test_source_sha256": "d79cd24428d8ff93892cb579d3c67882e66e3a5e131753ef8326d3ecdeec8bf9",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-unit-test_wordbank_input-test_csv_report_is_bounded_utf8_bom_and_row_specific",
+      "node_id": "apps/api/tests/unit/test_wordbank_input.py::test_csv_report_is_bounded_utf8_bom_and_row_specific",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A09",
+        "BE-A16",
+        "BE-A19",
+        "T17",
+        "T21"
+      ],
+      "test_source_sha256": "d79cd24428d8ff93892cb579d3c67882e66e3a5e131753ef8326d3ecdeec8bf9",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-unit-test_wordbank_input-test_calibration_is_fitted_and_overlapping_labels_rejected",
+      "node_id": "apps/api/tests/unit/test_wordbank_input.py::test_calibration_is_fitted_and_overlapping_labels_rejected",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A09",
+        "BE-A16",
+        "BE-A19",
+        "T17",
+        "T21"
+      ],
+      "test_source_sha256": "d79cd24428d8ff93892cb579d3c67882e66e3a5e131753ef8326d3ecdeec8bf9",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_transactional_exact_hit_and_role_isolation",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_transactional_exact_hit_and_role_isolation",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_next_selection_is_persistent_cas_and_public_private_separated",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_next_selection_is_persistent_cas_and_public_private_separated",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A16",
+        "BE-A19",
+        "T13"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_runtime_role_cannot_ddl_and_rollback_preserves_counter",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_runtime_role_cannot_ddl_and_rollback_preserves_counter",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_concurrent_exact_hit_commits_one_winner",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_concurrent_exact_hit_commits_one_winner",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_failed_outbox_rolls_back_winner_and_admission",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_failed_outbox_rolls_back_winner_and_admission",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_non_exact_calls_scorer_outside_transaction_and_never_wins",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_non_exact_calls_scorer_outside_transaction_and_never_wins",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_missing_scorer_is_persisted_failure_without_points",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_missing_scorer_is_persisted_failure_without_points",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_void_reverses_each_entry_and_cannot_repeat",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_void_reverses_each_entry_and_cannot_repeat",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_cross_boot_pause_cannot_resume_implicitly",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_cross_boot_pause_cannot_resume_implicitly",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_be_negotiation_required_for_every_affected_write_and_retries_survive",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_be_negotiation_required_for_every_affected_write_and_retries_survive",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_cached_ticket_requires_current_ownership_and_permission",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_cached_ticket_requires_current_ownership_and_permission",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_registered_private_dtos_match_spec_fields",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_registered_private_dtos_match_spec_fields",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_default_readiness_and_runtime_fail_closed_without_model_and_display",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_default_readiness_and_runtime_fail_closed_without_model_and_display",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_worker_expires_local_deadline_and_reboot_archives_old_running",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_worker_expires_local_deadline_and_reboot_archives_old_running",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_pause_preserves_admitted_score_and_drain_waits_for_completion",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_pause_preserves_admitted_score_and_drain_waits_for_completion",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_startup_preparation_does_not_require_session_or_display",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_startup_preparation_does_not_require_session_or_display",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_async_scorer_port_is_awaited_outside_transaction",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_async_scorer_port_is_awaited_outside_transaction",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_real_ws_readiness_live_receipts_and_reconnect_generation",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_real_ws_readiness_live_receipts_and_reconnect_generation",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A05",
+        "BE-A13",
+        "T15",
+        "T20"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_effect_credit_received_does_not_release_processed_pumps_history",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_effect_credit_received_does_not_release_processed_pumps_history",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A05",
+        "BE-A13",
+        "T15",
+        "T20"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_catalog_configure_disable_empty_and_hint_events_are_persistent",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_catalog_configure_disable_empty_and_hint_events_are_persistent",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A16",
+        "BE-A19",
+        "T13"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_rejected_guess_is_persistent_and_observers_run_at_real_transaction_boundaries",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_rejected_guess_is_persistent_and_observers_run_at_real_transaction_boundaries",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_new_published_version_does_not_replace_frozen_ready_selection",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_new_published_version_does_not_replace_frozen_ready_selection",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A16",
+        "BE-A19",
+        "T13"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_start_rejects_empty_next_rules_with_real_primary_server_state",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_start_rejects_empty_next_rules_with_real_primary_server_state",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_recover_end_session_observes_ended_inside_final_transaction",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_recover_end_session_observes_ended_inside_final_transaction",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_local_flow-test_round_freezes_real_difficulty_and_observes_category",
+      "node_id": "apps/api/tests/integration/test_local_flow.py::test_round_freezes_real_difficulty_and_observes_category",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A01",
+        "BE-A03",
+        "BE-A05",
+        "BE-A09",
+        "BE-A13",
+        "BE-A16",
+        "BE-A17",
+        "BE-A19"
+      ],
+      "test_source_sha256": "4e584370145e5b6aa6129a765482e9ccc9baa21e2d764d1685535215e4373be8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_replays-test_replay_durable_pause_resume_cancel_and_source_isolation",
+      "node_id": "apps/api/tests/integration/test_replays.py::test_replay_durable_pause_resume_cancel_and_source_isolation",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-10",
+        "BE-A09",
+        "T26"
+      ],
+      "test_source_sha256": "4b97460b9a089c4fda341f61fd1c09f19483bf08fb8f12c86696320ccf74701c",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_replays-test_replay_rejects_answer_score_or_official_inputs",
+      "node_id": "apps/api/tests/integration/test_replays.py::test_replay_rejects_answer_score_or_official_inputs",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-10",
+        "BE-A09",
+        "T26"
+      ],
+      "test_source_sha256": "4b97460b9a089c4fda341f61fd1c09f19483bf08fb8f12c86696320ccf74701c",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_replays-test_replay_cross_boot_requires_explicit_resume_and_no_double_admission",
+      "node_id": "apps/api/tests/integration/test_replays.py::test_replay_cross_boot_requires_explicit_resume_and_no_double_admission",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-10",
+        "BE-A09",
+        "T26"
+      ],
+      "test_source_sha256": "4b97460b9a089c4fda341f61fd1c09f19483bf08fb8f12c86696320ccf74701c",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_replays-test_replay_deadline_equality_never_admits_into_old_round",
+      "node_id": "apps/api/tests/integration/test_replays.py::test_replay_deadline_equality_never_admits_into_old_round",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-10",
+        "BE-A09",
+        "T26"
+      ],
+      "test_source_sha256": "4b97460b9a089c4fda341f61fd1c09f19483bf08fb8f12c86696320ccf74701c",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_replays-test_replay_auth_revocation_precedes_cached_result_and_foreign_job",
+      "node_id": "apps/api/tests/integration/test_replays.py::test_replay_auth_revocation_precedes_cached_result_and_foreign_job",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-10",
+        "BE-A09",
+        "T26"
+      ],
+      "test_source_sha256": "4b97460b9a089c4fda341f61fd1c09f19483bf08fb8f12c86696320ccf74701c",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_replays-test_replay_corrupt_checkpoint_fails_closed_after_boot",
+      "node_id": "apps/api/tests/integration/test_replays.py::test_replay_corrupt_checkpoint_fails_closed_after_boot",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-10",
+        "BE-A09",
+        "T26"
+      ],
+      "test_source_sha256": "4b97460b9a089c4fda341f61fd1c09f19483bf08fb8f12c86696320ccf74701c",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_replays-test_replay_zero_offset_end_keeps_frozen_intermission_deadline",
+      "node_id": "apps/api/tests/integration/test_replays.py::test_replay_zero_offset_end_keeps_frozen_intermission_deadline",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-10",
+        "BE-A09",
+        "T26"
+      ],
+      "test_source_sha256": "4b97460b9a089c4fda341f61fd1c09f19483bf08fb8f12c86696320ccf74701c",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_replays-test_replay_checkpoint_missing_round_started_is_rejected",
+      "node_id": "apps/api/tests/integration/test_replays.py::test_replay_checkpoint_missing_round_started_is_rejected",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-10",
+        "BE-A09",
+        "T26"
+      ],
+      "test_source_sha256": "4b97460b9a089c4fda341f61fd1c09f19483bf08fb8f12c86696320ccf74701c",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_wordbank_flow-test_real_jobs_calibration_blind_review_publish_immutable_patch",
+      "node_id": "apps/api/tests/integration/test_wordbank_flow.py::test_real_jobs_calibration_blind_review_publish_immutable_patch",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A09",
+        "BE-A16",
+        "BE-A19",
+        "T17",
+        "T21"
+      ],
+      "test_source_sha256": "a3fa15bf4198a6bd699e09e0e4d65c487d721d09861c7c8098381bc292bdfcf8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_wordbank_flow-test_csv_requires_explicit_valid_rows_and_preserves_security",
+      "node_id": "apps/api/tests/integration/test_wordbank_flow.py::test_csv_requires_explicit_valid_rows_and_preserves_security",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A09",
+        "BE-A16",
+        "BE-A19",
+        "T17",
+        "T21"
+      ],
+      "test_source_sha256": "a3fa15bf4198a6bd699e09e0e4d65c487d721d09861c7c8098381bc292bdfcf8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_wordbank_flow-test_word_ranking_contains_scored_current_round_words",
+      "node_id": "apps/api/tests/integration/test_wordbank_flow.py::test_word_ranking_contains_scored_current_round_words",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A09",
+        "BE-A16",
+        "BE-A19",
+        "T17",
+        "T21"
+      ],
+      "test_source_sha256": "a3fa15bf4198a6bd699e09e0e4d65c487d721d09861c7c8098381bc292bdfcf8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_wordbank_flow-test_runtime_maintenance_reports_unimplemented_truthfully",
+      "node_id": "apps/api/tests/integration/test_wordbank_flow.py::test_runtime_maintenance_reports_unimplemented_truthfully",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A09",
+        "BE-A16",
+        "BE-A19",
+        "T17",
+        "T21"
+      ],
+      "test_source_sha256": "a3fa15bf4198a6bd699e09e0e4d65c487d721d09861c7c8098381bc292bdfcf8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_wordbank_flow-test_auto_next_waits_frozen_intermission_and_readiness",
+      "node_id": "apps/api/tests/integration/test_wordbank_flow.py::test_auto_next_waits_frozen_intermission_and_readiness",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A09",
+        "BE-A16",
+        "BE-A19",
+        "T17",
+        "T21"
+      ],
+      "test_source_sha256": "a3fa15bf4198a6bd699e09e0e4d65c487d721d09861c7c8098381bc292bdfcf8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_wordbank_flow-test_selection_rejects_published_version_from_different_model",
+      "node_id": "apps/api/tests/integration/test_wordbank_flow.py::test_selection_rejects_published_version_from_different_model",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A09",
+        "BE-A16",
+        "BE-A19",
+        "T17",
+        "T21"
+      ],
+      "test_source_sha256": "a3fa15bf4198a6bd699e09e0e4d65c487d721d09861c7c8098381bc292bdfcf8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_wordbank_flow-test_puzzle_editor_needs_no_session_permission_and_revocation_beats_cache",
+      "node_id": "apps/api/tests/integration/test_wordbank_flow.py::test_puzzle_editor_needs_no_session_permission_and_revocation_beats_cache",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A09",
+        "BE-A16",
+        "BE-A19",
+        "T17",
+        "T21"
+      ],
+      "test_source_sha256": "a3fa15bf4198a6bd699e09e0e4d65c487d721d09861c7c8098381bc292bdfcf8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_wordbank_flow-test_missing_model_job_is_failed_not_fake_score_and_wrong_job_route_denied",
+      "node_id": "apps/api/tests/integration/test_wordbank_flow.py::test_missing_model_job_is_failed_not_fake_score_and_wrong_job_route_denied",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A09",
+        "BE-A16",
+        "BE-A19",
+        "T17",
+        "T21"
+      ],
+      "test_source_sha256": "a3fa15bf4198a6bd699e09e0e4d65c487d721d09861c7c8098381bc292bdfcf8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_wordbank_flow-test_wordbank_difficulty_filter_is_applied_and_invalid_range_rejected",
+      "node_id": "apps/api/tests/integration/test_wordbank_flow.py::test_wordbank_difficulty_filter_is_applied_and_invalid_range_rejected",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A09",
+        "BE-A16",
+        "BE-A19",
+        "T17",
+        "T21"
+      ],
+      "test_source_sha256": "a3fa15bf4198a6bd699e09e0e4d65c487d721d09861c7c8098381bc292bdfcf8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-test_wordbank_flow-test_wordbank_cursor_binds_filters_and_freezes_concurrent_versions",
+      "node_id": "apps/api/tests/integration/test_wordbank_flow.py::test_wordbank_cursor_binds_filters_and_freezes_concurrent_versions",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A09",
+        "BE-A16",
+        "BE-A19",
+        "T17",
+        "T21"
+      ],
+      "test_source_sha256": "a3fa15bf4198a6bd699e09e0e4d65c487d721d09861c7c8098381bc292bdfcf8",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_feature_entrypoint_exists",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_feature_entrypoint_exists",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "test_source_sha256": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_manifest_rejects_missing_hash_path_escape_and_symlink",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_manifest_rejects_missing_hash_path_escape_and_symlink",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "test_source_sha256": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_authenticated_response_replay_and_wrong_identity",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_authenticated_response_replay_and_wrong_identity",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "test_source_sha256": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_nonfinite_and_wrong_dimension_rejected",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_nonfinite_and_wrong_dimension_rejected",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "test_source_sha256": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_batched_queue_timeout_and_capacity",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_batched_queue_timeout_and_capacity",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "test_source_sha256": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_client_calibration_and_signature",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_client_calibration_and_signature",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "test_source_sha256": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_expired_request_and_nonloopback_are_rejected",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_expired_request_and_nonloopback_are_rejected",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "test_source_sha256": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_warmup_failure_keeps_not_ready",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_warmup_failure_keeps_not_ready",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "test_source_sha256": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_duplicate_keys_and_manifest_digest_mismatch_rejected",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_duplicate_keys_and_manifest_digest_mismatch_rejected",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "test_source_sha256": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_batch_shutdown_resolves_inflight_request",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_batch_shutdown_resolves_inflight_request",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "test_source_sha256": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_same_text_coalesces_and_cache_is_bounded",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_same_text_coalesces_and_cache_is_bounded",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "test_source_sha256": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_http_full_batch_and_deadline",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_http_full_batch_and_deadline",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "test_source_sha256": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_runtime_nonfinite_is_model_failure",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_runtime_nonfinite_is_model_failure",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "test_source_sha256": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_boot_clock_rollback_never_revalidates_expired_request",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_boot_clock_rollback_never_revalidates_expired_request",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "test_source_sha256": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_replay_retention_covers_future_timestamp_and_drift_margin",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_replay_retention_covers_future_timestamp_and_drift_margin",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "test_source_sha256": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_client_total_deadline_rejects_valid_slow_drip_response",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_client_total_deadline_rejects_valid_slow_drip_response",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "test_source_sha256": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_client_checks_monotonic_budget_after_synchronous_validation",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_client_checks_monotonic_budget_after_synchronous_validation",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "test_source_sha256": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-integration-test_real_model-test_real_offline_encoding_and_authenticated_client",
+      "node_id": "apps/scorer/tests/integration/test_real_model.py::test_real_offline_encoding_and_authenticated_client",
+      "environment": "model",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "test_source_sha256": "3f001bb64374cf45db07dd2b8d254b3ebd33f3ab491330030275c5937543afcf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_empty_core_has_fail_closed_entrypoint",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_empty_core_has_fail_closed_entrypoint",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_commit_dedup_hash_and_restart",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_commit_dedup_hash_and_restart",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_transaction_rollback_has_no_seq_gap",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_transaction_rollback_has_no_seq_gap",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_deadline_barrier_precedes_late_input_and_late_winner_does_not_reopen",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_deadline_barrier_precedes_late_input_and_late_winner_does_not_reopen",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_owner_unique_nonce_fencing_contiguous_ack_and_no_fake_processed",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_owner_unique_nonce_fencing_contiguous_ack_and_no_fake_processed",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_concurrent_callbacks_are_deduplicated_and_contiguous",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_concurrent_callbacks_are_deduplicated_and_contiguous",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_http_signature_and_ws_persisted_ack",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_http_signature_and_ws_persisted_ack",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_pause_resume_revoke_and_expiry_are_durable_barriers",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_pause_resume_revoke_and_expiry_are_durable_barriers",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_clock_rollback_closes_window_even_though_operation_rejected",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_clock_rollback_closes_window_even_though_operation_rejected",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_retention_keeps_dedup_metadata_and_reports_gap",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_retention_keeps_dedup_metadata_and_reports_gap",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_delivery_stages_and_unsupported_fulfillment_are_independent",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_delivery_stages_and_unsupported_fulfillment_are_independent",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_runtime_cannot_ddl_or_change_immutable_bytes",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_runtime_cannot_ddl_or_change_immutable_bytes",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_ack_loss_reconnect_uses_relay_durable_cursor",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_ack_loss_reconnect_uses_relay_durable_cursor",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_quota_rollback_and_room_registration_rejection",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_quota_rollback_and_room_registration_rejection",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_expired_lease_closes_before_rejected_connection",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_expired_lease_closes_before_rejected_connection",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_control_plane_is_required_and_device_scope_is_checked",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_control_plane_is_required_and_device_scope_is_checked",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_full_quota_still_allows_safety_close",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_full_quota_still_allows_safety_close",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_old_epoch_cannot_close_a_new_window_with_same_version",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_old_epoch_cannot_close_a_new_window_with_same_version",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_rv1_game_deadline_is_independent_of_short_lease",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_rv1_game_deadline_is_independent_of_short_lease",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_rv2_revoked_grant_cannot_write_processed_or_ack",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_rv2_revoked_grant_cannot_write_processed_or_ack",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_rv3_receipt_id_and_json_depth_are_bounded",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_rv3_receipt_id_and_json_depth_are_bounded",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_rv4_solved_result_returns_same_winner_and_rejects_different",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_rv4_solved_result_returns_same_winner_and_rejects_different",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_rv5_control_barrier_has_no_display_fulfillment",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_rv5_control_barrier_has_no_display_fulfillment",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_rv2_revoked_grant_cannot_advance_durable_ack",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_rv2_revoked_grant_cannot_advance_durable_ack",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_rv5_wrong_original_round_mapping_cannot_create_display_stage",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_rv5_wrong_original_round_mapping_cannot_create_display_stage",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-integration-test_relay_components-test_rv6_new_owner_cannot_fulfill_old_owner_source",
+      "node_id": "apps/relay/tests/integration/test_relay_components.py::test_rv6_new_owner_cannot_fulfill_old_owner_source",
+      "environment": "relay_postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "e88c3fdd91bc5a1000b437f33016227e692234b9fee160e85f33682f47a99fbf",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_config_repr_hides_database_url",
+      "node_id": "apps/relay/tests/test_config.py::test_config_repr_hides_database_url",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_config_missing_fields_and_production_synthetic_fail_closed",
+      "node_id": "apps/relay/tests/test_config.py::test_config_missing_fields_and_production_synthetic_fail_closed",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_synthetic_provider_is_not_client_selectable_for_production",
+      "node_id": "apps/relay/tests/test_config.py::test_synthetic_provider_is_not_client_selectable_for_production",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_connection_query_cannot_override_validated_database_identity",
+      "node_id": "apps/relay/tests/test_config.py::test_connection_query_cannot_override_validated_database_identity",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_wrong_database_name_rejected_before_any_connection",
+      "node_id": "apps/relay/tests/test_config.py::test_wrong_database_name_rejected_before_any_connection",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_connect_errors_never_expose_driver_payload",
+      "node_id": "apps/relay/tests/test_config.py::test_connect_errors_never_expose_driver_payload",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_low_level_factory_also_requires_trusted_verifier",
+      "node_id": "apps/relay/tests/test_config.py::test_low_level_factory_also_requires_trusted_verifier",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_bounded_json_rejects_depth_and_collection_expansion",
+      "node_id": "apps/relay/tests/test_config.py::test_bounded_json_rejects_depth_and_collection_expansion",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_migration_connect_errors_are_sanitized",
+      "node_id": "apps/relay/tests/test_config.py::test_migration_connect_errors_are_sanitized",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-relay-tests-test_config-test_direct_settings_cannot_enable_synthetic_production",
+      "node_id": "apps/relay/tests/test_config.py::test_direct_settings_cannot_enable_synthetic_production",
+      "environment": "local",
+      "stage": "test",
+      "group_refs": [
+        "BE-A06",
+        "BE-A07",
+        "BE-A08"
+      ],
+      "test_source_sha256": "8cf3b12492f23173a50544cbfb8a3497f6e821725475e69e288feed531468844",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-sessions-test_selection_acceptance-test_old_reference_cannot_turn_empty_into_a_fresh_random_intent",
+      "node_id": "apps/api/tests/integration/sessions/test_selection_acceptance.py::test_old_reference_cannot_turn_empty_into_a_fresh_random_intent",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A16",
+        "T13"
+      ],
+      "test_source_sha256": "b8a74a9fbdd77d1aeeaa81459ab2038d0db90bb26065e67e4b115c7259e8f109",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.sessions.test_selection_acceptance",
+      "junit_name": "test_old_reference_cannot_turn_empty_into_a_fresh_random_intent"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-sessions-test_selection_acceptance-test_same_trigger_cannot_bind_different_selection_content",
+      "node_id": "apps/api/tests/integration/sessions/test_selection_acceptance.py::test_same_trigger_cannot_bind_different_selection_content",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A19"
+      ],
+      "test_source_sha256": "b8a74a9fbdd77d1aeeaa81459ab2038d0db90bb26065e67e4b115c7259e8f109",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.sessions.test_selection_acceptance",
+      "junit_name": "test_same_trigger_cannot_bind_different_selection_content"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-sessions-test_selection_acceptance-test_aba_rejects_old_identity_and_revision_independently",
+      "node_id": "apps/api/tests/integration/sessions/test_selection_acceptance.py::test_aba_rejects_old_identity_and_revision_independently",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A16",
+        "BE-A19",
+        "T13"
+      ],
+      "test_source_sha256": "b8a74a9fbdd77d1aeeaa81459ab2038d0db90bb26065e67e4b115c7259e8f109",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.sessions.test_selection_acceptance",
+      "junit_name": "test_aba_rejects_old_identity_and_revision_independently"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-sessions-test_selection_acceptance-test_concurrent_select_commands_report_selection_cas_conflict",
+      "node_id": "apps/api/tests/integration/sessions/test_selection_acceptance.py::test_concurrent_select_commands_report_selection_cas_conflict",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A19"
+      ],
+      "test_source_sha256": "b8a74a9fbdd77d1aeeaa81459ab2038d0db90bb26065e67e4b115c7259e8f109",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.sessions.test_selection_acceptance",
+      "junit_name": "test_concurrent_select_commands_report_selection_cas_conflict"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-sessions-test_selection_acceptance-test_disabled_preview_reports_stale_and_never_substitutes_new_preview",
+      "node_id": "apps/api/tests/integration/sessions/test_selection_acceptance.py::test_disabled_preview_reports_stale_and_never_substitutes_new_preview",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A16",
+        "T13"
+      ],
+      "test_source_sha256": "b8a74a9fbdd77d1aeeaa81459ab2038d0db90bb26065e67e4b115c7259e8f109",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.sessions.test_selection_acceptance",
+      "junit_name": "test_disabled_preview_reports_stale_and_never_substitutes_new_preview"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-sessions-test_selection_acceptance-test_preview_reference_required_and_request_cannot_override_it",
+      "node_id": "apps/api/tests/integration/sessions/test_selection_acceptance.py::test_preview_reference_required_and_request_cannot_override_it",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A16",
+        "T13"
+      ],
+      "test_source_sha256": "b8a74a9fbdd77d1aeeaa81459ab2038d0db90bb26065e67e4b115c7259e8f109",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.sessions.test_selection_acceptance",
+      "junit_name": "test_preview_reference_required_and_request_cannot_override_it"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-sessions-test_selection_acceptance-test_concurrent_consumers_and_restart_idempotency_keep_one_frozen_round",
+      "node_id": "apps/api/tests/integration/sessions/test_selection_acceptance.py::test_concurrent_consumers_and_restart_idempotency_keep_one_frozen_round",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A16",
+        "BE-A19",
+        "T13"
+      ],
+      "test_source_sha256": "b8a74a9fbdd77d1aeeaa81459ab2038d0db90bb26065e67e4b115c7259e8f109",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.sessions.test_selection_acceptance",
+      "junit_name": "test_concurrent_consumers_and_restart_idempotency_keep_one_frozen_round"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-sessions-test_selection_acceptance-test_empty_gets_never_reselect_and_new_catalog_trigger_runs_once",
+      "node_id": "apps/api/tests/integration/sessions/test_selection_acceptance.py::test_empty_gets_never_reselect_and_new_catalog_trigger_runs_once",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A19"
+      ],
+      "test_source_sha256": "b8a74a9fbdd77d1aeeaa81459ab2038d0db90bb26065e67e4b115c7259e8f109",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.sessions.test_selection_acceptance",
+      "junit_name": "test_empty_gets_never_reselect_and_new_catalog_trigger_runs_once"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-sessions-test_selection_acceptance-test_applied_automatic_trigger_survives_restart_without_random_or_new_event",
+      "node_id": "apps/api/tests/integration/sessions/test_selection_acceptance.py::test_applied_automatic_trigger_survives_restart_without_random_or_new_event",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A19"
+      ],
+      "test_source_sha256": "b8a74a9fbdd77d1aeeaa81459ab2038d0db90bb26065e67e4b115c7259e8f109",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.sessions.test_selection_acceptance",
+      "junit_name": "test_applied_automatic_trigger_survives_restart_without_random_or_new_event"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-sessions-test_selection_acceptance-test_touch_persists_sealed_port_after_counter_and_tolerates_absent_observer",
+      "node_id": "apps/api/tests/integration/sessions/test_selection_acceptance.py::test_touch_persists_sealed_port_after_counter_and_tolerates_absent_observer",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20"
+      ],
+      "test_source_sha256": "b8a74a9fbdd77d1aeeaa81459ab2038d0db90bb26065e67e4b115c7259e8f109",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.sessions.test_selection_acceptance",
+      "junit_name": "test_touch_persists_sealed_port_after_counter_and_tolerates_absent_observer"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-sessions-test_selection_acceptance-test_one_hundred_http_ready_reads_do_not_write_or_select",
+      "node_id": "apps/api/tests/integration/sessions/test_selection_acceptance.py::test_one_hundred_http_ready_reads_do_not_write_or_select",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A16",
+        "T13"
+      ],
+      "test_source_sha256": "b8a74a9fbdd77d1aeeaa81459ab2038d0db90bb26065e67e4b115c7259e8f109",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.sessions.test_selection_acceptance",
+      "junit_name": "test_one_hundred_http_ready_reads_do_not_write_or_select"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-sessions-test_selection_acceptance-test_one_hundred_http_empty_reads_do_not_write_or_select",
+      "node_id": "apps/api/tests/integration/sessions/test_selection_acceptance.py::test_one_hundred_http_empty_reads_do_not_write_or_select",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A16",
+        "BE-A19",
+        "T13"
+      ],
+      "test_source_sha256": "b8a74a9fbdd77d1aeeaa81459ab2038d0db90bb26065e67e4b115c7259e8f109",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.sessions.test_selection_acceptance",
+      "junit_name": "test_one_hundred_http_empty_reads_do_not_write_or_select"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-sessions-test_selection_acceptance-test_configure_and_disable_without_rounds_emit_durable_studio_notices",
+      "node_id": "apps/api/tests/integration/sessions/test_selection_acceptance.py::test_configure_and_disable_without_rounds_emit_durable_studio_notices",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A16",
+        "BE-A19",
+        "T13"
+      ],
+      "test_source_sha256": "b8a74a9fbdd77d1aeeaa81459ab2038d0db90bb26065e67e4b115c7259e8f109",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.sessions.test_selection_acceptance",
+      "junit_name": "test_configure_and_disable_without_rounds_emit_durable_studio_notices"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-sessions-test_selection_acceptance-test_automatic_trigger_rollback_retries_once_with_atomic_notice",
+      "node_id": "apps/api/tests/integration/sessions/test_selection_acceptance.py::test_automatic_trigger_rollback_retries_once_with_atomic_notice",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A19"
+      ],
+      "test_source_sha256": "b8a74a9fbdd77d1aeeaa81459ab2038d0db90bb26065e67e4b115c7259e8f109",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.sessions.test_selection_acceptance",
+      "junit_name": "test_automatic_trigger_rollback_retries_once_with_atomic_notice"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-sessions-test_selection_acceptance-test_consume_before_disable_keeps_frozen_preview",
+      "node_id": "apps/api/tests/integration/sessions/test_selection_acceptance.py::test_consume_before_disable_keeps_frozen_preview",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A19"
+      ],
+      "test_source_sha256": "b8a74a9fbdd77d1aeeaa81459ab2038d0db90bb26065e67e4b115c7259e8f109",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.sessions.test_selection_acceptance",
+      "junit_name": "test_consume_before_disable_keeps_frozen_preview"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-sessions-test_selection_acceptance-test_disable_before_consume_rejects_old_preview",
+      "node_id": "apps/api/tests/integration/sessions/test_selection_acceptance.py::test_disable_before_consume_rejects_old_preview",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A19"
+      ],
+      "test_source_sha256": "b8a74a9fbdd77d1aeeaa81459ab2038d0db90bb26065e67e4b115c7259e8f109",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.sessions.test_selection_acceptance",
+      "junit_name": "test_disable_before_consume_rejects_old_preview"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-sessions-test_selection_acceptance-test_disable_consume_and_sorted_configure_batch_share_one_global_lock_order",
+      "node_id": "apps/api/tests/integration/sessions/test_selection_acceptance.py::test_disable_consume_and_sorted_configure_batch_share_one_global_lock_order",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A19"
+      ],
+      "test_source_sha256": "b8a74a9fbdd77d1aeeaa81459ab2038d0db90bb26065e67e4b115c7259e8f109",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.sessions.test_selection_acceptance",
+      "junit_name": "test_disable_consume_and_sorted_configure_batch_share_one_global_lock_order"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-sessions-test_selection_acceptance-test_worker_empty_only_rechecks_for_new_round_or_catalog_trigger",
+      "node_id": "apps/api/tests/integration/sessions/test_selection_acceptance.py::test_worker_empty_only_rechecks_for_new_round_or_catalog_trigger",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A16",
+        "BE-A19",
+        "T13"
+      ],
+      "test_source_sha256": "b8a74a9fbdd77d1aeeaa81459ab2038d0db90bb26065e67e4b115c7259e8f109",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.sessions.test_selection_acceptance",
+      "junit_name": "test_worker_empty_only_rechecks_for_new_round_or_catalog_trigger"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_seal_atomically_persists_aggregate_before_any_get",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_seal_atomically_persists_aggregate_before_any_get",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20",
+        "T26"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_seal_atomically_persists_aggregate_before_any_get"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_rollback_preserves_counter_and_has_no_final",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_rollback_preserves_counter_and_has_no_final",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_rollback_preserves_counter_and_has_no_final"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_no_preget_day8_raw_cleanup_keeps_pages_csv_anomaly_and_basis",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_no_preget_day8_raw_cleanup_keeps_pages_csv_anomaly_and_basis",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20",
+        "T26"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_no_preget_day8_raw_cleanup_keeps_pages_csv_anomaly_and_basis"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_opaque_round_trace_resolves_with_current_authorization",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_opaque_round_trace_resolves_with_current_authorization",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20",
+        "T26"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_opaque_round_trace_resolves_with_current_authorization"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_day31_trace_expired_reason_while_day90_anomaly_survives",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_day31_trace_expired_reason_while_day90_anomaly_survives",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20",
+        "T26"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_day31_trace_expired_reason_while_day90_anomaly_survives"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_real_commit_missing_latency_never_becomes_zero-crash",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_real_commit_missing_latency_never_becomes_zero[crash]",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20",
+        "T26"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_real_commit_missing_latency_never_becomes_zero[crash]"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_real_commit_missing_latency_never_becomes_zero-cross_boot",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_real_commit_missing_latency_never_becomes_zero[cross_boot]",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20",
+        "T26"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_real_commit_missing_latency_never_becomes_zero[cross_boot]"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_real_commit_missing_latency_never_becomes_zero-negative",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_real_commit_missing_latency_never_becomes_zero[negative]",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20",
+        "T26"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_real_commit_missing_latency_never_becomes_zero[negative]"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_final_retention_ends_at_seal_plus90_without_get_extension",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_final_retention_ends_at_seal_plus90_without_get_extension",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_final_retention_ends_at_seal_plus90_without_get_extension"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_existing_message_id_trace_stays_compatible_and_has_expiry_reason",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_existing_message_id_trace_stays_compatible_and_has_expiry_reason",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20",
+        "T26"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_existing_message_id_trace_stays_compatible_and_has_expiry_reason"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_recovery_after_commit_persists_final_with_same_watermark",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_recovery_after_commit_persists_final_with_same_watermark",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_recovery_after_commit_persists_final_with_same_watermark"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_get_never_repairs_missing_final_or_extends_seal",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_get_never_repairs_missing_final_or_extends_seal",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_get_never_repairs_missing_final_or_extends_seal"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_day31_trace_payload_pruned_but_opaque_tombstone_is_still410",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_day31_trace_payload_pruned_but_opaque_tombstone_is_still410",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20",
+        "T26"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_day31_trace_payload_pruned_but_opaque_tombstone_is_still410"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_real_end_and_receipt_refresh_query_watermark_keep_durable_business_basis",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_real_end_and_receipt_refresh_query_watermark_keep_durable_business_basis",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_real_end_and_receipt_refresh_query_watermark_keep_durable_business_basis"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_snapshot_budget_does_not_rollback_end_or_fake_a_final-rows",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_snapshot_budget_does_not_rollback_end_or_fake_a_final[rows]",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_snapshot_budget_does_not_rollback_end_or_fake_a_final[rows]"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_snapshot_budget_does_not_rollback_end_or_fake_a_final-bytes",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_snapshot_budget_does_not_rollback_end_or_fake_a_final[bytes]",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_snapshot_budget_does_not_rollback_end_or_fake_a_final[bytes]"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_nonbudget_persistence_error_propagates_and_rolls_back_whole_transaction-dependency",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_nonbudget_persistence_error_propagates_and_rolls_back_whole_transaction[dependency]",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_nonbudget_persistence_error_propagates_and_rolls_back_whole_transaction[dependency]"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_nonbudget_persistence_error_propagates_and_rolls_back_whole_transaction-database",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_nonbudget_persistence_error_propagates_and_rolls_back_whole_transaction[database]",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_nonbudget_persistence_error_propagates_and_rolls_back_whole_transaction[database]"
+    },
+    {
+      "subcase_id": "apps-api-tests-integration-analytics-test_commit_retention_acceptance-test_raw_comment_cleanup_preserves_ledger_and_anonymous_final",
+      "node_id": "apps/api/tests/integration/analytics/test_commit_retention_acceptance.py::test_raw_comment_cleanup_preserves_ledger_and_anonymous_final",
+      "environment": "postgres",
+      "stage": "integration",
+      "group_refs": [
+        "BE-A20",
+        "T26"
+      ],
+      "test_source_sha256": "d105bd0bb3fbb655e56f6fbc32d3aefbf4b24b7c83e3852b6ac828b8840f18db",
+      "execution_status": "pending_trusted_execution",
+      "entire_acceptance_group_complete": false,
+      "junit_classname": "apps.api.tests.integration.analytics.test_commit_retention_acceptance",
+      "junit_name": "test_raw_comment_cleanup_preserves_ledger_and_anonymous_final"
+    }
+  ]
+}

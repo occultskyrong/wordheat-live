@@ -1,0 +1,1516 @@
+{
+  "plan_version": "1.0",
+  "spec_version": "1.1",
+  "spec_sha256": "e95b592d0401e41daff0e170dad8aabc9d98adb7f484d430c22df161041ccc54",
+  "execution_authorized": false,
+  "planned_implementation_root": ".",
+  "scope": "P-W first release F01-F60 + W01-W18; no P-A rollout or P1/P2 features",
+  "roles": {
+    "BE": "one person owns local core AND relay",
+    "FE": "one frontend engineer",
+    "WIN": "one Windows/delivery engineer"
+  },
+  "tasks": [
+    {
+      "id": "WP01",
+      "milestone": "M0",
+      "owner": "BE",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [],
+      "title": "平台输入与正式包体可行性",
+      "scope": "G0取得真实回调：自由词/短码、用户和消息ID、包体启动token、房间核验、题库类别与履约反馈口径；不足时只允许离线范围",
+      "planned_files": [
+        "docs/feasibility/platform.md",
+        "spikes/platform-probe/probe.py",
+        "spikes/platform-probe/sample-contract.json"
+      ],
+      "requirements": [
+        "F03",
+        "F04",
+        "W18"
+      ],
+      "acceptance_refs": [
+        "T01",
+        "WT24"
+      ],
+      "done_evidence": "平台控制台记录、脱敏源消息、最小EXE启动与能力结论；不能只交mock日志",
+      "status": "planned",
+      "component_verification": "在已授权资源执行最小平台探针及包体启动，保存脱敏实际输入/回调/房间核验记录"
+    },
+    {
+      "id": "WP02",
+      "milestone": "M0",
+      "owner": "WIN",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [],
+      "title": "Windows原生交付风险验证",
+      "scope": "冻结最小API/模型进程和静态页；干净机离线加载BGE、spawn、PG专用服务与跨管理员SID引导；OBS CEF最小展示",
+      "planned_files": [
+        "spikes/windows-native/launcher.py",
+        "spikes/windows-native/runtime.spec",
+        "docs/feasibility/windows-native.md"
+      ],
+      "requirements": [
+        "W01",
+        "W02",
+        "W03",
+        "W04",
+        "W05",
+        "W18"
+      ],
+      "acceptance_refs": [
+        "WT01",
+        "WT02",
+        "WT03",
+        "WT04",
+        "WT06",
+        "WT09"
+      ],
+      "done_evidence": "wheel/DLL/模型清单与真实安装/运行日志；最小包证明技术可行，仍非完整产品验收",
+      "status": "planned",
+      "component_verification": "在干净Windows运行最小冻结目录包，验证离线模型、spawn、最小PG/SID流程和OBS，不等待完整业务"
+    },
+    {
+      "id": "WP03",
+      "milestone": "M1",
+      "owner": "BE",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [
+        "WP01",
+        "WP02"
+      ],
+      "title": "冻结跨模块契约和发行清单",
+      "scope": "OpenAPI/事件JSON Schema；五状态确认、stream/generation/epoch、关闭竞态、错误码；schema迁移、health、安装器与launcher退出码",
+      "planned_files": [
+        "packages/contracts/openapi.yaml",
+        "packages/contracts/relay.schema.json",
+        "packages/contracts/runtime-manifest.schema.json",
+        "docs/contracts/decisions.md",
+        "packages/contracts/check_contracts.py"
+      ],
+      "requirements": [
+        "F28",
+        "F45",
+        "F46",
+        "F47",
+        "W03",
+        "W06",
+        "W08",
+        "W09",
+        "W11",
+        "W13"
+      ],
+      "acceptance_refs": [
+        "T14",
+        "WT13",
+        "WT16",
+        "WT19",
+        "WT20"
+      ],
+      "done_evidence": "同一组正常/重复/失联/截止fixture通过契约校验；前后端/WIN共同签认字段与版本",
+      "status": "planned",
+      "component_verification": "运行Schema/fixture和兼容性检查，交付可供其他角色独立使用的契约；不要求完整产品端到端"
+    },
+    {
+      "id": "WP04",
+      "milestone": "M1",
+      "owner": "WIN",
+      "effort_days": {
+        "low": 1,
+        "high": 2
+      },
+      "depends_on": [
+        "WP03"
+      ],
+      "title": "工程骨架与Windows构建CI",
+      "scope": "建立单仓工程、锁依赖、Windows x64构建和制品摘要；最小API/评分/Web包可重复构建；签名证书申请同步开始",
+      "planned_files": [
+        "apps/api/pyproject.toml",
+        "apps/scorer/pyproject.toml",
+        "apps/web/package.json",
+        "deploy/windows-native/build.ps1",
+        "docs/build.md"
+      ],
+      "requirements": [
+        "W01",
+        "W04",
+        "W18"
+      ],
+      "acceptance_refs": [
+        "WT01",
+        "WT04",
+        "WT06"
+      ],
+      "done_evidence": "两次构建有锁定依赖与可核查manifest；不把签名申请完成等同已获证书",
+      "status": "planned",
+      "component_verification": "运行最小工程的Windows构建，输出依赖锁、摘要与可运行骨架；不要求后续业务已完成"
+    },
+    {
+      "id": "WP05",
+      "milestone": "M1",
+      "owner": "BE",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [
+        "WP03",
+        "WP04"
+      ],
+      "title": "本机数据模型与迁移基础",
+      "scope": "实现业务表、唯一键与锁顺序；运行/迁移账号分离；迁移状态、实例标识和ready接口；备份格式与schema兼容范围；测试库校验实例标识与测试命名空间，拒绝生产DSN",
+      "planned_files": [
+        "apps/api/app/infrastructure/db/models.py",
+        "apps/api/migrations/versions/initial.py",
+        "apps/api/app/health.py",
+        "apps/api/tests/integration/test_schema.py",
+        "apps/api/tests/conftest.py"
+      ],
+      "requirements": [
+        "F06",
+        "F07",
+        "F36",
+        "F54",
+        "F55",
+        "W02",
+        "W13"
+      ],
+      "acceptance_refs": [
+        "T18",
+        "T19",
+        "T23",
+        "WT02",
+        "WT03",
+        "WT11"
+      ],
+      "done_evidence": "真实PG验证约束、事务回滚、最小迁移与还原；不以SQLite或内存测试替代",
+      "status": "planned",
+      "component_verification": "在专用测试PG验证schema、权限、迁移和最小备份还原，不依赖Launcher或完整安装器"
+    },
+    {
+      "id": "WP06",
+      "milestone": "M1",
+      "owner": "FE",
+      "effort_days": {
+        "low": 1,
+        "high": 2
+      },
+      "depends_on": [
+        "WP03",
+        "WP04"
+      ],
+      "title": "前端工程与公共交互基础",
+      "scope": "8类Web路由、类型客户端、事件解码、错误边界、单套高可读主题；建立演练fixture；公开与私有入口分离",
+      "planned_files": [
+        "apps/web/src/app/router.tsx",
+        "apps/web/src/api/client.ts",
+        "apps/web/src/api/events.ts",
+        "apps/web/src/styles/tokens.css"
+      ],
+      "requirements": [
+        "F38",
+        "F43",
+        "F48",
+        "F51"
+      ],
+      "acceptance_refs": [
+        "T16",
+        "T17",
+        "T24"
+      ],
+      "done_evidence": "构建和契约解码通过；fixture有明确演练标记，不宣称已接真后端",
+      "status": "planned",
+      "component_verification": "构建前端壳并验证路由、类型解码及冻结fixture，不要求尚未实现的后端/安装Alpha"
+    },
+    {
+      "id": "WP07",
+      "milestone": "M2",
+      "owner": "BE",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [
+        "WP05"
+      ],
+      "title": "题库发布与CSV校验",
+      "scope": "草稿/审核/发布/禁用、不可变版本、别名/提示/来源；CSV逐行报告，发布受模型校准状态约束",
+      "planned_files": [
+        "apps/api/app/modules/wordbank/service.py",
+        "apps/api/app/modules/wordbank/imports.py",
+        "apps/api/tests/integration/test_wordbank.py"
+      ],
+      "requirements": [
+        "F22",
+        "F23",
+        "F24"
+      ],
+      "acceptance_refs": [
+        "T17",
+        "T21"
+      ],
+      "done_evidence": "坏行不静默发布，未审核/无校准题不能抽取；已开局版本不可修改",
+      "status": "planned",
+      "component_verification": "运行实际题库API与PG的导入/发布用例；正式质量清单由WP08及CONTENT共同提供"
+    },
+    {
+      "id": "WP08",
+      "milestone": "M2",
+      "owner": "BE",
+      "effort_days": {
+        "low": 3,
+        "high": 4
+      },
+      "depends_on": [
+        "WP02",
+        "WP05",
+        "WP07"
+      ],
+      "title": "真实评分进程、校准与G1-Q",
+      "scope": "固定BGE/预处理/维度、离线加载、批处理/有界缓存；精确判胜独立；分离校准/盲评集完成G1-Q质量子项，独立进程资源初测不能代替M5的G1-R",
+      "planned_files": [
+        "apps/scorer/app/encoder.py",
+        "apps/scorer/app/batcher.py",
+        "apps/api/app/modules/scoring/service.py",
+        "packages/evaluation/evaluate.py",
+        "resources/model-manifest.json"
+      ],
+      "requirements": [
+        "F16",
+        "F17",
+        "F18",
+        "F19",
+        "W04",
+        "W14",
+        "W16"
+      ],
+      "acceptance_refs": [
+        "T06",
+        "T07",
+        "T08",
+        "T21",
+        "T22",
+        "WT04",
+        "WT08"
+      ],
+      "done_evidence": "原分与展示分分离；相关/无关排序质量目标分组报告达标；模型缺失禁止正式开局；G1整体待M5资源子项完成",
+      "status": "planned",
+      "component_verification": "在固定Windows评分候选上跑G1-Q与独立进程初测，不以此替代M5的OBS共机G1-R"
+    },
+    {
+      "id": "WP09",
+      "milestone": "M2",
+      "owner": "BE",
+      "effort_days": {
+        "low": 3,
+        "high": 4
+      },
+      "depends_on": [
+        "WP05",
+        "WP07",
+        "WP08"
+      ],
+      "title": "回合状态机与有序入场",
+      "scope": "场次/回合、规范化、用户身份/去重/限流、题目冻结、判胜/超时/暂停/作废/续局、三水位和恢复",
+      "planned_files": [
+        "apps/api/app/modules/rounds/service.py",
+        "apps/api/app/modules/inbox/admission.py",
+        "apps/api/tests/integration/test_round_races.py"
+      ],
+      "requirements": [
+        "F01",
+        "F08",
+        "F09",
+        "F10",
+        "F12",
+        "F15",
+        "F20",
+        "F25",
+        "F26",
+        "F28",
+        "F29",
+        "F30",
+        "F31",
+        "F32",
+        "F33",
+        "F34",
+        "F54",
+        "F60"
+      ],
+      "acceptance_refs": [
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T18"
+      ],
+      "done_evidence": "并发100条正确输入仅一个赢家；旧结果/旧短码不入新轮；重启待确认",
+      "status": "planned",
+      "component_verification": "运行本机API与真实PG的回合竞态、去重、旧轮和恢复定向用例；双端子项留WP27"
+    },
+    {
+      "id": "WP10",
+      "milestone": "M2",
+      "owner": "BE",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [
+        "WP09"
+      ],
+      "title": "积分账本与事务outbox",
+      "scope": "固定档位奖、首位奖励、VOID冲销；结算/账本/事件原子提交；失败重试与出站投影",
+      "planned_files": [
+        "apps/api/app/modules/ranking/ledger.py",
+        "apps/api/app/infrastructure/outbox.py",
+        "apps/api/tests/integration/test_settlement.py"
+      ],
+      "requirements": [
+        "F35",
+        "F36",
+        "F59"
+      ],
+      "acceptance_refs": [
+        "T09",
+        "T19",
+        "T27"
+      ],
+      "done_evidence": "不同评分返回顺序档位总分相同；事务前后杀进程无部分积分/双结算",
+      "status": "planned",
+      "component_verification": "运行真实PG结算/账本/outbox事务和返回乱序用例，不依赖前端或安装Alpha"
+    },
+    {
+      "id": "WP11",
+      "milestone": "M2",
+      "owner": "BE",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [
+        "WP05",
+        "WP03"
+      ],
+      "title": "身份、只读票据与公私DTO",
+      "scope": "主播/运营角色、展示票据兑换/撤销、白名单DTO；昵称纯文本与安全导出；敏感字段脱敏",
+      "planned_files": [
+        "apps/api/app/modules/auth/service.py",
+        "apps/api/app/modules/realtime/dto.py",
+        "apps/api/tests/integration/test_access.py"
+      ],
+      "requirements": [
+        "F48",
+        "F49",
+        "F50",
+        "F51"
+      ],
+      "acceptance_refs": [
+        "T16",
+        "T17",
+        "WT21"
+      ],
+      "done_evidence": "展示票据不能读答案/改管理状态；撤销对既有连接生效；公开网络/静态包无未揭晓答案",
+      "status": "planned",
+      "component_verification": "通过HTTP/WS授权与DTO检查验证隔离/撤销；不要求尚未实现的最终展示页"
+    },
+    {
+      "id": "WP12",
+      "milestone": "M3",
+      "owner": "BE",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [
+        "WP10",
+        "WP11"
+      ],
+      "title": "快照、WebSocket与端侧回执",
+      "scope": "一致as_of_seq、持久补发、动画游标、received/processed验证；为launcher提供就绪与停止接口",
+      "planned_files": [
+        "apps/api/app/modules/realtime/gateway.py",
+        "apps/api/app/modules/realtime/receipts.py",
+        "apps/api/tests/integration/test_reconnect.py"
+      ],
+      "requirements": [
+        "F45",
+        "F46",
+        "F53",
+        "F59",
+        "W03",
+        "W11",
+        "W12"
+      ],
+      "acceptance_refs": [
+        "T15",
+        "T20",
+        "WT09",
+        "WT20"
+      ],
+      "done_evidence": "快照/订阅间无缺口；刷新不重播旧获胜；落盘不能伪造渲染完成",
+      "status": "planned",
+      "component_verification": "用真实API/PG与受控WS客户端验证快照、补发、回执和health，不依赖WP20安装Alpha"
+    },
+    {
+      "id": "WP13",
+      "milestone": "M3",
+      "owner": "FE",
+      "effort_days": {
+        "low": 3,
+        "high": 4
+      },
+      "depends_on": [
+        "WP06"
+      ],
+      "title": "OBS展示页与反馈组件",
+      "scope": "规则/短码/词格/时间/榜单/最新反馈/提示/揭晓；双画布安全区与减少动态效果；接线在WP21验收",
+      "planned_files": [
+        "apps/web/src/pages/obs/ObsPage.tsx",
+        "apps/web/src/features/guesses/Feedback.tsx",
+        "apps/web/src/features/round/Reveal.tsx",
+        "apps/web/tests/obs.spec.ts"
+      ],
+      "requirements": [
+        "F11",
+        "F21",
+        "F37",
+        "F38",
+        "F39",
+        "F40",
+        "F41",
+        "F42",
+        "F43",
+        "F59"
+      ],
+      "acceptance_refs": [
+        "T15",
+        "T17",
+        "T24",
+        "WT09"
+      ],
+      "done_evidence": "fixture状态可读；真实快照接线与手机/OBS验收不能用组件截图替代",
+      "status": "planned",
+      "component_verification": "构建组件并跑冻结fixture及目标画布检查；真实API/安装Alpha接线在WP21验证"
+    },
+    {
+      "id": "WP14",
+      "milestone": "M3",
+      "owner": "FE",
+      "effort_days": {
+        "low": 3,
+        "high": 4
+      },
+      "depends_on": [
+        "WP06"
+      ],
+      "title": "准备页、主播台与设置",
+      "scope": "输入模式/试词、开始/暂停/恢复/跳题/提示/结束；状态与失败原因；活动轮配置下一轮生效",
+      "planned_files": [
+        "apps/web/src/pages/setup/SetupPage.tsx",
+        "apps/web/src/pages/studio/StudioPage.tsx",
+        "apps/web/src/pages/settings/SettingsPage.tsx",
+        "apps/web/tests/studio.spec.ts"
+      ],
+      "requirements": [
+        "F02",
+        "F03",
+        "F14",
+        "F27",
+        "F30",
+        "F31",
+        "F53",
+        "F60",
+        "W12"
+      ],
+      "acceptance_refs": [
+        "T13",
+        "T14",
+        "T25",
+        "WT07",
+        "WT23"
+      ],
+      "done_evidence": "操作可追踪、冲突可理解；模型未就绪/演练模式不能显示已正式开播",
+      "status": "planned",
+      "component_verification": "使用冻结fixture与已具备API验证控制状态；安装Alpha全链路在WP21验证"
+    },
+    {
+      "id": "WP15",
+      "milestone": "M3",
+      "owner": "FE",
+      "effort_days": {
+        "low": 3,
+        "high": 4
+      },
+      "depends_on": [
+        "WP06",
+        "WP07",
+        "WP08"
+      ],
+      "title": "题库与评分实验室页面",
+      "scope": "搜索/草稿/CSV报告/审核发布；原分/展示分/模型版本与人工对照；禁止改正在使用版本",
+      "planned_files": [
+        "apps/web/src/pages/words/WordsPage.tsx",
+        "apps/web/src/pages/scoring/ScoringPage.tsx",
+        "apps/web/tests/wordbank.spec.ts"
+      ],
+      "requirements": [
+        "F19",
+        "F22",
+        "F23",
+        "F24",
+        "W14"
+      ],
+      "acceptance_refs": [
+        "T17",
+        "T21"
+      ],
+      "done_evidence": "坏CSV可定位错误；未通过质检题无法发布；UI与实际模型/校准版本一致",
+      "status": "planned",
+      "component_verification": "连接实际题库/评分API验证页面与版本，当前前端构建即可，不要求安装Alpha"
+    },
+    {
+      "id": "WP16",
+      "milestone": "M3",
+      "owner": "BE",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [
+        "WP10",
+        "WP12"
+      ],
+      "title": "回放、消息追踪、基础复盘",
+      "scope": "隔离manual/replay/test/official；消息处理时间线、配置操作审计、场次统计与脱敏导出",
+      "planned_files": [
+        "apps/api/app/modules/operations/trace.py",
+        "apps/api/app/modules/analytics/service.py",
+        "apps/api/app/modules/replays/service.py",
+        "apps/api/tests/integration/test_replay.py"
+      ],
+      "requirements": [
+        "F13",
+        "F52",
+        "F56",
+        "F57",
+        "F58"
+      ],
+      "acceptance_refs": [
+        "T26",
+        "WT14",
+        "WT22"
+      ],
+      "done_evidence": "测试不混正式指标；每条已接收消息可定位终态；无平台观看分母不造漏词率/停留指标",
+      "status": "planned",
+      "component_verification": "运行真实PG的回放/追踪/统计接口与数据隔离用例，不要求WP17页面已完成"
+    },
+    {
+      "id": "WP17",
+      "milestone": "M3",
+      "owner": "FE",
+      "effort_days": {
+        "low": 3,
+        "high": 4
+      },
+      "depends_on": [
+        "WP06",
+        "WP16"
+      ],
+      "title": "诊断回放与复盘页面",
+      "scope": "消息ID搜索、原因/时间线、隔离回放控制、场次统计/导出、空/加载/失败状态",
+      "planned_files": [
+        "apps/web/src/pages/replay/ReplayPage.tsx",
+        "apps/web/src/pages/analytics/AnalyticsPage.tsx",
+        "apps/web/tests/diagnostics.spec.ts"
+      ],
+      "requirements": [
+        "F13",
+        "F52",
+        "F56",
+        "F57",
+        "F58",
+        "W17"
+      ],
+      "acceptance_refs": [
+        "T17",
+        "T26",
+        "WT22"
+      ],
+      "done_evidence": "正式只读追踪与演练回放清楚分区；统计能与后端账本对账",
+      "status": "planned",
+      "component_verification": "用当前前端构建与WP16实际API验证诊断/复盘，不要求完整安装Alpha"
+    },
+    {
+      "id": "WP18",
+      "milestone": "M3",
+      "owner": "WIN",
+      "effort_days": {
+        "low": 3,
+        "high": 4
+      },
+      "depends_on": [
+        "WP04",
+        "WP08",
+        "WP12",
+        "WP19"
+      ],
+      "title": "Launcher进程与状态机",
+      "scope": "安装实例互斥、健康身份检查、Job Objects、有限退避、预热、可演练/可开播、停止排空和异常恢复",
+      "planned_files": [
+        "apps/windows-launcher/process_host.py",
+        "apps/windows-launcher/state.py",
+        "apps/windows-launcher/health_client.py",
+        "apps/windows-launcher/tests/test_lifecycle.py"
+      ],
+      "requirements": [
+        "W03",
+        "W04",
+        "W12",
+        "W13",
+        "W17"
+      ],
+      "acceptance_refs": [
+        "WT05",
+        "WT06",
+        "WT07",
+        "WT10",
+        "WT23"
+      ],
+      "done_evidence": "不杀未知进程；不托管/终止PG服务和用户OBS；无无限spawn；故障待确认",
+      "status": "planned",
+      "component_verification": "用真实PG及已就绪API/评分目录包验证Job与启动停止，不要求下游WP20安装器"
+    },
+    {
+      "id": "WP19",
+      "milestone": "M3",
+      "owner": "WIN",
+      "effort_days": {
+        "low": 3,
+        "high": 4
+      },
+      "depends_on": [
+        "WP02",
+        "WP04",
+        "WP05",
+        "WP11"
+      ],
+      "title": "专用PG服务与SID/DPAPI引导",
+      "scope": "实例归属清单、服务/端口/目录ACL、运行/迁移角色；目标SID一次性凭据交接与首次修复",
+      "planned_files": [
+        "deploy/windows-native/database.ps1",
+        "apps/windows-launcher/bootstrap.py",
+        "apps/windows-launcher/credentials.py",
+        "docs/windows/database.md"
+      ],
+      "requirements": [
+        "W02",
+        "W05",
+        "W13",
+        "W15"
+      ],
+      "acceptance_refs": [
+        "WT02",
+        "WT03",
+        "WT11",
+        "WT12"
+      ],
+      "done_evidence": "已有PG不受影响；另一管理员UAC后普通用户可启动；不使用trust/明文密码捷径",
+      "status": "planned",
+      "component_verification": "在干净Windows用最小schema测试专用PG服务、目标SID和DPAPI，不要求完整Launcher/Alpha"
+    },
+    {
+      "id": "WP20",
+      "milestone": "M3",
+      "owner": "WIN",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [
+        "WP18",
+        "WP19",
+        "WP13",
+        "WP14"
+      ],
+      "title": "基础可安装Alpha与离线交付",
+      "scope": "onedir+安装器、模型独立目录/摘要、静态基础页面、依赖/SBOM、修复/卸载默认留数据；CI生成基础Alpha，只打包WP08批准的模型manifest及同摘要资源；不声称8页整体已就绪",
+      "planned_files": [
+        "deploy/windows-native/installer.iss",
+        "resources/model-manifest.json",
+        "deploy/windows-native/verify.ps1",
+        "docs/windows/install.md"
+      ],
+      "requirements": [
+        "W01",
+        "W04",
+        "W05",
+        "W15",
+        "W18"
+      ],
+      "acceptance_refs": [
+        "WT01",
+        "WT02",
+        "WT03",
+        "WT04",
+        "WT05",
+        "WT12"
+      ],
+      "done_evidence": "干净机无开发工具可启动PG/API/真实评分与准备/OBS基础页并修复卸载；不是正式平台包体，也不是最终8页Alpha",
+      "status": "planned",
+      "component_verification": "构建并安装基础Alpha，验证PG/API/评分与准备/OBS基础页、修复卸载；8页整体重建在WP21完成"
+    },
+    {
+      "id": "WP21",
+      "milestone": "M3",
+      "owner": "BE",
+      "effort_days": {
+        "low": 1,
+        "high": 2
+      },
+      "depends_on": [
+        "WP12",
+        "WP13",
+        "WP14",
+        "WP15",
+        "WP16",
+        "WP17",
+        "WP20"
+      ],
+      "title": "本机离线纵向闭环集成",
+      "scope": "收齐全部依赖的同一代码/模型/契约版本，重新运行WP20已验证构建器生成包含8页的完整Alpha，再执行手动/回放→入场→评分→反馈→结算→下一轮→重启恢复",
+      "planned_files": [
+        "tests/e2e/offline-session.spec.ts",
+        "tests/fixtures/replays/offline.json",
+        "docs/acceptance/local-alpha.md"
+      ],
+      "requirements": [
+        "F01",
+        "F13",
+        "F20",
+        "F37",
+        "F54",
+        "F58",
+        "W01",
+        "W03"
+      ],
+      "acceptance_refs": [
+        "T13",
+        "T15",
+        "T18",
+        "T19",
+        "T26",
+        "WT01",
+        "WT06",
+        "WT09"
+      ],
+      "done_evidence": "记录含WP15/17最新页面的实际安装Alpha摘要与多轮闭环，不能复用早于这些依赖完成的基础包或mock分数",
+      "status": "planned",
+      "component_verification": "在全部依赖同一版本上重新触发WP20构建器，取得包含WP15/17的完整8页Alpha，再执行真实本机多轮端到端"
+    },
+    {
+      "id": "WP22",
+      "milestone": "M4",
+      "owner": "BE",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [
+        "WP21",
+        "WP01",
+        "WP03"
+      ],
+      "title": "中继官方回调与持久收件箱",
+      "scope": "独立relay数据库、验签/来源/大小校验、提交后HTTP确认；源ID去重、配额/保留/告警与原始模式隔离；测试库与本机/正式中继库隔离并校验实例",
+      "planned_files": [
+        "apps/relay/app/ingress.py",
+        "apps/relay/app/models.py",
+        "apps/relay/migrations/initial.py",
+        "apps/relay/tests/test_ingress.py",
+        "apps/relay/tests/conftest.py"
+      ],
+      "requirements": [
+        "F05",
+        "F06",
+        "F12",
+        "F58",
+        "W07",
+        "W17"
+      ],
+      "acceptance_refs": [
+        "T02",
+        "T20",
+        "T26",
+        "WT14",
+        "WT18",
+        "WT21"
+      ],
+      "done_evidence": "中继落盘前失败不能HTTP成功；不保存谜底/模型，不执行shell/任意下载",
+      "status": "planned",
+      "component_verification": "仅对中继入口/真实中继PG运行签名、落盘崩溃、模式与配额用例，不要求下游WSS/本机/履约已实现"
+    },
+    {
+      "id": "WP23",
+      "milestone": "M4",
+      "owner": "BE",
+      "effort_days": {
+        "low": 1,
+        "high": 2
+      },
+      "depends_on": [
+        "WP22",
+        "WP11"
+      ],
+      "title": "设备绑定与房间租约",
+      "scope": "配对、installation身份、app/room唯一活动owner、generation/TTL；提前撤销无重叠提交期",
+      "planned_files": [
+        "apps/relay/app/leases.py",
+        "apps/relay/app/pairing.py",
+        "apps/relay/tests/test_ownership.py"
+      ],
+      "requirements": [
+        "W05",
+        "W06"
+      ],
+      "acceptance_refs": [
+        "WT13",
+        "WT21"
+      ],
+      "done_evidence": "同room不同session/设备不能重叠运行；自报room不授予权限，旧代次拒绝",
+      "status": "planned",
+      "component_verification": "用真实租约表和受控设备身份fixture验证并发授权/代次，不要求完整Windows连接组件"
+    },
+    {
+      "id": "WP24",
+      "milestone": "M4",
+      "owner": "BE",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [
+        "WP22",
+        "WP23"
+      ],
+      "title": "WSS投递、连续游标和gap",
+      "scope": "事件/控制同stream_seq、原owner不可变、当前delivery代次、至少一次重投、落盘ACK、保留缺口告警",
+      "planned_files": [
+        "apps/relay/app/streams.py",
+        "apps/relay/app/checkpoints.py",
+        "apps/relay/tests/test_redelivery.py"
+      ],
+      "requirements": [
+        "F07",
+        "W08",
+        "W11",
+        "W17"
+      ],
+      "acceptance_refs": [
+        "T03",
+        "WT14",
+        "WT15",
+        "WT18",
+        "WT22"
+      ],
+      "done_evidence": "ACK丢失不双计；同序号不同内容暂停；过期gap不能静默跳到最新",
+      "status": "planned",
+      "component_verification": "用受控WS测试客户端与真实中继PG验证投递/ACK/gap，不要求尚未实现的WP25/26/28"
+    },
+    {
+      "id": "WP25",
+      "milestone": "M4",
+      "owner": "WIN",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [
+        "WP24",
+        "WP18"
+      ],
+      "title": "Windows本机中继连接组件",
+      "scope": "主动WSS、DPAPI授权、relay_deliveries/checkpoints、心跳/健康、代次验证与本机持久ACK",
+      "planned_files": [
+        "apps/api/app/modules/connectors/relay_client.py",
+        "apps/api/app/modules/connectors/relay_store.py",
+        "tests/windows/test_relay_client.py"
+      ],
+      "requirements": [
+        "W06",
+        "W08",
+        "W10",
+        "W11",
+        "W17"
+      ],
+      "acceptance_refs": [
+        "WT10",
+        "WT13",
+        "WT14",
+        "WT15",
+        "WT17",
+        "WT22"
+      ],
+      "done_evidence": "本机无公网监听；落盘后才ACK，旧连接/错误代次/未知帧不推进正式状态",
+      "status": "planned",
+      "component_verification": "连接WP24或冻结协议测试中继验证本机落盘/ACK/重连；正式窗口整合在WP27验证"
+    },
+    {
+      "id": "WP26",
+      "milestone": "M4",
+      "owner": "BE",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [
+        "WP24",
+        "WP09"
+      ],
+      "title": "正式窗口、可信时间与关闭屏障",
+      "scope": "开/暂停/恢复/截止与接收同锁；relay时间；timeout屏障与合法winner竞争；版本冲突返回原终态",
+      "planned_files": [
+        "apps/relay/app/windows.py",
+        "apps/relay/tests/test_window_races.py",
+        "packages/contracts/window-cases.json"
+      ],
+      "requirements": [
+        "F15",
+        "F29",
+        "F30",
+        "W09"
+      ],
+      "acceptance_refs": [
+        "T10",
+        "T11",
+        "T14",
+        "WT16",
+        "WT19"
+      ],
+      "done_evidence": "截止前接收但后解析的合法命中仍可结算；winner_seq越界拒绝，不重开窗口",
+      "status": "planned",
+      "component_verification": "用真实中继PG和受控控制/事件客户端验证窗口与关闭竞态；双端整合留WP27"
+    },
+    {
+      "id": "WP27",
+      "milestone": "M4",
+      "owner": "BE",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [
+        "WP25",
+        "WP26",
+        "WP21"
+      ],
+      "title": "双端回合、故障中断与恢复联调",
+      "scope": "RECONNECTING冻结提交；短重连与6秒中断、5秒运输收尾、租约过期、INTERRUPTED/VOID、积压隔离",
+      "planned_files": [
+        "apps/api/app/modules/connectors/relay_rounds.py",
+        "tests/integration/test_two_side_failures.py",
+        "docs/acceptance/relay-beta.md"
+      ],
+      "requirements": [
+        "F33",
+        "F34",
+        "F44",
+        "F54",
+        "W09",
+        "W10",
+        "W17"
+      ],
+      "acceptance_refs": [
+        "T09",
+        "T10",
+        "T12",
+        "T18",
+        "T19",
+        "WT13",
+        "WT16",
+        "WT17",
+        "WT18",
+        "WT19",
+        "WT22"
+      ],
+      "done_evidence": "完整入场/终态水位可对账；中断后旧积压不追记；不因本机时钟回拨延时",
+      "status": "planned",
+      "component_verification": "使用实际relay和Windows本机原生目录包验证两端故障/水位；前端最终故障展示由WP30补齐"
+    },
+    {
+      "id": "WP28",
+      "milestone": "M4",
+      "owner": "BE",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [
+        "WP27",
+        "WP12",
+        "WP01"
+      ],
+      "title": "正式平台适配、履约与停任务",
+      "scope": "包体token核验room、启动/查询/停止任务、五种确认与ack_outbox/relay_ack_jobs、stop_job重试",
+      "planned_files": [
+        "apps/relay/app/platform.py",
+        "apps/relay/app/fulfillment.py",
+        "apps/api/app/modules/realtime/ack_outbox.py",
+        "apps/relay/tests/test_fulfillment.py"
+      ],
+      "requirements": [
+        "F03",
+        "F04",
+        "F47",
+        "W11",
+        "W13",
+        "W18"
+      ],
+      "acceptance_refs": [
+        "T20",
+        "T25",
+        "WT20",
+        "WT23",
+        "WT24"
+      ],
+      "done_evidence": "落盘ACK不冒充processed；未渲染不伪报；停任务失败可见并持久重试",
+      "status": "planned",
+      "component_verification": "在完整代码链和受控平台测试端验证五种确认、token核验和失败重试；真实平台整体证据在WP35取得"
+    },
+    {
+      "id": "WP29",
+      "milestone": "M4",
+      "owner": "WIN",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [
+        "WP28",
+        "WP20"
+      ],
+      "title": "正式EXE入口与平台包体产物",
+      "scope": "与自有安装器分开构建，处理平台启动/退出/授权，采集认可路径与许可/包结构；CI留两类产物",
+      "planned_files": [
+        "apps/windows-launcher/platform_entry.py",
+        "deploy/windows-native/platform-package.ps1",
+        "docs/platform/package.md"
+      ],
+      "requirements": [
+        "W01",
+        "W03",
+        "W18"
+      ],
+      "acceptance_refs": [
+        "WT06",
+        "WT23",
+        "WT24"
+      ],
+      "done_evidence": "完整产品包体按G0确认形式构建；早期最小包体验证不能替代此包验收",
+      "status": "planned",
+      "component_verification": "构建产品级平台EXE并按G0确认入口做Windows启动/授权/停止验证，不等待最终RC或G2先通过"
+    },
+    {
+      "id": "WP30",
+      "milestone": "M4",
+      "owner": "FE",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [
+        "WP27",
+        "WP17"
+      ],
+      "title": "真实连接与故障状态接线",
+      "scope": "准备/演练/正式、重连冻结/故障中断/停止待确认、租约冲突与gap；字段与版本错误明确",
+      "planned_files": [
+        "apps/web/src/features/connection/status.ts",
+        "apps/web/src/features/connection/StatusPanel.tsx",
+        "apps/web/tests/relay-state.spec.ts"
+      ],
+      "requirements": [
+        "F03",
+        "F44",
+        "F53",
+        "W06",
+        "W10",
+        "W12",
+        "W17"
+      ],
+      "acceptance_refs": [
+        "T20",
+        "WT07",
+        "WT10",
+        "WT17",
+        "WT18",
+        "WT23"
+      ],
+      "done_evidence": "无授权、租约失效或缺口不能显示正常开播；短重连不偷偷延长回合",
+      "status": "planned",
+      "component_verification": "用实际双端状态及故障fixture验证前端，区分重连/中断/停止待确认；不依赖最终RC"
+    },
+    {
+      "id": "WP31",
+      "milestone": "M5",
+      "owner": "WIN",
+      "effort_days": {
+        "low": 3,
+        "high": 4
+      },
+      "depends_on": [
+        "WP20",
+        "WP08",
+        "WP05"
+      ],
+      "title": "升级、模型联合切换与受控回滚",
+      "scope": "维护态、签名/摘要/空间、备份→迁移→预热→切换；至少两代实际应用/schema；数据不兼容时独立实例恢复",
+      "planned_files": [
+        "deploy/windows-native/upgrade.ps1",
+        "apps/windows-launcher/maintenance.py",
+        "tests/windows/test_upgrade.py",
+        "docs/windows/recovery.md"
+      ],
+      "requirements": [
+        "F55",
+        "W13",
+        "W14",
+        "W15"
+      ],
+      "acceptance_refs": [
+        "T21",
+        "T23",
+        "WT04",
+        "WT11",
+        "WT12",
+        "WT22"
+      ],
+      "done_evidence": "不能只换EXE冒充DB回滚；跨机重绑；卸载留数据；既有PG仍不受影响",
+      "status": "planned",
+      "component_verification": "用两代明确摘要的预候选应用/schema验证升级/模型切换/恢复；正式RC由下游WP34冻结后复验"
+    },
+    {
+      "id": "WP32",
+      "milestone": "M5",
+      "owner": "BE",
+      "effort_days": {
+        "low": 2,
+        "high": 3
+      },
+      "depends_on": [
+        "WP27",
+        "WP28",
+        "WP29",
+        "WP30"
+      ],
+      "title": "负载与协议故障证据收敛",
+      "scope": "持续/突发真实模型+OBS；中继/本机/展示逐段指标；崩溃、租约、屏障、回执、配额失效组合",
+      "planned_files": [
+        "tests/load/relay_profile.py",
+        "tests/faults/scenarios.yaml",
+        "docs/acceptance/capacity.md"
+      ],
+      "requirements": [
+        "F12",
+        "F33",
+        "F34",
+        "F52",
+        "F53",
+        "W09",
+        "W10",
+        "W11",
+        "W16",
+        "W17"
+      ],
+      "acceptance_refs": [
+        "T22",
+        "WT08",
+        "WT13",
+        "WT14",
+        "WT15",
+        "WT16",
+        "WT17",
+        "WT18",
+        "WT19",
+        "WT20",
+        "WT21",
+        "WT23"
+      ],
+      "done_evidence": "真实PG/模型/Windows/CEF运行；不以单函数mock或平台流量宣称容量",
+      "status": "planned",
+      "component_verification": "在成套预候选上执行真实模型/PG/Windows/CEF联合负载与故障，记录全部摘要；不反向依赖WP34"
+    },
+    {
+      "id": "WP33",
+      "milestone": "M5",
+      "owner": "WIN",
+      "effort_days": {
+        "low": 1,
+        "high": 2
+      },
+      "depends_on": [
+        "WP31",
+        "WP27"
+      ],
+      "title": "双端备份恢复与安装安全复验",
+      "scope": "本机/relay分别恢复、旧备份超出保留窗、SID/ACL/Defender、安装卸载/重装、凭据重绑",
+      "planned_files": [
+        "tests/windows/test_restore.py",
+        "tests/integration/test_checkpoint_restore.py",
+        "docs/acceptance/recovery.md"
+      ],
+      "requirements": [
+        "F55",
+        "W05",
+        "W13",
+        "W15",
+        "W17"
+      ],
+      "acceptance_refs": [
+        "T23",
+        "WT01",
+        "WT02",
+        "WT03",
+        "WT04",
+        "WT05",
+        "WT06",
+        "WT07",
+        "WT10",
+        "WT11",
+        "WT12",
+        "WT22"
+      ],
+      "done_evidence": "恢复到独立实例，缺口明确终止旧场；不静默删数据、不要求关闭安全保护",
+      "status": "planned",
+      "component_verification": "在明确版本的预候选上执行双端恢复与安装安全矩阵，不要求最终RC已冻结；RC复验由WP34组织"
+    },
+    {
+      "id": "WP34",
+      "milestone": "M5",
+      "owner": "WIN",
+      "effort_days": {
+        "low": 1,
+        "high": 2
+      },
+      "depends_on": [
+        "WP31",
+        "WP32",
+        "WP33",
+        "WP29",
+        "WP30"
+      ],
+      "title": "冻结发布候选与复验清单",
+      "scope": "冻结安装器/正式包体/前端/API/scorer/relay/schema/model/题库manifest、摘要/签名、47项前置用例与G1报告",
+      "planned_files": [
+        "deploy/release/release-manifest.json",
+        "docs/acceptance/rc-checklist.md",
+        "docs/release-notes.md"
+      ],
+      "requirements": [
+        "W01",
+        "W13",
+        "W14",
+        "W18"
+      ],
+      "acceptance_refs": [
+        "T22",
+        "T23",
+        "WT01",
+        "WT08",
+        "WT09",
+        "WT11",
+        "WT12"
+      ],
+      "done_evidence": "唯一RC编号和成套版本可追溯，G1-Q与G1-R合并放行；修改任一候选后重冻结并重跑受影响用例",
+      "status": "planned",
+      "component_verification": "先冻结并签署成套RC/manifest，再组织此前47项与G1最终复验；失败修复后重冻结，不能把旧候选证据沿用为通过"
+    },
+    {
+      "id": "WP35",
+      "milestone": "M6",
+      "owner": "BE",
+      "effort_days": {
+        "low": 1,
+        "high": 2
+      },
+      "depends_on": [
+        "WP34",
+        "WP01",
+        "WP28",
+        "WP29"
+      ],
+      "title": "真实平台多用户与G2验收",
+      "scope": "使用已授权测试/试播资源，真实词/短码/身份、真实包体和双阶段履约；正式/演练统计分开",
+      "planned_files": [
+        "docs/acceptance/platform-live.md",
+        "docs/acceptance/source-to-render-report.json"
+      ],
+      "requirements": [
+        "F03",
+        "F04",
+        "F47",
+        "F58",
+        "W18"
+      ],
+      "acceptance_refs": [
+        "T01",
+        "T24",
+        "T25",
+        "WT24"
+      ],
+      "done_evidence": "固定RC的真实接入/直播画面/履约证据；模拟通过不放行，改代码需回退到RC复验",
+      "status": "planned",
+      "component_verification": "使用固定RC执行真实平台多用户G2采证；若需改代码则回到修复和WP34重冻结/复验"
+    },
+    {
+      "id": "WP36",
+      "milestone": "M6",
+      "owner": "WIN",
+      "effort_days": {
+        "low": 1,
+        "high": 2
+      },
+      "depends_on": [
+        "WP35",
+        "WP34"
+      ],
+      "title": "主播独立安装开停播与交付",
+      "scope": "按手册在目标机安装/开播/暂停/结束/备份/恢复，交付支持日志、回滚边界与未过项",
+      "planned_files": [
+        "docs/operator/install.md",
+        "docs/operator/start-stop.md",
+        "docs/operator/troubleshooting.md",
+        "docs/acceptance/handover.md"
+      ],
+      "requirements": [
+        "F02",
+        "F52",
+        "F55",
+        "W12",
+        "W13",
+        "W15",
+        "W18"
+      ],
+      "acceptance_refs": [
+        "T25",
+        "WT01",
+        "WT10",
+        "WT11",
+        "WT12",
+        "WT23",
+        "WT24"
+      ],
+      "done_evidence": "主播无需开发者改配置完成操作；未过G0/G1/G2或关键51项不能签为正式可用",
+      "status": "planned",
+      "component_verification": "用最终固定RC让主播按手册独立安装开停播与恢复，核验完整51项证据及交付边界"
+    }
+  ],
+  "acceptance_primary_milestone": {
+    "T03": "M2",
+    "T04": "M2",
+    "T05": "M2",
+    "T06": "M2",
+    "T07": "M2",
+    "T08": "M2",
+    "T09": "M2",
+    "T11": "M2",
+    "T12": "M2",
+    "T13": "M2",
+    "T14": "M2",
+    "T19": "M2",
+    "T21": "M2",
+    "T27": "M2",
+    "T15": "M3",
+    "T16": "M3",
+    "T17": "M3",
+    "T02": "M4",
+    "T10": "M4",
+    "T18": "M4",
+    "T20": "M4",
+    "T26": "M4",
+    "WT13": "M4",
+    "WT14": "M4",
+    "WT15": "M4",
+    "WT16": "M4",
+    "WT17": "M4",
+    "WT18": "M4",
+    "WT19": "M4",
+    "WT20": "M4",
+    "WT21": "M4",
+    "WT23": "M4",
+    "T22": "M5",
+    "T23": "M5",
+    "WT01": "M5",
+    "WT02": "M5",
+    "WT03": "M5",
+    "WT04": "M5",
+    "WT05": "M5",
+    "WT06": "M5",
+    "WT07": "M5",
+    "WT08": "M5",
+    "WT09": "M5",
+    "WT10": "M5",
+    "WT11": "M5",
+    "WT12": "M5",
+    "WT22": "M5",
+    "T01": "M6",
+    "T24": "M6",
+    "T25": "M6",
+    "WT24": "M6"
+  },
+  "milestone_acceptance_counts": {
+    "M2": 14,
+    "M3": 3,
+    "M4": 15,
+    "M5": 15,
+    "M6": 4
+  },
+  "quality_gates": {
+    "G0": "M0真实平台输入/包体路径可行性",
+    "G1-Q": "M2评分质量子项",
+    "G1-R": "M5目标机与OBS资源子项；与G1-Q合并构成G1",
+    "G2": "M6真实平台闭环"
+  },
+  "engineering_day_totals": {
+    "BE": [
+      37,
+      56
+    ],
+    "FE": [
+      15,
+      21
+    ],
+    "WIN": [
+      21,
+      32
+    ],
+    "base": [
+      73,
+      109
+    ],
+    "rework_buffer": [
+      8,
+      16
+    ],
+    "budget_including_buffer": [
+      81,
+      125
+    ]
+  },
+  "path_resolution": "repository-root-relative"
+}

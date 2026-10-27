@@ -1,0 +1,139 @@
+{
+  "verifier": "backend_iteration2_verify",
+  "repo": "/Users/jiachenclaw/code/wordheat-live",
+  "repo_access": "read-only",
+  "base": "master@unborn",
+  "verdict": "pass_for_primary_assembly_with_BE_A20_partial",
+  "source_tree_sha256": "7b8f26c36e9fea7e0fff2ff7ba44921ae21734676e3f5101aded1e96adb8ce30",
+  "source_manifest_path": "/private/tmp/wordheat-backend-iteration2-GaVvsj/verify/20261026-final-combined-source-manifest.json",
+  "source_manifest_file_sha256": "62c6d7eeed89742519229a955e2d6ecefd880ea12eaf026f97d92c69562e2b45",
+  "source_files": 137,
+  "source_unchanged_after_tests": true,
+  "frozen_inputs": {
+    "acceptance_final_freeze": "1634ae4a732838ae2af52790bda6311079db5ad2b29cd63a77ff328e6f52d315",
+    "analytics_manifest": "696b9242ddc4367e983c9528ab05ef38138e90bca33ed0844d4e000c1e898740",
+    "isolation_manifest": "62805935dc9c06eaf9daf21925edf856cbaf6f508cf2ef51d925aecd1012b13b",
+    "selection_manifest": "0de8790013a7c594a12ec951fef5d8ceaa33a5bdeb2deee1a7e7a89b7e0623e3"
+  },
+  "final_acceptance_configuration": {
+    "freeze_sha256": "1634ae4a732838ae2af52790bda6311079db5ad2b29cd63a77ff328e6f52d315",
+    "manifest_sha256": "44166d1af5c2476c41eadadbd8165d2cdd09794bfe94bec5be01a6267cf68ef3",
+    "manifest_valid": true,
+    "a19_nodes": [
+      "test_same_trigger_cannot_bind_different_selection_content",
+      "test_aba_rejects_old_identity_and_revision_independently",
+      "test_concurrent_select_commands_report_selection_cas_conflict",
+      "test_concurrent_consumers_and_restart_idempotency_keep_one_frozen_round",
+      "test_empty_gets_never_reselect_and_new_catalog_trigger_runs_once",
+      "test_applied_automatic_trigger_survives_restart_without_random_or_new_event",
+      "test_one_hundred_http_empty_reads_do_not_write_or_select",
+      "test_configure_and_disable_without_rounds_emit_durable_studio_notices",
+      "test_automatic_trigger_rollback_retries_once_with_atomic_notice",
+      "test_consume_before_disable_keeps_frozen_preview",
+      "test_disable_before_consume_rejects_old_preview",
+      "test_disable_consume_and_sorted_configure_batch_share_one_global_lock_order",
+      "test_worker_empty_only_rechecks_for_new_round_or_catalog_trigger"
+    ],
+    "a19_bound_sources": 6,
+    "a19_sources_match_independently_tested_candidate": true,
+    "a20_full_verification_empty": true,
+    "old_mappings_preserved": 113,
+    "new_mappings_match_independent_junit": 37,
+    "total_mappings": 150,
+    "other_group_guards_verification_unchanged": true,
+    "other_group_mapping_changes": "only append new subcase ids according to group_refs",
+    "tool_code_unchanged": true,
+    "all_original_assertions_retained": true,
+    "no_evidence_passed": 0,
+    "issues": [],
+    "verdict": "pass",
+    "tests_passed": 18,
+    "subtests_passed": 22,
+    "junit_sha256": "ad54e9daa4f85df2acde3e315b61323e660928457297628670fc6ba7ec26ed17",
+    "pg_executed": false,
+    "waiting_for": "frozen isolated legacy-suite helper"
+  },
+  "isolation_helper": {
+    "verdict": "pass",
+    "owned_write_paths": 3,
+    "legacy_test_source_unchanged": true,
+    "matching": "exact configured runtime/migration URLs only; no query overrides; engine_connect covers direct factories and cached aliases",
+    "scope": "one random schema per pytest process; no public search_path fallback",
+    "cleanup": "schema deletion requires in-memory ownership plus current DB marker, schema owner and nonce comment; normal exception paths clean in finally",
+    "role_boundary": "runtime cannot CREATE in private schema or public; marker/revision runtime writes revoked",
+    "production_source_unchanged": true,
+    "migration_scope_limit": "pytest-only packaged SQL plus actual identity/revision validation; production migrate public GRANT path remains for primary independent check"
+  },
+  "full_api_execution": {
+    "exit_code": 0,
+    "command": [
+      "/Users/jiachenclaw/code/wordheat-live/apps/api/.venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "tests",
+      "-q",
+      "--tb=short",
+      "-p",
+      "no:cacheprovider",
+      "--rootdir=/private/tmp/wordheat-backend-iteration2-GaVvsj/verify/final-combined-candidate/apps/api",
+      "--junitxml=/private/tmp/wordheat-backend-iteration2-GaVvsj/verify/20261026-final-api-independent.junit.xml"
+    ],
+    "log": "/private/tmp/wordheat-backend-iteration2-GaVvsj/verify/20261026-final-api-independent.log",
+    "junit": "/private/tmp/wordheat-backend-iteration2-GaVvsj/verify/20261026-final-api-independent.junit.xml",
+    "observations": {
+      "external_public_sentinel_preserved": true,
+      "new_private_schemas_remaining": 0,
+      "preexisting_private_schemas_preserved": true,
+      "runtime_public_create": false,
+      "external_owned_sentinel_removed": true
+    },
+    "pytest_passed": 174,
+    "subtests_passed": 52,
+    "junit_testcases": 174,
+    "failed": 0,
+    "skipped": 0,
+    "junit_sha256": "79376011e177a1bcd3ee62f506dd2d9ba02480dd33984e6408ee194c1cac532e"
+  },
+  "collection_without_valid_config": {
+    "exit_code": 0,
+    "collected": 174,
+    "invalid_config_path_ignored_for_collection": true
+  },
+  "BE_A19": "pass for frozen Mac plus dedicated-PG component acceptance",
+  "BE_A20": "partial; repaired scoped subcases pass",
+  "open_issues": [
+    {
+      "id": "BE-I2-A20-01",
+      "status": "open_known_partial",
+      "severity": "scope_limitation",
+      "finding": "Official ACK projection remains explicitly unavailable; analytics GET returns ACK_PROJECTION_UNAVAILABLE 503. Independent probe confirms this does not roll back local ENDED/final persistence.",
+      "source": "apps/api/app/modules/analytics/service.py:277"
+    },
+    {
+      "id": "BE-I2-A20-02",
+      "status": "open_known_partial",
+      "severity": "scope_limitation",
+      "finding": "Over-budget final remains unmaterialized with materialization_pending_reason; ENDED and raw/ledger remain committed, seal is cleared, GET stays 413. No complete recovery/materialization worker is claimed.",
+      "source": "apps/api/app/modules/analytics/service.py:287"
+    },
+    {
+      "id": "BE-I2-A20-03",
+      "status": "open_known_partial",
+      "severity": "scope_limitation",
+      "finding": "Retention is proven by fixture-owned logical aging and scoped cleanup. No automatic 7-day raw-comment or 30-day trace scheduler is implemented; prune_expired_traces is an explicit session-scoped hook.",
+      "source": "apps/api/app/modules/analytics/service.py:328"
+    },
+    {
+      "id": "BE-I2-A20-04",
+      "status": "open_known_partial",
+      "severity": "scope_limitation",
+      "finding": "Legacy pre-observer unsealed GET-only HMAC trace refs remain unresolved by the new persisted round_facts lookup. Observed rounds and historical rounds upgraded during sealing are covered.",
+      "source": "apps/api/app/modules/analytics/service.py:364"
+    }
+  ],
+  "new_blocking_defects": [],
+  "whole_spec_complete": false,
+  "production_windows_platform_acceptance": false,
+  "strict_final_evidence_status": "configuration remains pending trusted execution until primary uses final manifest/source; independent component results do not manufacture strict overall completion"
+}

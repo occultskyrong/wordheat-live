@@ -1,0 +1,1151 @@
+{
+  "report_version": 1,
+  "spec_sha256": "6c582420ea7d80d66cea1178e8629e7358a6a23a88c1d5ea65843a47f821f63b",
+  "manifest_sha256": "68754b804c81c0bb3b746406e9d9bf26284211a70a1adc1644fd30a07c0f72f7",
+  "run_id": "d2d62bd608db4e6ba658ceccacf579fc",
+  "started_at": "2026-10-25T17:00:50.967767+00:00",
+  "finished_at": "2026-10-25T17:00:53.275299+00:00",
+  "collected_node_ids": [
+    "apps/scorer/tests/unit/test_scorer.py::test_feature_entrypoint_exists",
+    "apps/scorer/tests/unit/test_scorer.py::test_manifest_rejects_missing_hash_path_escape_and_symlink",
+    "apps/scorer/tests/unit/test_scorer.py::test_authenticated_response_replay_and_wrong_identity",
+    "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[deadline_ms-True]",
+    "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[deadline_ms-0]",
+    "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[texts-value2]",
+    "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[texts-value3]",
+    "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[texts-value4]",
+    "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[request_id-]",
+    "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[manifest_id-1]",
+    "apps/scorer/tests/unit/test_scorer.py::test_nonfinite_and_wrong_dimension_rejected",
+    "apps/scorer/tests/unit/test_scorer.py::test_batched_queue_timeout_and_capacity",
+    "apps/scorer/tests/unit/test_scorer.py::test_client_calibration_and_signature",
+    "apps/scorer/tests/unit/test_scorer.py::test_expired_request_and_nonloopback_are_rejected",
+    "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[signature]",
+    "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[identity]",
+    "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[dimension]",
+    "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[nonfinite]",
+    "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[norm]",
+    "apps/scorer/tests/unit/test_scorer.py::test_warmup_failure_keeps_not_ready",
+    "apps/scorer/tests/unit/test_scorer.py::test_duplicate_keys_and_manifest_digest_mismatch_rejected",
+    "apps/scorer/tests/unit/test_scorer.py::test_batch_shutdown_resolves_inflight_request",
+    "apps/scorer/tests/unit/test_scorer.py::test_same_text_coalesces_and_cache_is_bounded",
+    "apps/scorer/tests/unit/test_scorer.py::test_http_full_batch_and_deadline",
+    "apps/scorer/tests/unit/test_scorer.py::test_runtime_nonfinite_is_model_failure",
+    "apps/scorer/tests/unit/test_scorer.py::test_boot_clock_rollback_never_revalidates_expired_request",
+    "apps/scorer/tests/unit/test_scorer.py::test_replay_retention_covers_future_timestamp_and_drift_margin",
+    "apps/scorer/tests/unit/test_scorer.py::test_boot_clock_jump_beyond_500ms_fails_closed[-0.501]",
+    "apps/scorer/tests/unit/test_scorer.py::test_boot_clock_jump_beyond_500ms_fails_closed[0.501]",
+    "apps/scorer/tests/unit/test_scorer.py::test_client_total_deadline_rejects_valid_slow_drip_response",
+    "apps/scorer/tests/unit/test_scorer.py::test_client_checks_monotonic_budget_after_synchronous_validation"
+  ],
+  "declared_environment": "local",
+  "observed_runtime": {
+    "sys_platform": "darwin",
+    "python_version": "3.12.13",
+    "service": "scorer",
+    "cwd": "apps/scorer",
+    "postgres_nodes": [],
+    "relay_postgres_nodes": [],
+    "real_model_nodes": [],
+    "integration_qualified": true,
+    "external_runner_available": false
+  },
+  "exit_code": 0,
+  "junit_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+  "checks": [],
+  "component_results": [
+    {
+      "component_id": "apps/scorer/tests/unit/test_scorer.py",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 31,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+      "artifact_sha256": "bc701378f986c6e4bb8192c00e17583bc2e28e5e26783c35caefa909cb6d96db",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "55c06d4ccaf0bfcce1ad858c290d89cf3737142ba0168e4a05ca4497411ba721",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "7d00f2a1128455e0b26d8217265b03e50f3534cb3b1a39823f0b5aa1f1e725d6",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "4b4256293fcdb662479c9170c0c90bba3fedcb5100c39d2939f3d5f3a0c88f7a",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/unit/test_scorer.py::test_feature_entrypoint_exists",
+        "apps/scorer/tests/unit/test_scorer.py::test_manifest_rejects_missing_hash_path_escape_and_symlink",
+        "apps/scorer/tests/unit/test_scorer.py::test_authenticated_response_replay_and_wrong_identity",
+        "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[deadline_ms-True]",
+        "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[deadline_ms-0]",
+        "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[texts-value2]",
+        "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[texts-value3]",
+        "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[texts-value4]",
+        "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[request_id-]",
+        "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[manifest_id-1]",
+        "apps/scorer/tests/unit/test_scorer.py::test_nonfinite_and_wrong_dimension_rejected",
+        "apps/scorer/tests/unit/test_scorer.py::test_batched_queue_timeout_and_capacity",
+        "apps/scorer/tests/unit/test_scorer.py::test_client_calibration_and_signature",
+        "apps/scorer/tests/unit/test_scorer.py::test_expired_request_and_nonloopback_are_rejected",
+        "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[signature]",
+        "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[identity]",
+        "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[dimension]",
+        "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[nonfinite]",
+        "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[norm]",
+        "apps/scorer/tests/unit/test_scorer.py::test_warmup_failure_keeps_not_ready",
+        "apps/scorer/tests/unit/test_scorer.py::test_duplicate_keys_and_manifest_digest_mismatch_rejected",
+        "apps/scorer/tests/unit/test_scorer.py::test_batch_shutdown_resolves_inflight_request",
+        "apps/scorer/tests/unit/test_scorer.py::test_same_text_coalesces_and_cache_is_bounded",
+        "apps/scorer/tests/unit/test_scorer.py::test_http_full_batch_and_deadline",
+        "apps/scorer/tests/unit/test_scorer.py::test_runtime_nonfinite_is_model_failure",
+        "apps/scorer/tests/unit/test_scorer.py::test_boot_clock_rollback_never_revalidates_expired_request",
+        "apps/scorer/tests/unit/test_scorer.py::test_replay_retention_covers_future_timestamp_and_drift_margin",
+        "apps/scorer/tests/unit/test_scorer.py::test_boot_clock_jump_beyond_500ms_fails_closed[-0.501]",
+        "apps/scorer/tests/unit/test_scorer.py::test_boot_clock_jump_beyond_500ms_fails_closed[0.501]",
+        "apps/scorer/tests/unit/test_scorer.py::test_client_total_deadline_rejects_valid_slow_drip_response",
+        "apps/scorer/tests/unit/test_scorer.py::test_client_checks_monotonic_budget_after_synchronous_validation"
+      ]
+    },
+    {
+      "component_id": "apps-scorer-tests-unit-test_scorer-test_feature_entrypoint_exists",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+      "artifact_sha256": "bc701378f986c6e4bb8192c00e17583bc2e28e5e26783c35caefa909cb6d96db",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "55c06d4ccaf0bfcce1ad858c290d89cf3737142ba0168e4a05ca4497411ba721",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "7d00f2a1128455e0b26d8217265b03e50f3534cb3b1a39823f0b5aa1f1e725d6",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "4b4256293fcdb662479c9170c0c90bba3fedcb5100c39d2939f3d5f3a0c88f7a",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/unit/test_scorer.py::test_feature_entrypoint_exists"
+      ],
+      "junit_cases": [
+        [
+          "apps.scorer.tests.unit.test_scorer",
+          "test_feature_entrypoint_exists"
+        ]
+      ],
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-scorer-tests-unit-test_scorer-test_manifest_rejects_missing_hash_path_escape_and_symlink",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+      "artifact_sha256": "bc701378f986c6e4bb8192c00e17583bc2e28e5e26783c35caefa909cb6d96db",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "55c06d4ccaf0bfcce1ad858c290d89cf3737142ba0168e4a05ca4497411ba721",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "7d00f2a1128455e0b26d8217265b03e50f3534cb3b1a39823f0b5aa1f1e725d6",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "4b4256293fcdb662479c9170c0c90bba3fedcb5100c39d2939f3d5f3a0c88f7a",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/unit/test_scorer.py::test_manifest_rejects_missing_hash_path_escape_and_symlink"
+      ],
+      "junit_cases": [
+        [
+          "apps.scorer.tests.unit.test_scorer",
+          "test_manifest_rejects_missing_hash_path_escape_and_symlink"
+        ]
+      ],
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-scorer-tests-unit-test_scorer-test_authenticated_response_replay_and_wrong_identity",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+      "artifact_sha256": "bc701378f986c6e4bb8192c00e17583bc2e28e5e26783c35caefa909cb6d96db",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "55c06d4ccaf0bfcce1ad858c290d89cf3737142ba0168e4a05ca4497411ba721",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "7d00f2a1128455e0b26d8217265b03e50f3534cb3b1a39823f0b5aa1f1e725d6",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "4b4256293fcdb662479c9170c0c90bba3fedcb5100c39d2939f3d5f3a0c88f7a",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/unit/test_scorer.py::test_authenticated_response_replay_and_wrong_identity"
+      ],
+      "junit_cases": [
+        [
+          "apps.scorer.tests.unit.test_scorer",
+          "test_authenticated_response_replay_and_wrong_identity"
+        ]
+      ],
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-scorer-tests-unit-test_scorer-test_nonfinite_and_wrong_dimension_rejected",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+      "artifact_sha256": "bc701378f986c6e4bb8192c00e17583bc2e28e5e26783c35caefa909cb6d96db",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "55c06d4ccaf0bfcce1ad858c290d89cf3737142ba0168e4a05ca4497411ba721",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "7d00f2a1128455e0b26d8217265b03e50f3534cb3b1a39823f0b5aa1f1e725d6",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "4b4256293fcdb662479c9170c0c90bba3fedcb5100c39d2939f3d5f3a0c88f7a",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/unit/test_scorer.py::test_nonfinite_and_wrong_dimension_rejected"
+      ],
+      "junit_cases": [
+        [
+          "apps.scorer.tests.unit.test_scorer",
+          "test_nonfinite_and_wrong_dimension_rejected"
+        ]
+      ],
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-scorer-tests-unit-test_scorer-test_batched_queue_timeout_and_capacity",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+      "artifact_sha256": "bc701378f986c6e4bb8192c00e17583bc2e28e5e26783c35caefa909cb6d96db",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "55c06d4ccaf0bfcce1ad858c290d89cf3737142ba0168e4a05ca4497411ba721",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "7d00f2a1128455e0b26d8217265b03e50f3534cb3b1a39823f0b5aa1f1e725d6",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "4b4256293fcdb662479c9170c0c90bba3fedcb5100c39d2939f3d5f3a0c88f7a",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/unit/test_scorer.py::test_batched_queue_timeout_and_capacity"
+      ],
+      "junit_cases": [
+        [
+          "apps.scorer.tests.unit.test_scorer",
+          "test_batched_queue_timeout_and_capacity"
+        ]
+      ],
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-scorer-tests-unit-test_scorer-test_client_calibration_and_signature",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+      "artifact_sha256": "bc701378f986c6e4bb8192c00e17583bc2e28e5e26783c35caefa909cb6d96db",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "55c06d4ccaf0bfcce1ad858c290d89cf3737142ba0168e4a05ca4497411ba721",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "7d00f2a1128455e0b26d8217265b03e50f3534cb3b1a39823f0b5aa1f1e725d6",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "4b4256293fcdb662479c9170c0c90bba3fedcb5100c39d2939f3d5f3a0c88f7a",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/unit/test_scorer.py::test_client_calibration_and_signature"
+      ],
+      "junit_cases": [
+        [
+          "apps.scorer.tests.unit.test_scorer",
+          "test_client_calibration_and_signature"
+        ]
+      ],
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-scorer-tests-unit-test_scorer-test_expired_request_and_nonloopback_are_rejected",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+      "artifact_sha256": "bc701378f986c6e4bb8192c00e17583bc2e28e5e26783c35caefa909cb6d96db",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "55c06d4ccaf0bfcce1ad858c290d89cf3737142ba0168e4a05ca4497411ba721",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "7d00f2a1128455e0b26d8217265b03e50f3534cb3b1a39823f0b5aa1f1e725d6",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "4b4256293fcdb662479c9170c0c90bba3fedcb5100c39d2939f3d5f3a0c88f7a",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/unit/test_scorer.py::test_expired_request_and_nonloopback_are_rejected"
+      ],
+      "junit_cases": [
+        [
+          "apps.scorer.tests.unit.test_scorer",
+          "test_expired_request_and_nonloopback_are_rejected"
+        ]
+      ],
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-scorer-tests-unit-test_scorer-test_warmup_failure_keeps_not_ready",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+      "artifact_sha256": "bc701378f986c6e4bb8192c00e17583bc2e28e5e26783c35caefa909cb6d96db",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "55c06d4ccaf0bfcce1ad858c290d89cf3737142ba0168e4a05ca4497411ba721",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "7d00f2a1128455e0b26d8217265b03e50f3534cb3b1a39823f0b5aa1f1e725d6",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "4b4256293fcdb662479c9170c0c90bba3fedcb5100c39d2939f3d5f3a0c88f7a",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/unit/test_scorer.py::test_warmup_failure_keeps_not_ready"
+      ],
+      "junit_cases": [
+        [
+          "apps.scorer.tests.unit.test_scorer",
+          "test_warmup_failure_keeps_not_ready"
+        ]
+      ],
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-scorer-tests-unit-test_scorer-test_duplicate_keys_and_manifest_digest_mismatch_rejected",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+      "artifact_sha256": "bc701378f986c6e4bb8192c00e17583bc2e28e5e26783c35caefa909cb6d96db",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "55c06d4ccaf0bfcce1ad858c290d89cf3737142ba0168e4a05ca4497411ba721",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "7d00f2a1128455e0b26d8217265b03e50f3534cb3b1a39823f0b5aa1f1e725d6",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "4b4256293fcdb662479c9170c0c90bba3fedcb5100c39d2939f3d5f3a0c88f7a",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/unit/test_scorer.py::test_duplicate_keys_and_manifest_digest_mismatch_rejected"
+      ],
+      "junit_cases": [
+        [
+          "apps.scorer.tests.unit.test_scorer",
+          "test_duplicate_keys_and_manifest_digest_mismatch_rejected"
+        ]
+      ],
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-scorer-tests-unit-test_scorer-test_batch_shutdown_resolves_inflight_request",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+      "artifact_sha256": "bc701378f986c6e4bb8192c00e17583bc2e28e5e26783c35caefa909cb6d96db",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "55c06d4ccaf0bfcce1ad858c290d89cf3737142ba0168e4a05ca4497411ba721",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "7d00f2a1128455e0b26d8217265b03e50f3534cb3b1a39823f0b5aa1f1e725d6",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "4b4256293fcdb662479c9170c0c90bba3fedcb5100c39d2939f3d5f3a0c88f7a",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/unit/test_scorer.py::test_batch_shutdown_resolves_inflight_request"
+      ],
+      "junit_cases": [
+        [
+          "apps.scorer.tests.unit.test_scorer",
+          "test_batch_shutdown_resolves_inflight_request"
+        ]
+      ],
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-scorer-tests-unit-test_scorer-test_same_text_coalesces_and_cache_is_bounded",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+      "artifact_sha256": "bc701378f986c6e4bb8192c00e17583bc2e28e5e26783c35caefa909cb6d96db",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "55c06d4ccaf0bfcce1ad858c290d89cf3737142ba0168e4a05ca4497411ba721",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "7d00f2a1128455e0b26d8217265b03e50f3534cb3b1a39823f0b5aa1f1e725d6",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "4b4256293fcdb662479c9170c0c90bba3fedcb5100c39d2939f3d5f3a0c88f7a",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/unit/test_scorer.py::test_same_text_coalesces_and_cache_is_bounded"
+      ],
+      "junit_cases": [
+        [
+          "apps.scorer.tests.unit.test_scorer",
+          "test_same_text_coalesces_and_cache_is_bounded"
+        ]
+      ],
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-scorer-tests-unit-test_scorer-test_http_full_batch_and_deadline",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+      "artifact_sha256": "bc701378f986c6e4bb8192c00e17583bc2e28e5e26783c35caefa909cb6d96db",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "55c06d4ccaf0bfcce1ad858c290d89cf3737142ba0168e4a05ca4497411ba721",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "7d00f2a1128455e0b26d8217265b03e50f3534cb3b1a39823f0b5aa1f1e725d6",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "4b4256293fcdb662479c9170c0c90bba3fedcb5100c39d2939f3d5f3a0c88f7a",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/unit/test_scorer.py::test_http_full_batch_and_deadline"
+      ],
+      "junit_cases": [
+        [
+          "apps.scorer.tests.unit.test_scorer",
+          "test_http_full_batch_and_deadline"
+        ]
+      ],
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-scorer-tests-unit-test_scorer-test_runtime_nonfinite_is_model_failure",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+      "artifact_sha256": "bc701378f986c6e4bb8192c00e17583bc2e28e5e26783c35caefa909cb6d96db",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "55c06d4ccaf0bfcce1ad858c290d89cf3737142ba0168e4a05ca4497411ba721",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "7d00f2a1128455e0b26d8217265b03e50f3534cb3b1a39823f0b5aa1f1e725d6",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "4b4256293fcdb662479c9170c0c90bba3fedcb5100c39d2939f3d5f3a0c88f7a",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/unit/test_scorer.py::test_runtime_nonfinite_is_model_failure"
+      ],
+      "junit_cases": [
+        [
+          "apps.scorer.tests.unit.test_scorer",
+          "test_runtime_nonfinite_is_model_failure"
+        ]
+      ],
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-scorer-tests-unit-test_scorer-test_boot_clock_rollback_never_revalidates_expired_request",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+      "artifact_sha256": "bc701378f986c6e4bb8192c00e17583bc2e28e5e26783c35caefa909cb6d96db",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "55c06d4ccaf0bfcce1ad858c290d89cf3737142ba0168e4a05ca4497411ba721",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "7d00f2a1128455e0b26d8217265b03e50f3534cb3b1a39823f0b5aa1f1e725d6",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "4b4256293fcdb662479c9170c0c90bba3fedcb5100c39d2939f3d5f3a0c88f7a",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/unit/test_scorer.py::test_boot_clock_rollback_never_revalidates_expired_request"
+      ],
+      "junit_cases": [
+        [
+          "apps.scorer.tests.unit.test_scorer",
+          "test_boot_clock_rollback_never_revalidates_expired_request"
+        ]
+      ],
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-scorer-tests-unit-test_scorer-test_replay_retention_covers_future_timestamp_and_drift_margin",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+      "artifact_sha256": "bc701378f986c6e4bb8192c00e17583bc2e28e5e26783c35caefa909cb6d96db",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "55c06d4ccaf0bfcce1ad858c290d89cf3737142ba0168e4a05ca4497411ba721",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "7d00f2a1128455e0b26d8217265b03e50f3534cb3b1a39823f0b5aa1f1e725d6",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "4b4256293fcdb662479c9170c0c90bba3fedcb5100c39d2939f3d5f3a0c88f7a",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/unit/test_scorer.py::test_replay_retention_covers_future_timestamp_and_drift_margin"
+      ],
+      "junit_cases": [
+        [
+          "apps.scorer.tests.unit.test_scorer",
+          "test_replay_retention_covers_future_timestamp_and_drift_margin"
+        ]
+      ],
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-scorer-tests-unit-test_scorer-test_client_total_deadline_rejects_valid_slow_drip_response",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+      "artifact_sha256": "bc701378f986c6e4bb8192c00e17583bc2e28e5e26783c35caefa909cb6d96db",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "55c06d4ccaf0bfcce1ad858c290d89cf3737142ba0168e4a05ca4497411ba721",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "7d00f2a1128455e0b26d8217265b03e50f3534cb3b1a39823f0b5aa1f1e725d6",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "4b4256293fcdb662479c9170c0c90bba3fedcb5100c39d2939f3d5f3a0c88f7a",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/unit/test_scorer.py::test_client_total_deadline_rejects_valid_slow_drip_response"
+      ],
+      "junit_cases": [
+        [
+          "apps.scorer.tests.unit.test_scorer",
+          "test_client_total_deadline_rejects_valid_slow_drip_response"
+        ]
+      ],
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "component_id": "apps-scorer-tests-unit-test_scorer-test_client_checks_monotonic_budget_after_synchronous_validation",
+      "stage": "test",
+      "status": "passed",
+      "declared_environment": "local",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "local",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/d2d62bd608db4e6ba658ceccacf579fc/results.xml",
+      "artifact_sha256": "bc701378f986c6e4bb8192c00e17583bc2e28e5e26783c35caefa909cb6d96db",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "55c06d4ccaf0bfcce1ad858c290d89cf3737142ba0168e4a05ca4497411ba721",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "7d00f2a1128455e0b26d8217265b03e50f3534cb3b1a39823f0b5aa1f1e725d6",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "4b4256293fcdb662479c9170c0c90bba3fedcb5100c39d2939f3d5f3a0c88f7a",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/unit/test_scorer.py::test_client_checks_monotonic_budget_after_synchronous_validation"
+      ],
+      "junit_cases": [
+        [
+          "apps.scorer.tests.unit.test_scorer",
+          "test_client_checks_monotonic_budget_after_synchronous_validation"
+        ]
+      ],
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    }
+  ],
+  "subcase_results": [
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_feature_entrypoint_exists",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_feature_entrypoint_exists",
+      "status": "passed",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_manifest_rejects_missing_hash_path_escape_and_symlink",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_manifest_rejects_missing_hash_path_escape_and_symlink",
+      "status": "passed",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_authenticated_response_replay_and_wrong_identity",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_authenticated_response_replay_and_wrong_identity",
+      "status": "passed",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_nonfinite_and_wrong_dimension_rejected",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_nonfinite_and_wrong_dimension_rejected",
+      "status": "passed",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_batched_queue_timeout_and_capacity",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_batched_queue_timeout_and_capacity",
+      "status": "passed",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_client_calibration_and_signature",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_client_calibration_and_signature",
+      "status": "passed",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_expired_request_and_nonloopback_are_rejected",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_expired_request_and_nonloopback_are_rejected",
+      "status": "passed",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_warmup_failure_keeps_not_ready",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_warmup_failure_keeps_not_ready",
+      "status": "passed",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_duplicate_keys_and_manifest_digest_mismatch_rejected",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_duplicate_keys_and_manifest_digest_mismatch_rejected",
+      "status": "passed",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_batch_shutdown_resolves_inflight_request",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_batch_shutdown_resolves_inflight_request",
+      "status": "passed",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_same_text_coalesces_and_cache_is_bounded",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_same_text_coalesces_and_cache_is_bounded",
+      "status": "passed",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_http_full_batch_and_deadline",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_http_full_batch_and_deadline",
+      "status": "passed",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_runtime_nonfinite_is_model_failure",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_runtime_nonfinite_is_model_failure",
+      "status": "passed",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_boot_clock_rollback_never_revalidates_expired_request",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_boot_clock_rollback_never_revalidates_expired_request",
+      "status": "passed",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_replay_retention_covers_future_timestamp_and_drift_margin",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_replay_retention_covers_future_timestamp_and_drift_margin",
+      "status": "passed",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_client_total_deadline_rejects_valid_slow_drip_response",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_client_total_deadline_rejects_valid_slow_drip_response",
+      "status": "passed",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    },
+    {
+      "subcase_id": "apps-scorer-tests-unit-test_scorer-test_client_checks_monotonic_budget_after_synchronous_validation",
+      "node_id": "apps/scorer/tests/unit/test_scorer.py::test_client_checks_monotonic_budget_after_synchronous_validation",
+      "status": "passed",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "report_version": 1,
+  "spec_sha256": "6c582420ea7d80d66cea1178e8629e7358a6a23a88c1d5ea65843a47f821f63b",
+  "manifest_sha256": "6fe5c95c5d80393cd40c6974e980c3f4b682eaaf318bee5727a97e20da944dc4",
+  "run_id": "e20ecbc2a8e54148950bbf3143fcfa7f",
+  "started_at": "2026-10-27T02:13:14.540571+00:00",
+  "finished_at": "2026-10-27T02:13:21.538178+00:00",
+  "collected_node_ids": [
+    "apps/scorer/tests/integration/test_real_model.py::test_real_offline_encoding_and_authenticated_client",
+    "apps/scorer/tests/unit/test_scorer.py::test_feature_entrypoint_exists",
+    "apps/scorer/tests/unit/test_scorer.py::test_manifest_rejects_missing_hash_path_escape_and_symlink",
+    "apps/scorer/tests/unit/test_scorer.py::test_authenticated_response_replay_and_wrong_identity",
+    "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[deadline_ms-True]",
+    "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[deadline_ms-0]",
+    "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[texts-value2]",
+    "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[texts-value3]",
+    "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[texts-value4]",
+    "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[request_id-]",
+    "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[manifest_id-1]",
+    "apps/scorer/tests/unit/test_scorer.py::test_nonfinite_and_wrong_dimension_rejected",
+    "apps/scorer/tests/unit/test_scorer.py::test_batched_queue_timeout_and_capacity",
+    "apps/scorer/tests/unit/test_scorer.py::test_client_calibration_and_signature",
+    "apps/scorer/tests/unit/test_scorer.py::test_expired_request_and_nonloopback_are_rejected",
+    "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[signature]",
+    "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[identity]",
+    "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[dimension]",
+    "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[nonfinite]",
+    "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[norm]",
+    "apps/scorer/tests/unit/test_scorer.py::test_warmup_failure_keeps_not_ready",
+    "apps/scorer/tests/unit/test_scorer.py::test_duplicate_keys_and_manifest_digest_mismatch_rejected",
+    "apps/scorer/tests/unit/test_scorer.py::test_batch_shutdown_resolves_inflight_request",
+    "apps/scorer/tests/unit/test_scorer.py::test_same_text_coalesces_and_cache_is_bounded",
+    "apps/scorer/tests/unit/test_scorer.py::test_http_full_batch_and_deadline",
+    "apps/scorer/tests/unit/test_scorer.py::test_runtime_nonfinite_is_model_failure",
+    "apps/scorer/tests/unit/test_scorer.py::test_boot_clock_rollback_never_revalidates_expired_request",
+    "apps/scorer/tests/unit/test_scorer.py::test_replay_retention_covers_future_timestamp_and_drift_margin",
+    "apps/scorer/tests/unit/test_scorer.py::test_boot_clock_jump_beyond_500ms_fails_closed[-0.501]",
+    "apps/scorer/tests/unit/test_scorer.py::test_boot_clock_jump_beyond_500ms_fails_closed[0.501]",
+    "apps/scorer/tests/unit/test_scorer.py::test_client_total_deadline_rejects_valid_slow_drip_response",
+    "apps/scorer/tests/unit/test_scorer.py::test_client_checks_monotonic_budget_after_synchronous_validation"
+  ],
+  "declared_environment": "model",
+  "observed_runtime": {
+    "sys_platform": "darwin",
+    "python_version": "3.12.13",
+    "service": "scorer",
+    "cwd": "apps/scorer",
+    "postgres_nodes": [],
+    "relay_postgres_nodes": [],
+    "real_model_nodes": [
+      "apps/scorer/tests/integration/test_real_model.py::test_real_offline_encoding_and_authenticated_client"
+    ],
+    "integration_qualified": true,
+    "external_runner_available": false
+  },
+  "exit_code": 0,
+  "junit_path": "docs/acceptance/backend-evidence/e20ecbc2a8e54148950bbf3143fcfa7f/results.xml",
+  "checks": [],
+  "component_results": [
+    {
+      "component_id": "apps/scorer/tests",
+      "stage": "integration",
+      "status": "passed",
+      "declared_environment": "model",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [
+          "apps/scorer/tests/integration/test_real_model.py::test_real_offline_encoding_and_authenticated_client"
+        ],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "model",
+      "tests_run": 32,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/e20ecbc2a8e54148950bbf3143fcfa7f/results.xml",
+      "artifact_sha256": "84fdd58a40515b5aefd6dc548a98df4b4dabf1823832c474c5f93a7ec2c0126e",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "8c8b4efb4615c86374e435a13330b3333ab41c8c33f1d9ea3dbe199daad71020",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "de0456358103e82a5ac62fc9eaf2042eb03687449b635411b1f398527b4c2891",
+        "apps/api/app/modules/scoring/worker.py": "889de55bfe3c71510072dbd33e10f0a3db3e1cc02168b1733be23681954b8391",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "09a0eb9b790caa3e121559b827d08ceab9427e1563baa2c20afdc494c1859249",
+        "apps/scorer/tests/integration/test_real_model.py": "3f001bb64374cf45db07dd2b8d254b3ebd33f3ab491330030275c5937543afcf",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/integration/test_real_model.py::test_real_offline_encoding_and_authenticated_client",
+        "apps/scorer/tests/unit/test_scorer.py::test_feature_entrypoint_exists",
+        "apps/scorer/tests/unit/test_scorer.py::test_manifest_rejects_missing_hash_path_escape_and_symlink",
+        "apps/scorer/tests/unit/test_scorer.py::test_authenticated_response_replay_and_wrong_identity",
+        "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[deadline_ms-True]",
+        "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[deadline_ms-0]",
+        "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[texts-value2]",
+        "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[texts-value3]",
+        "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[texts-value4]",
+        "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[request_id-]",
+        "apps/scorer/tests/unit/test_scorer.py::test_strict_requests[manifest_id-1]",
+        "apps/scorer/tests/unit/test_scorer.py::test_nonfinite_and_wrong_dimension_rejected",
+        "apps/scorer/tests/unit/test_scorer.py::test_batched_queue_timeout_and_capacity",
+        "apps/scorer/tests/unit/test_scorer.py::test_client_calibration_and_signature",
+        "apps/scorer/tests/unit/test_scorer.py::test_expired_request_and_nonloopback_are_rejected",
+        "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[signature]",
+        "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[identity]",
+        "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[dimension]",
+        "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[nonfinite]",
+        "apps/scorer/tests/unit/test_scorer.py::test_client_rejects_untrusted_or_invalid_response[norm]",
+        "apps/scorer/tests/unit/test_scorer.py::test_warmup_failure_keeps_not_ready",
+        "apps/scorer/tests/unit/test_scorer.py::test_duplicate_keys_and_manifest_digest_mismatch_rejected",
+        "apps/scorer/tests/unit/test_scorer.py::test_batch_shutdown_resolves_inflight_request",
+        "apps/scorer/tests/unit/test_scorer.py::test_same_text_coalesces_and_cache_is_bounded",
+        "apps/scorer/tests/unit/test_scorer.py::test_http_full_batch_and_deadline",
+        "apps/scorer/tests/unit/test_scorer.py::test_runtime_nonfinite_is_model_failure",
+        "apps/scorer/tests/unit/test_scorer.py::test_boot_clock_rollback_never_revalidates_expired_request",
+        "apps/scorer/tests/unit/test_scorer.py::test_replay_retention_covers_future_timestamp_and_drift_margin",
+        "apps/scorer/tests/unit/test_scorer.py::test_boot_clock_jump_beyond_500ms_fails_closed[-0.501]",
+        "apps/scorer/tests/unit/test_scorer.py::test_boot_clock_jump_beyond_500ms_fails_closed[0.501]",
+        "apps/scorer/tests/unit/test_scorer.py::test_client_total_deadline_rejects_valid_slow_drip_response",
+        "apps/scorer/tests/unit/test_scorer.py::test_client_checks_monotonic_budget_after_synchronous_validation"
+      ]
+    },
+    {
+      "component_id": "apps-scorer-tests-integration-test_real_model-test_real_offline_encoding_and_authenticated_client",
+      "stage": "integration",
+      "status": "passed",
+      "declared_environment": "model",
+      "observed_runtime": {
+        "sys_platform": "darwin",
+        "python_version": "3.12.13",
+        "service": "scorer",
+        "cwd": "apps/scorer",
+        "postgres_nodes": [],
+        "relay_postgres_nodes": [],
+        "real_model_nodes": [
+          "apps/scorer/tests/integration/test_real_model.py::test_real_offline_encoding_and_authenticated_client"
+        ],
+        "integration_qualified": true,
+        "external_runner_available": false
+      },
+      "environment": "model",
+      "tests_run": 1,
+      "skipped": 0,
+      "failed": 0,
+      "independently_verified": false,
+      "artifact_path": "docs/acceptance/backend-evidence/e20ecbc2a8e54148950bbf3143fcfa7f/results.xml",
+      "artifact_sha256": "84fdd58a40515b5aefd6dc548a98df4b4dabf1823832c474c5f93a7ec2c0126e",
+      "source_sha256": {
+        "apps/api/app/modules/scoring/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "apps/api/app/modules/scoring/client.py": "8c8b4efb4615c86374e435a13330b3333ab41c8c33f1d9ea3dbe199daad71020",
+        "apps/api/app/modules/scoring/port.py": "21c45248d698959b6077ecba02c67a7060eae7de466e51a2eb816ca41726c043",
+        "apps/api/app/modules/scoring/runtime.py": "de0456358103e82a5ac62fc9eaf2042eb03687449b635411b1f398527b4c2891",
+        "apps/api/app/modules/scoring/worker.py": "889de55bfe3c71510072dbd33e10f0a3db3e1cc02168b1733be23681954b8391",
+        "apps/scorer/app/__init__.py": "49da9425575240ac50d87bdd56010999cccba39c4bfd39a01f7edec991a59d27",
+        "apps/scorer/app/batcher.py": "d72cd17e3e2791ec20bb64aac957dccf579f751ad998ef94a992edaeab48d593",
+        "apps/scorer/app/encoder.py": "6a51cdafe8b9eb3481ed2cc19b61df0db90ef828ad1f133d25e24946651ddd76",
+        "apps/scorer/app/main.py": "c2407150641f96090b8a3c9296e7de4b666b780d6cd479e190d9348a5ba616e5",
+        "apps/scorer/app/manifest.py": "f16cebd04c32a7dc1cc6b0f1fa53cb176289b34d287250ce3210f62b53949930",
+        "apps/scorer/app/protocol.py": "e85c30d4d0d8a5a8231d2abb0eeec4ff6691b4305618a70d1bb76e270f118cae",
+        "apps/scorer/app/runtime_entry.py": "09a0eb9b790caa3e121559b827d08ceab9427e1563baa2c20afdc494c1859249",
+        "apps/scorer/tests/integration/test_real_model.py": "3f001bb64374cf45db07dd2b8d254b3ebd33f3ab491330030275c5937543afcf",
+        "apps/scorer/tests/unit/test_scorer.py": "2b466bab2daac163c52ca7dd169bf73d918ea65c3ad543303c0a39177d10112d"
+      },
+      "collected_node_ids": [
+        "apps/scorer/tests/integration/test_real_model.py::test_real_offline_encoding_and_authenticated_client"
+      ],
+      "junit_cases": [
+        [
+          "apps.scorer.tests.integration.test_real_model",
+          "test_real_offline_encoding_and_authenticated_client"
+        ]
+      ],
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    }
+  ],
+  "subcase_results": [
+    {
+      "subcase_id": "apps-scorer-tests-integration-test_real_model-test_real_offline_encoding_and_authenticated_client",
+      "node_id": "apps/scorer/tests/integration/test_real_model.py::test_real_offline_encoding_and_authenticated_client",
+      "status": "passed",
+      "group_refs": [
+        "BE-A02"
+      ],
+      "entire_acceptance_group_complete": false
+    }
+  ]
+}

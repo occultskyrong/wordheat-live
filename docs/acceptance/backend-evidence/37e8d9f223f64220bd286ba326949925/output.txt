@@ -1,0 +1,26 @@
+.............................................F......                          [100%]
+=================================== FAILURES ===================================
+___________ test_runtime_clients_are_per_call_and_monitor_is_cached ____________
+
+    def test_runtime_clients_are_per_call_and_monitor_is_cached():
+        runtime=load(ROOT/'apps/api/app/modules/scoring/runtime.py','runtime_test')
+        clients=[]; clock=[0.]
+        class Client:
+            def __init__(self,*args,**kwargs):self.closed=False;clients.append(self)
+            async def embeddings(self,texts):return [[1.,0.] for _ in texts]
+            async def score(self,*args):return 42.
+            async def aclose(self):self.closed=True
+        proxy=runtime.ScorerRuntime(b'x'*32,'real-model','a'*64,2,client_factory=Client,clock=lambda:clock[0])
+        assert proxy.readiness()['ready'] is False and len(clients)==0
+        for word in ('first-uncached','second-uncached'): assert asyncio.run(proxy.score(word,{}))==42.
+        assert len(clients)==2 and all(c.closed for c in clients)
+        asyncio.run(proxy.probe())
+        assert proxy.readiness()=={'ready':True,'manifest_id':'real-model'}
+        count=len(clients);clock[0]=2.
+>       assert proxy.readiness()['ready'] is False and len(clients)==count
+E       assert (True is False)
+
+tests/integration/test_local_bootstrap.py:89: AssertionError
+=========================== short test summary info ============================
+FAILED tests/integration/test_local_bootstrap.py::test_runtime_clients_are_per_call_and_monitor_is_cached
+1 failed, 51 passed, 67 subtests passed in 11.74s

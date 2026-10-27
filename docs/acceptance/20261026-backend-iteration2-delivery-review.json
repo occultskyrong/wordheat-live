@@ -1,0 +1,105 @@
+{
+  "verdict": "pass",
+  "applied_integration_files_verified": 19,
+  "integration_manifest_sha256": "db137e48cecdc59ed8a118f7a0cf909c62e66405d46a0394de9ad69abbe9021a",
+  "all_report_source_hashes_valid": true,
+  "distinct_source_paths_checked": 112,
+  "spec_sha256": "6c582420ea7d80d66cea1178e8629e7358a6a23a88c1d5ea65843a47f821f63b",
+  "manifest_sha256": "44166d1af5c2476c41eadadbd8165d2cdd09794bfe94bec5be01a6267cf68ef3",
+  "reports": [
+    {
+      "name": "api",
+      "report_path": "docs/acceptance/backend-evidence/83a5f5a7ddd44d1bae2390b115178141/evidence.json",
+      "report_sha256": "c532ab659502c967bbb49d74fb3a17d1f7c8d2e6106fc582fc639259042e294d",
+      "junit_sha256": "179fc0027bbbf34c1cc73cdc8a5683f32046f0fe86ed413db395ffa903f413f1",
+      "tests": 174,
+      "output_subtests_passed": 52,
+      "source_hashes_valid": true,
+      "spec_manifest_match": true
+    },
+    {
+      "name": "relay",
+      "report_path": "docs/acceptance/backend-evidence/66d4ac8057904c09aa3cc6d085e3cac3/evidence.json",
+      "report_sha256": "dac7c99445d4997f1e84f3ad541d914e007a61af930f7a2446fca7aa340e661f",
+      "junit_sha256": "025f73203effd0b45c22449084ea34c73b128e38672a51ff88c5fa629f02ad64",
+      "tests": 46,
+      "output_subtests_passed": 0,
+      "source_hashes_valid": true,
+      "spec_manifest_match": true
+    },
+    {
+      "name": "scorer",
+      "report_path": "docs/acceptance/backend-evidence/2afae2b3475b434c8aa0f02d1f8faf08/evidence.json",
+      "report_sha256": "7bba346375c3f3708d56aaa87d021133776f02fbd2904567d6f4ac39841fb9bf",
+      "junit_sha256": "165895c4adaf294cb8548f868687f541fa3ef3b88216fc8e53843df4c4b9b5f0",
+      "tests": 32,
+      "output_subtests_passed": 0,
+      "source_hashes_valid": true,
+      "spec_manifest_match": true
+    },
+    {
+      "name": "tools",
+      "report_path": "docs/acceptance/backend-evidence/b3cd5e9c34824681a9fef123948f5e4a/evidence.json",
+      "report_sha256": "563caaac17e5ebc677914c5f8cebb008f95702866f8839b46784f16b9f452837",
+      "junit_sha256": "199545c6904467da09f723438e3552b7d83782ca3a7138fccd2503eb9c1f55b1",
+      "tests": 42,
+      "output_subtests_passed": 32,
+      "source_hashes_valid": true,
+      "spec_manifest_match": true
+    },
+    {
+      "name": "api-local",
+      "report_path": "docs/acceptance/backend-evidence/3d82805567314dfc9faeb40bd1a5c810/evidence.json",
+      "report_sha256": "583df2860d87af769fc5d62aca49aea434374382ee26a2d071e18196bd6f91c0",
+      "junit_sha256": "e768a7d0cf9dc9aa167362a7e824332bd2238386526dd6be133cff7f90cf3528",
+      "tests": 21,
+      "output_subtests_passed": 0,
+      "source_hashes_valid": true,
+      "spec_manifest_match": true
+    },
+    {
+      "name": "scorer-local",
+      "report_path": "docs/acceptance/backend-evidence/27f0659ad380437e892b478b545a5506/evidence.json",
+      "report_sha256": "fa0834e57d855d85eb03d4df1477420abc15b9afd972e4ccb6f46dd091df7caf",
+      "junit_sha256": "d1571823e8ec2e44f19b5ada1aadc10cf5a8e76c411059733523b94982aeda34",
+      "tests": 31,
+      "output_subtests_passed": 0,
+      "source_hashes_valid": true,
+      "spec_manifest_match": true
+    },
+    {
+      "name": "relay-local",
+      "report_path": "docs/acceptance/backend-evidence/8f00f5e2ab02430dbe235af9074e7b9b/evidence.json",
+      "report_sha256": "e7c2a72ec93a54ca13260f90033ea09e0dfab85a5b4ebed2c27d1b3b7641e106",
+      "junit_sha256": "4bbd89ed5cb4fa4b88125c0e907109382433c8af46a0b2679fd57d1b34124f9e",
+      "tests": 10,
+      "output_subtests_passed": 0,
+      "source_hashes_valid": true,
+      "spec_manifest_match": true
+    }
+  ],
+  "unique_tests": 294,
+  "local_batches_are_subsets": true,
+  "components": 157,
+  "subcases_passed": 150,
+  "full_spec_passed": 3,
+  "full_spec_total": 100,
+  "BE-A19": "passed",
+  "BE-A20": "pending_external_partial",
+  "all_complete": false,
+  "saved_progress_matches_rebuild": true,
+  "contract_completeness_flag": "recorded value reused without reading excluded frontend Spec; evidence states recomputed",
+  "documentation_write_paths": {
+    "README.md": "c26d7bca3d1d550a2216a3f9333b94dc5c5879d986303bac6f6dbbc286e7c629",
+    "apps/api/README.md": "0a2f897609bea6708372aba35bf55937750827b38a705ec999ed079b5a1ba76c",
+    "docs/README.md": "e01dcec848d5b90d7f52d366860e217fbfa1e49795255aad18d745a7da9ae9ed",
+    "docs/acceptance/20261026 - \u540e\u7aef\u7b2c\u4e8c\u8f6e - \u9a8c\u8bc1\u8bb0\u5f55.md": "22bfffe47026eef875dc59f4e2d4f02472c346fba0a56ea82e950a74592f2cdc",
+    "docs/acceptance/README.md": "e2e23aa643f75c0ca7f8e7b16b63c53f9baff86ae9b003fb2b46ad6abe63117c",
+    "docs/plans/20261025 - \u540e\u7aef\u5f00\u53d1\u8fed\u4ee3 - \u6267\u884c\u8ba1\u5212.md": "3a0a3255f15f17c14cc130eaa56bb6dc2485a26c76730e9a5f367bb90117e8e8"
+  },
+  "documentation_local_links_verified": 73,
+  "documentation_writes_do_not_overlap_report_bound_sources": true,
+  "migration_record_review": "local PG16.14/public/wordheat_test; actual migrate entry recorded; 9 revisions, no new revision, 37 existing-table row counts unchanged; idempotent verification only, no database access by verifier",
+  "pytest_or_db_executed": false,
+  "issues": []
+}

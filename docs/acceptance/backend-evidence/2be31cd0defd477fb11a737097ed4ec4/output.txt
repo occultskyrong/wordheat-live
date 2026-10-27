@@ -1,0 +1,128 @@
+F..F.F..F.F.FF........      [100%]
+=================================== FAILURES ===================================
+_____ ContractTests.test_204_cannot_be_replaced_with_a_fake_json_envelope ______
+
+self = <test_contracts.ContractTests testMethod=test_204_cannot_be_replaced_with_a_fake_json_envelope>
+
+    def test_204_cannot_be_replaced_with_a_fake_json_envelope(self):
+        import json,shutil,tempfile
+        with tempfile.TemporaryDirectory(dir=ROOT) as directory:
+>           root=Path(directory);package=self.copy_checked_source(root)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+packages/contracts/tests/test_contracts.py:173: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+packages/contracts/tests/test_contracts.py:25: in copy_checked_source
+    self.assertTrue(self.checker().check(root)['valid'])
+E   AssertionError: False is not true
+________ ContractTests.test_be_operation_cannot_disappear_from_coverage ________
+
+self = <test_contracts.ContractTests testMethod=test_be_operation_cannot_disappear_from_coverage>
+
+    def test_be_operation_cannot_disappear_from_coverage(self):
+        import json
+        import shutil
+        import tempfile
+        checker = self.checker()
+        with tempfile.TemporaryDirectory(dir=ROOT) as directory:
+            root = Path(directory)
+            package = root/'packages/contracts'
+>           self.copy_checked_source(root)
+
+packages/contracts/tests/test_contracts.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+packages/contracts/tests/test_contracts.py:25: in copy_checked_source
+    self.assertTrue(self.checker().check(root)['valid'])
+E   AssertionError: False is not true
+_______ ContractTests.test_checker_rejects_dropped_machine_auth_metadata _______
+
+self = <test_contracts.ContractTests testMethod=test_checker_rejects_dropped_machine_auth_metadata>
+
+    def test_checker_rejects_dropped_machine_auth_metadata(self):
+        import json,shutil,tempfile
+        with tempfile.TemporaryDirectory() as directory:
+>           root=Path(directory);package=self.copy_checked_source(root)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+packages/contracts/tests/test_contracts.py:243: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+packages/contracts/tests/test_contracts.py:25: in copy_checked_source
+    self.assertTrue(self.checker().check(root)['valid'])
+E   AssertionError: False is not true
+____ ContractTests.test_current_contracts_define_all_current_backend_wires _____
+
+self = <test_contracts.ContractTests testMethod=test_current_contracts_define_all_current_backend_wires>
+
+    def test_current_contracts_define_all_current_backend_wires(self):
+        result = self.checker().check(ROOT)
+>       self.assertTrue(result["valid"], result)
+E       AssertionError: False is not true : {'report_version': 2, 'spec_sha256': '6c582420ea7d80d66cea1178e8629e7358a6a23a88c1d5ea65843a47f821f63b', 'c1_sha256': 'd69ae165a6d1169e00f20bb03b4cd66bdc9ed2fe7ef2a730c2a130934a88b4e8', 'valid': False, 'schema_validated': False, 'all_contracts_defined': False, 'definition_scope': 'backend HTTP/WS wire shapes; not implementation/platform/Windows acceptance', 'source_status': 'FROZEN_INPUT', 'partial_components': [], 'defined_operations': 0, 'defined_http_operations': 0, 'actual_http_route_templates': 0, 'dynamic_concrete_aliases': 0, 'defined_websocket_protocols': 0, 'defined_baseline_operations': 0, 'baseline_operations': 45, 'defined_component_http_operations': 0, 'undefined_operations': [], 'errors': ['source hash drift: apps/api/app/modules/scoring/runtime.py']}
+
+packages/contracts/tests/test_contracts.py:30: AssertionError
+_____ ContractTests.test_empty_combination_and_definition_set_are_invalid ______
+
+self = <test_contracts.ContractTests testMethod=test_empty_combination_and_definition_set_are_invalid>
+
+    def test_empty_combination_and_definition_set_are_invalid(self):
+        import json
+        import shutil
+        import tempfile
+        checker = self.checker()
+        for schema in ({"allOf":[{}]}, {"oneOf":[{"type":"string"},{}]}, {"$ref":"#/$defs/Loop","$defs":{"Loop":{"$ref":"#/$defs/Loop"}}}):
+            with self.subTest(schema=schema), self.assertRaises(ValueError):
+                checker.assert_typed(schema)
+        with tempfile.TemporaryDirectory(dir=ROOT) as directory:
+            root = Path(directory)
+            package = root/'packages/contracts'
+>           self.copy_checked_source(root)
+
+packages/contracts/tests/test_contracts.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+packages/contracts/tests/test_contracts.py:25: in copy_checked_source
+    self.assertTrue(self.checker().check(root)['valid'])
+E   AssertionError: False is not true
+----------------------------- Captured stdout call -----------------------------
+uuu
+____________ ContractTests.test_missing_indexed_source_is_rejected _____________
+
+self = <test_contracts.ContractTests testMethod=test_missing_indexed_source_is_rejected>
+
+    def test_missing_indexed_source_is_rejected(self):
+        import json,shutil,tempfile
+        with tempfile.TemporaryDirectory() as directory:
+>           root=Path(directory);package=self.copy_checked_source(root)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+packages/contracts/tests/test_contracts.py:209: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+packages/contracts/tests/test_contracts.py:25: in copy_checked_source
+    self.assertTrue(self.checker().check(root)['valid'])
+E   AssertionError: False is not true
+_______ ContractTests.test_missing_response_schema_invalidates_contract ________
+
+self = <test_contracts.ContractTests testMethod=test_missing_response_schema_invalidates_contract>
+
+    def test_missing_response_schema_invalidates_contract(self):
+        import json
+        import shutil
+        import tempfile
+        checker = self.checker()
+        with tempfile.TemporaryDirectory(dir=ROOT) as directory:
+            root = Path(directory)
+            package = root/'packages/contracts'
+>           self.copy_checked_source(root)
+
+packages/contracts/tests/test_contracts.py:271: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+packages/contracts/tests/test_contracts.py:25: in copy_checked_source
+    self.assertTrue(self.checker().check(root)['valid'])
+E   AssertionError: False is not true
+=========================== short test summary info ============================
+FAILED packages/contracts/tests/test_contracts.py::ContractTests::test_204_cannot_be_replaced_with_a_fake_json_envelope
+FAILED packages/contracts/tests/test_contracts.py::ContractTests::test_be_operation_cannot_disappear_from_coverage
+FAILED packages/contracts/tests/test_contracts.py::ContractTests::test_checker_rejects_dropped_machine_auth_metadata
+FAILED packages/contracts/tests/test_contracts.py::ContractTests::test_current_contracts_define_all_current_backend_wires
+FAILED packages/contracts/tests/test_contracts.py::ContractTests::test_empty_combination_and_definition_set_are_invalid
+FAILED packages/contracts/tests/test_contracts.py::ContractTests::test_missing_indexed_source_is_rejected
+FAILED packages/contracts/tests/test_contracts.py::ContractTests::test_missing_response_schema_invalidates_contract
+7 failed, 15 passed, 45 subtests passed in 0.61s
