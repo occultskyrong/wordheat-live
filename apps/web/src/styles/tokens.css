@@ -1,0 +1,26 @@
+:root {
+  color-scheme: dark;
+  --bg: #07131f;
+  --bg-raised: #0b1b2a;
+  --surface: rgba(17, 36, 53, 0.9);
+  --surface-solid: #112435;
+  --surface-hover: #173047;
+  --line: rgba(159, 190, 210, 0.16);
+  --line-strong: rgba(159, 190, 210, 0.3);
+  --text: #edf5f7;
+  --muted: #9db2c2;
+  --faint: #7892a6;
+  --teal: #55e0c3;
+  --teal-dark: #062c28;
+  --amber: #f3bf67;
+  --red: #ff8178;
+  --blue: #74bdf5;
+  --radius: 14px;
+  --radius-sm: 9px;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
+  --font-body: "Microsoft YaHei UI", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+  --font-data: "Bahnschrift", "DIN Alternate", "Microsoft YaHei UI", sans-serif;
+  font-family: var(--font-body);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
